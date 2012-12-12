@@ -13,9 +13,14 @@ class Person {
     boolean accountLocked
     boolean passwordExpired
 
+    String token
+    String email
+
     static constraints = {
         username blank: false, unique: true
         password blank: false
+        token blank: false, nullable: false
+        email email: true, nullable: false, blank: false
     }
 
     static mapping = {
