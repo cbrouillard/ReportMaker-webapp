@@ -2,39 +2,42 @@ package com.headbangers.reportmaker
 
 class Person {
 
-	transient springSecurityService
+    transient springSecurityService
 
-	String username
-	String password
-	boolean enabled
-	boolean accountExpired
-	boolean accountLocked
-	boolean passwordExpired
+    String id
 
-	static constraints = {
-		username blank: false, unique: true
-		password blank: false
-	}
+    String username
+    String password
+    boolean enabled
+    boolean accountExpired
+    boolean accountLocked
+    boolean passwordExpired
 
-	static mapping = {
-		password column: '`password`'
-	}
+    static constraints = {
+        username blank: false, unique: true
+        password blank: false
+    }
 
-	Set<Role> getAuthorities() {
-		PersonRole.findAllByPerson(this).collect { it.role } as Set
-	}
+    static mapping = {
+        id generator: 'uuid'
+        password column: '`password`'
+    }
 
-	def beforeInsert() {
-		encodePassword()
-	}
+    Set<Role> getAuthorities() {
+        PersonRole.findAllByPerson(this).collect { it.role } as Set
+    }
 
-	def beforeUpdate() {
-		if (isDirty('password')) {
-			encodePassword()
-		}
-	}
+    def beforeInsert() {
+        encodePassword()
+    }
 
-	protected void encodePassword() {
-		password = springSecurityService.encodePassword(password)
-	}
+    def beforeUpdate() {
+        if (isDirty('password')) {
+            encodePassword()
+        }
+    }
+
+    protected void encodePassword() {
+        password = springSecurityService.encodePassword(password)
+    }
 }
