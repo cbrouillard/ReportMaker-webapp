@@ -36,6 +36,8 @@ class LoginController {
         }
     }
 
+    def register = {}
+
     // Création de l'utilisateur
     def apply = {
 
