@@ -39,3 +39,11 @@
 .table td.center {
     text-align: center;
 }
+
+.table td.sized48 {
+    width: 48px;
+}
+
+.table td.middle {
+    vertical-align: middle;
+}
