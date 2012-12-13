@@ -34,7 +34,7 @@
             <a class="btn btn-large btn-success"
                href="https://play.google.com/store/apps/details?id=com.headbangers.reportmaker"><g:message
                     code="download.mobile.app"/></a>
-            <g:link class="btn btn-large btn-warning"><g:message code="login.noaccount"/></g:link>
+            <g:link class="btn btn-large btn-warning" action="register"><g:message code="login.noaccount"/></g:link>
         </div>
 
     </div>

@@ -4,7 +4,7 @@
 
 .form-signin {
     /*max-width: 350px;*/
-    padding: 31px 29px 29px;
+    padding: 19px 29px 29px;
     /*margin: 0 auto 20px;*/
     background-color: #fff;
     border: 1px solid #e5e5e5;
@@ -27,4 +27,11 @@
     height: auto;
     margin-bottom: 15px;
     padding: 7px 9px;
+}
+
+.error {
+    border: 1px solid red !important;
+    background-color: red !important;
+    color: white !important;
+    font-weight: bold !important;
 }

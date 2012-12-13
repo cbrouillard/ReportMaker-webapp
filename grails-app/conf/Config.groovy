@@ -96,3 +96,15 @@ grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.headbange
 grails.plugins.springsecurity.authority.className = 'com.headbangers.reportmaker.Role'
 
 grails.plugins.twitterbootstrap.fixtaglib = true
+
+grails.mail.host = props.get("mail.host")
+grails.mail.port = props.get("mail.port")
+grails.mail.username = props.get("mail.username")
+grails.mail.password = props.get("mail.password")
+grails.mail.default.from=props.get("mail.default.from")
+
+// TODO externaliser
+grails.mail.props = ["mail.smtp.auth":"true",
+        "mail.smtp.socketFactory.port":"465",
+        "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+        "mail.smtp.socketFactory.fallback":"false"]
