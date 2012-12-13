@@ -35,3 +35,7 @@
     color: white !important;
     font-weight: bold !important;
 }
+
+.table td.center {
+    text-align: center;
+}
