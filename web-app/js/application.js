@@ -13,6 +13,7 @@ jQuery(function () {
     $(".photo-display img").error(function () {
         $(this).hide();
     });
+
 })
 
 var registerClickableTr = function () {

@@ -17,8 +17,8 @@ class Turn {
 
     static constraints = {
         num nullable: false
-        comments1 blank: true
-        comments2 blank: true
+        comments1 blank: true, nullable: true
+        comments2 blank: true, nullable: true
         lastOne nullable: true
         nightFight nullable: true
     }

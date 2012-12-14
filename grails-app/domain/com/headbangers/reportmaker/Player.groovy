@@ -14,7 +14,7 @@ class Player {
 
     static constraints = {
         name blank: false, nullable: false
-        race blank: true
+        race blank: true, nullable: true
         num nullable: false
     }
 

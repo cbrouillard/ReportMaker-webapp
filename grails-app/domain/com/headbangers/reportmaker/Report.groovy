@@ -26,12 +26,12 @@ class Report {
         name blank: false, nullable: false
         date nullable: false
         format nullable: true
-        deploymentType blank: true
-        scenario blank: true
+        deploymentType blank: true, nullable: true
+        scenario blank: true, nullable: true
         firstPlayer nullable: false
-        lordCapacity1 blank: true
-        lordCapacity2 blank: true
-        comments blank: true
+        lordCapacity1 blank: true, nullable: true
+        lordCapacity2 blank: true, nullable: true
+        comments blank: true, nullable: true
     }
 
     static mapping = {
