@@ -19,6 +19,8 @@
             <h1><g:message code="report.list"/></h1>
 
             <p><g:message code="report.list.help"/></p>
+
+            <p><g:link class="btn btn-primary" action="create"><g:message code="report.howto.create"/></g:link></p>
         </div>
     </div>
 </div>
@@ -37,7 +39,12 @@
                 </div>
             </td>
             <td class="center middle actions">
-                EDIT PDF BBCODE
+                <g:link action="edit" id="${report.id}"><img src="${resource(dir: 'images', file: 'edit.png')}"
+                                                             alt="Edit"/></g:link>
+                <g:link action="pdf" id="${report.id}"><img src="${resource(dir: 'images', file: 'pdf.png')}"
+                                                            alt="PDF"/></g:link>
+                <g:link action="code" params="[type: 'bbcode']" id="${report.id}"><img
+                        src="${resource(dir: 'images', file: 'bb-code.png')}" alt="BB-Code"/></g:link>
             </td>
         </tr>
     </g:each>

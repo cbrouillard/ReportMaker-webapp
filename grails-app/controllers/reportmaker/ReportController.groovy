@@ -21,4 +21,40 @@ class ReportController {
 
         [reports: reports]
     }
+
+    def create() {}
+
+    def edit() {
+        def person = springSecurityService.currentUser
+        def report = Report.findByIdAndOwner(params.id, person)
+
+        if (report) {
+            render(view: 'edit', [report: report])
+            return
+        }
+
+        redirect(action: 'list')
+    }
+
+    def update() {
+
+    }
+
+    def pdf() {
+        def person = springSecurityService.currentUser
+        def report = Report.findByIdAndOwner(params.id, person)
+
+        if (report) {
+
+        }
+    }
+
+    def code() {
+        def person = springSecurityService.currentUser
+        def report = Report.findByIdAndOwner(params.id, person)
+
+        if (report) {
+
+        }
+    }
 }
