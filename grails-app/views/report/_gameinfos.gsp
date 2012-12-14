@@ -1,4 +1,4 @@
-<div class="alert alert-info"><g:message code="report.photo.table"/></div>
+<legend><g:message code="report.photo.table"/></legend>
 
 <div class="photo-display">
     <img src="${createLink(absolute: true, url: "/twr/photos/${report.id}/table.jpg")}" alt="Table" title="Table"/>
@@ -6,8 +6,8 @@
     </button>
 </div>
 
-<div class="alert alert-info"><g:message code="report.deployment.type"/></div>
+<legend><g:message code="report.deployment.type"/></legend>
 <g:textField name="deploymentType" value="${report.deploymentType}"/>
 
-<div class="alert alert-info"><g:message code="report.scenario"/></div>
+<legend><g:message code="report.scenario"/></legend>
 <g:textField name="scenario" value="${report.scenario}"/>
