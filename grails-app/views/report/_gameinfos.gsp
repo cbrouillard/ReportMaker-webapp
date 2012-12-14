@@ -7,4 +7,7 @@
 </div>
 
 <div class="alert alert-info"><g:message code="report.deployment.type"/></div>
-<g:textField name="test"/>
+<g:textField name="deploymentType" value="${report.deploymentType}"/>
+
+<div class="alert alert-info"><g:message code="report.scenario"/></div>
+<g:textField name="scenario" value="${report.scenario}"/>
