@@ -10,6 +10,9 @@ if (typeof jQuery !== 'undefined') {
 
 jQuery(function () {
     registerClickableTr();
+    $("img").error(function () {
+        $(this).hide();
+    });
 })
 
 var registerClickableTr = function () {

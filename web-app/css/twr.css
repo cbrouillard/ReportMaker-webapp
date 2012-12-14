@@ -64,3 +64,10 @@
 .clickable {
     cursor: pointer;
 }
+
+.photo-display {
+    background: transparent url('../images/damier.png') repeat top left;
+    width: 100%;
+    min-height: 45px;
+    margin-bottom: 10px;
+}
