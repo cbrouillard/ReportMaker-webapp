@@ -25,7 +25,7 @@
 
 <table class="table table-striped table-hover">
     <g:each in="${reports}" var="report" status="i">
-        <tr>
+        <tr class="clickable" link="${createLink(action: 'edit', id: report.id)}">
             <td class="sized48 center middle"><img src="${resource(dir: 'images', file: 'mars.png')}" alt="[.]"/></td>
             <td>
                 <div>
@@ -36,7 +36,7 @@
                     <h4>${report.one.name} VS ${report.two.name}</h4>
                 </div>
             </td>
-            <td class="center middle">
+            <td class="center middle actions">
                 EDIT PDF BBCODE
             </td>
         </tr>

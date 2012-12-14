@@ -47,3 +47,7 @@
 .table td.middle {
     vertical-align: middle;
 }
+
+.clickable {
+    cursor: pointer;
+}
