@@ -29,7 +29,7 @@ class ReportController {
         def report = Report.findByIdAndOwner(params.id, person)
 
         if (report) {
-            render(view: 'edit', [report: report])
+            render(view: 'edit', model: [report: report])
             return
         }
 

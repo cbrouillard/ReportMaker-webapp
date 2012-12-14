@@ -13,6 +13,8 @@
 </head>
 
 <body>
+<g:render template="/common/flashmessage"/>
+
 TUTORIAL POUR CREER UN NOUVEAU RAPPORT.
 </body>
 </html>

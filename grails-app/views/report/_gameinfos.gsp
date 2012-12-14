@@ -1,0 +1,1 @@
+<p>Game infos</p>
