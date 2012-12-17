@@ -37,7 +37,7 @@ class ReportController {
     }
 
     def update() {
-
+        println params
     }
 
     def pdf() {
