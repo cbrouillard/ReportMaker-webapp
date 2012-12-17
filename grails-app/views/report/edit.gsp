@@ -34,31 +34,31 @@
             </div>
 
             <div class="tab-pane" id="t1">
-                <g:render template="oneturn" model="[num: 1, report: report]"/>
+                <g:render template="oneturn" model="[num: 1, report: report, turn: report.getTurn(1)]"/>
             </div>
 
             <div class="tab-pane" id="t2">
-                <g:render template="oneturn" model="[num: 2, report: report]"/>
+                <g:render template="oneturn" model="[num: 2, report: report, turn: report.getTurn(2)]"/>
             </div>
 
             <div class="tab-pane" id="t3">
-                <g:render template="oneturn" model="[num: 3, report: report]"/>
+                <g:render template="oneturn" model="[num: 3, report: report, turn: report.getTurn(3)]"/>
             </div>
 
             <div class="tab-pane" id="t4">
-                <g:render template="oneturn" model="[num: 4, report: report]"/>
+                <g:render template="oneturn" model="[num: 4, report: report, turn: report.getTurn(4)]"/>
             </div>
 
             <div class="tab-pane" id="t5">
-                <g:render template="oneturn" model="[num: 5, report: report]"/>
+                <g:render template="oneturn" model="[num: 5, report: report, turn: report.getTurn(5)]"/>
             </div>
 
             <div class="tab-pane" id="t6">
-                <g:render template="oneturn" model="[num: 6, report: report]"/>
+                <g:render template="oneturn" model="[num: 6, report: report, turn: report.getTurn(6)]"/>
             </div>
 
             <div class="tab-pane" id="t7">
-                <g:render template="oneturn" model="[num: 7, report: report]"/>
+                <g:render template="oneturn" model="[num: 7, report: report, turn: report.getTurn(7)]"/>
             </div>
         </div>
     </div>

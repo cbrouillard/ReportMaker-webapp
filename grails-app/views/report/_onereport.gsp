@@ -26,4 +26,9 @@
         <g:link action="code" params="[type: 'bbcode']" id="${report.id}"><img
                 src="${resource(dir: 'images', file: 'bb-code.png')}" alt="BB-Code"/></g:link><br/>BB-Code
     </span>
+
+    <span>
+        <g:link action="code" params="[type: 'html']" id="${report.id}"><img
+                src="${resource(dir: 'images', file: 'html.png')}" alt="HTML"/></g:link><br/>HTML
+    </span>
 </td>

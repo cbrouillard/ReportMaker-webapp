@@ -21,6 +21,7 @@ class Report {
     Player two
 
     Person owner
+    List<Turn> turns;
 
     static constraints = {
         name blank: false, nullable: false
@@ -37,5 +38,14 @@ class Report {
     static mapping = {
         id generator: 'uuid'
         comments type: 'text'
+    }
+
+    Turn getTurn(int num) {
+        turns.each {t ->
+            if (t.num.equals(num)) {
+                return t
+            }
+        }
+        return null
     }
 }
