@@ -71,3 +71,9 @@
     <button class="btn pull-right"><img src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
     </button>
 </div>
+
+
+<legend><g:message code="report.infos.comments"/></legend>
+
+<g:textArea name="comments" rows="5" class="span12" cols=""
+            value="${report.comments}"/>
