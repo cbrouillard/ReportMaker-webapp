@@ -21,6 +21,8 @@ class WebController {
         Battle battle = mapper.readValue(params.reportData, Battle.class)
 
         // Récupération du fichier zip
+        println params
+        println battle
 
         // Décompression du fichier zip
 
