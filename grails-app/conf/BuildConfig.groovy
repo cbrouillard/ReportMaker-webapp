@@ -36,6 +36,8 @@ grails.project.dependency.resolution = {
 
         // runtime 'mysql:mysql-connector-java:5.1.20'
         runtime 'postgresql:postgresql:9.1-901.jdbc4'
+        compile 'org.codehaus.jackson:jackson-core-asl:1.9.11'
+        compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.11'
     }
 
     plugins {
