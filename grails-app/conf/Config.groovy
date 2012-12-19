@@ -11,6 +11,16 @@
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
 
+def ENV_NAME = "REPORTMAKER_CONF"
+def props = new Properties()
+if (System.getenv(ENV_NAME)) {
+    InputStream is = new BufferedInputStream(new FileInputStream(System.getenv(ENV_NAME)))
+    props.load(is)
+    is.close()
+}
+
+
+
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.use.accept.header = false
@@ -108,6 +118,8 @@ grails.mail.port = props.get("mail.port")
 grails.mail.username = props.get("mail.username")
 grails.mail.password = props.get("mail.password")
 grails.mail.default.from = props.get("mail.default.from")
+
+twr.photos.dir = props.get("twr.photos.dir")
 
 // TODO externaliser
 grails.mail.props = ["mail.smtp.auth": "true",

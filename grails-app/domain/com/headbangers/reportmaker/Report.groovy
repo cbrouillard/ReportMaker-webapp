@@ -1,5 +1,7 @@
 package com.headbangers.reportmaker
 
+import com.headbangers.reportmaker.pojo.Battle
+
 class Report {
 
     static hasMany = [turns: Turn]
@@ -47,5 +49,50 @@ class Report {
             }
         }
         return null
+    }
+
+    public void buildFromBattle(Battle battle, Person owner) {
+        // Informations
+        this.name = battle.name
+        this.date = battle.date
+        this.format = battle.format
+        this.deploymentType = battle.infos?.deploymentType
+        this.scenario = battle.infos?.scenario
+        this.firstPlayer = battle.infos?.firstPlayer
+        this.lordCapacity1 = battle.infos?.lordCapacity1
+        this.lordCapacity2 = battle.infos?.lordCapacity2
+        this.comments = battle.infos?.comments
+        this.owner = owner
+
+        // Joueurs
+        this.one = new Player()
+        this.one.name = battle.one?.name
+        this.one.race = battle.one?.race
+        this.one.num = firstPlayer == 1 ? 1 : 2;
+        this.one.owner = owner
+
+        this.two = new Player()
+        this.two.name = battle.two?.name
+        this.two.race = battle.two?.race
+        this.two.num = firstPlayer == 1 ? 2 : 1;
+        this.two.owner = owner
+
+        // Tours
+        this.turns = new ArrayList<Turn>()
+        (1..7).each {nt ->
+
+            com.headbangers.reportmaker.pojo.Turn tData = battle.getTurn(nt)
+            if (tData) {
+                Turn turn = new Turn()
+                turn.owner = owner
+                turn.comments1 = tData.comments1
+                turn.comments2 = tData.comments2
+                turn.lastOne = tData.lastOne
+                turn.nightFight = tData.nightFight
+                turn.num = nt
+
+                this.turns.add(turn)
+            }
+        }
     }
 }
