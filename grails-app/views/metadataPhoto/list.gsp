@@ -10,7 +10,7 @@
     <g:each in="${photos}" var="photo">
         <li class="span4">
             <div class="thumbnail">
-                <img src="${createLink(absolute: true, uri: photo.path)}" alt="">
+                <img src="${createLink(url: photo.path)}" alt="">
 
                 <p><g:link controller="report" action="edit"
                            id="${photo.report.id}">${photo.report.name}</g:link> - ${photo.path.split("/").last()}</p>

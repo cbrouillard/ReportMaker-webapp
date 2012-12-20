@@ -68,7 +68,7 @@ class WebController {
                 // Ajout des paths des photos dans la table de gestion
                 for (File file : finalDir.listFiles()) {
                     MetadataPhoto metaPhoto = new MetadataPhoto()
-                    metaPhoto.path = "/twr/photos/${report.id}/${file.name}"
+                    metaPhoto.path = "/twr/${report.id}/${file.name}"
                     metaPhoto.owner = owner
                     metaPhoto.report = report
                     metaPhoto.save(flush: true)
