@@ -83,11 +83,11 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $(".change-photo").click(function () {
-            showDialogChangePhoto();
+            showDialogChangePhoto($(this).attr("photoName"));
         });
     });
 
-    var showDialogChangePhoto = function () {
+    var showDialogChangePhoto = function (photoName) {
         var dialog = $('<div style="display:none" class="loading dialog-change-photo"></div>').appendTo('body');
         dialog.dialog({
             close:function (event, ui) {
@@ -101,7 +101,7 @@
         });
         dialog.load(
                 "${createLink(action:'changePhoto')}",
-                {"ajaxSpinner":true, "id":'${report.id}'},
+                {"ajaxSpinner":true, "id":'${report.id}', "name":photoName},
                 function (responseText, textStatus, XMLHttpRequest) {
                     dialog.removeClass('loading');
                     dialog.dialog('open');

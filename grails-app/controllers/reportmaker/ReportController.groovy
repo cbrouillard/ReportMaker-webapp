@@ -57,4 +57,13 @@ class ReportController {
 
         }
     }
+
+    def changePhoto() {
+        def person = springSecurityService.currentUser
+        def report = Report.findByIdAndOwner(params.id, person)
+
+        if (report) {
+            render(template: "changePhoto", model: [name: params.photoName, report: report])
+        }
+    }
 }
