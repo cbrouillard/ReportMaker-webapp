@@ -16,6 +16,7 @@
     %{--<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">--}%
 
     <r:require modules="bootstrap"/>
+    <r:require modules="jquery,jquery-ui"/>
 
     <style>
     body {

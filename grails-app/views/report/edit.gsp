@@ -81,4 +81,31 @@
 </g:form>
 
 </body>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var dialog = $('<div style="display:none" class="loading dialog-change-photo"></div>').appendTo('body');
+        dialog.dialog({
+            close:function (event, ui) {
+                dialog.remove();
+                $('#calendar').fullCalendar('refetchEvents');
+            },
+            modal:true,
+            autoOpen:false,
+            dialogClass:"smaller",
+            title:dialogTitle,
+            width:500
+        });
+        dialog.load(
+                loadLink,
+                {"ajaxSpinner":true, "id":'${calendar.id}', "selectedDate":date.getTime()},
+                function (responseText, textStatus, XMLHttpRequest) {
+                    dialog.removeClass('loading');
+                    dialog.dialog('open');
+                }
+        );
+
+    });
+</script>
 </html>
