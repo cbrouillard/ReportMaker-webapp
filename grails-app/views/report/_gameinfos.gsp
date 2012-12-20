@@ -2,8 +2,9 @@
 
 <div class="photo-display">
     <img src="${createLink(url: "/twr/${report.id}/table.jpg")}" alt="Table" title="Table"/>
-    <button class="btn pull-right change-photo" photoName="table"><img src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
-    </button>
+    <a class="btn pull-right change-photo" photoName="table"><img src="${resource(dir: 'images', file: 'camera.png')}"
+                                                                  alt="Change"/>
+    </a>
 </div>
 
 <legend><g:message code="report.deployment.type"/></legend>
