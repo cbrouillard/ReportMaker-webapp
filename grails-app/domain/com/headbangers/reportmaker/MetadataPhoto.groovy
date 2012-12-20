@@ -11,6 +11,9 @@ class MetadataPhoto {
 
     Date dateCreated
 
+    boolean valid = false
+    boolean deleted = false
+
     static constraints = {
         path nullable: false, blank: false
     }

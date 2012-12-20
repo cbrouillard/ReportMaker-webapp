@@ -6,22 +6,35 @@
 
 <body>
 
-<ul class="thumbnails">
-    <g:each in="${photos}" var="photo">
-        <li class="span4">
-            <div class="thumbnail">
-                <img src="${createLink(url: photo.path)}" alt="">
+<g:set var="report" value="'start'"/>
+<g:set var="hasUlOpen" value="false"/>
+<g:each in="${photos}" var="photo">
+    <g:if test="${!photo.report.id.equals(report)}">
+        <g:if test="${hasUlOpen}">
+            </ul>
+        </g:if>
 
-                <p><g:link controller="report" action="edit"
-                           id="${photo.report.id}">${photo.report.name}</g:link> - ${photo.path.split("/").last()}</p>
+        <g:set var="report" value="${photo.report.id}"/>
+        <legend>${photo.report.name} - ${photo.report.owner.username}</legend>
+        <ul class="thumbnails">
+        <g:set var="hasUlOpen" value="trues"/>
+    </g:if>
 
-                <div class="form-actions">
-                    <g:link action="delete" id="${photo.id}" class="btn btn-danger pull-right"><g:message code="delete"/></g:link>
-                </div>
-            </div>
-        </li>
-    </g:each>
-</ul>
+    <li class="span3">
+        <div class="thumbnail thumb-perso" id="photo${photo.id}">
+            <g:if test="${photo.deleted}">
+                <g:render template="deleted" model="[photo: photo]"/>
+            </g:if><g:else>
+                <g:render template="photo" model="[photo: photo]"/>
+            </g:else>
+
+        </div>
+    </li>
+
+</g:each>
+<g:if test="${hasUlOpen}">
+    </ul>
+</g:if>
 
 </body>
 </html>
