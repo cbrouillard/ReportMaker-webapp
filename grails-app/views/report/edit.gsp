@@ -88,7 +88,7 @@
     });
 
     var showDialogChangePhoto = function (photoName) {
-        var dialog = $('<div style="display:none" class="loading dialog-change-photo"></div>').appendTo('body');
+        var dialog = $('<div style="display:none" class="loading dialog-change-photo" id="dialog-photo"></div>').appendTo('body');
         dialog.dialog({
             close:function (event, ui) {
                 dialog.remove();

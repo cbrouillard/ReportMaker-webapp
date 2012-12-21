@@ -16,8 +16,7 @@
     %{--<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">--}%
 
     <r:require modules="bootstrap"/>
-    <r:require modules="jquery,jquery-ui"/>
-
+    <r:require modules="jquery,jquery-ui, fileupload"/>
     <style>
     body {
         padding-top: 60px;
@@ -70,7 +69,7 @@
 </div>
 
 
-<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
+%{--<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>--}%
 <g:javascript library="application"/>
 <r:layoutResources/>
 </body>

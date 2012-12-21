@@ -83,3 +83,8 @@ textarea {
 .thumb-perso .thumbnail {
     background-color: white;
 }
+
+.fileupload-buttonbar {
+    margin-top: 10px;
+    text-align: right;
+}

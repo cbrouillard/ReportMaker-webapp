@@ -3,7 +3,7 @@
 <div class="photo-display">
     <img src="${createLink(url: "/twr/${report.id}/table.jpg")}" alt="Table" title="Table"/>
     <a class="btn pull-right change-photo" photoName="table"><img src="${resource(dir: 'images', file: 'camera.png')}"
-                                                                  alt="Change"/>
+                                                                  alt="Change" class="photo-tochange"/>
     </a>
 </div>
 
