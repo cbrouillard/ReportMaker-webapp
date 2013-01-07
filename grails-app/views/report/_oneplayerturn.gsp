@@ -2,27 +2,30 @@
 
 <div class="photo-display">
     <img src="${createLink(absolute: true, uri: "/twr/${report.id}/player${player.num}_turn${numTurn}_move.jpg")}"
-         alt="Move" title="Move"/>
-    <button class="btn pull-right"><img src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
-    </button>
+         alt="" title="Move" class="photo-tochange-player${player.num}_turn${numTurn}_move"/>
+    <a class="btn pull-right change-photo" photoName="player${player.num}_turn${numTurn}_move"><img
+            src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
+    </a>
 </div>
 
 <legend><g:message code="report.turn.photo.shoot"/></legend>
 
 <div class="photo-display">
     <img src="${createLink(absolute: true, uri: "/twr/${report.id}/player${player.num}_turn${numTurn}_shoot.jpg")}"
-         alt="Shoot" title="Shoot"/>
-    <button class="btn pull-right"><img src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
-    </button>
+         alt="" title="Shoot" class="photo-tochange-player${player.num}_turn${numTurn}_shoot"/>
+    <a class="btn pull-right change-photo" photoName="player${player.num}_turn${numTurn}_shoot"><img
+            src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
+    </a>
 </div>
 
 <legend><g:message code="report.turn.photo.assault"/></legend>
 
 <div class="photo-display">
     <img src="${createLink(absolute: true, uri: "/twr/${report.id}/player${player.num}_turn${numTurn}_assault.jpg")}"
-         alt="Assault" title="Assault"/>
-    <button class="btn pull-right"><img src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
-    </button>
+         alt="" title="Assault" class="photo-tochange-player${player.num}_turn${numTurn}_assault"/>
+    <a class="btn pull-right change-photo" photoName="player${player.num}_turn${numTurn}_assault"><img
+            src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
+    </a>
 </div>
 
 <legend><g:message code="report.turn.comments"/></legend>
