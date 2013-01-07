@@ -88,3 +88,6 @@ textarea {
     margin-top: 10px;
 }
 
+.report-title {
+    border-bottom: 1px solid #ccc;
+}

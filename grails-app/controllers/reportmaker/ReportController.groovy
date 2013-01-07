@@ -28,7 +28,7 @@ class ReportController {
         [reports: reports]
     }
 
-    def create() {}
+//    def create() {}
 
     def edit() {
         def person = springSecurityService.currentUser
@@ -59,9 +59,22 @@ class ReportController {
         def person = springSecurityService.currentUser
         def report = Report.findByIdAndOwner(params.id, person)
 
+        def type = params.type ?: "html"
+
         if (report) {
 
+            if (type.equals("html")) {
+                render view: 'html', model: [report: report]
+                return
+            }
+
+            if (type.equals("bbcode")) {
+                render view: 'bbcode', model: [report: report]
+                return
+            }
         }
+
+        redirect(action: 'list')
     }
 
     def changePhoto() {
