@@ -1,9 +1,9 @@
 <legend><g:message code="report.photo.table"/></legend>
 
 <div class="photo-display">
-    <img src="${createLink(url: "/twr/${report.id}/table.jpg")}" alt="Table" title="Table"/>
+    <img src="${createLink(url: "/twr/${report.id}/table.jpg")}" alt="" class="photo-tochange-table"/>
     <a class="btn pull-right change-photo" photoName="table"><img src="${resource(dir: 'images', file: 'camera.png')}"
-                                                                  alt="Change" class="photo-tochange"/>
+                                                                  alt="Change"/>
     </a>
 </div>
 
@@ -26,51 +26,59 @@
 <legend><g:message code="report.photo.deployment" args="${[report.one.name]}"/></legend>
 
 <div class="photo-display">
-    <img src="${createLink(url: "/twr/${report.id}/deployment_j1.jpg")}" alt="DpJ1"/>
-    <button class="btn pull-right"><img src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
-    </button>
+    <img src="${createLink(url: "/twr/${report.id}/deployment_j1.jpg")}" alt="" class="photo-tochange-deployment_j1"/>
+    <a class="btn pull-right change-photo" photoName="deployment_j1"><img
+            src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
+    </a>
 </div>
 
 <legend><g:message code="report.photo.deployment" args="${[report.two.name]}"/></legend>
 
 <div class="photo-display">
-    <img src="${createLink(url: "/twr/${report.id}/deployment_j2.jpg")}" alt="DpJ2"/>
-    <button class="btn pull-right"><img src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
-    </button>
+    <img src="${createLink(url: "/twr/${report.id}/deployment_j2.jpg")}" alt="" class="photo-tochange-deployment_j2"/>
+    <a class="btn pull-right change-photo" photoName="deployment_j2"><img
+            src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
+    </a>
 </div>
 
 <legend><g:message code="report.photo.infiltration" args="${[report.one.name]}"/></legend>
 
 <div class="photo-display">
-    <img src="${createLink(url: "/twr/${report.id}/infiltration_j1.jpg")}" alt="InfJ1"/>
-    <button class="btn pull-right"><img src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
-    </button>
+    <img src="${createLink(url: "/twr/${report.id}/infiltration_j1.jpg")}" alt=""
+         class="photo-tochange-infiltration_j1"/>
+    <a class="btn pull-right change-photo" photoName="infiltration_j1"><img
+            src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
+    </a>
 </div>
 
 
 <legend><g:message code="report.photo.infiltration" args="${[report.two.name]}"/></legend>
 
 <div class="photo-display">
-    <img src="${createLink(url: "/twr/${report.id}/infiltration_j2.jpg")}" alt="InfJ2"/>
-    <button class="btn pull-right"><img src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
-    </button>
+    <img src="${createLink(url: "/twr/${report.id}/infiltration_j2.jpg")}" alt=""
+         class="photo-tochange-infiltration_j2"/>
+    <a class="btn pull-right change-photo" photoName="infiltration_j2"><img
+            src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
+    </a>
 </div>
 
 
 <legend><g:message code="report.photo.scooting" args="${[report.one.name]}"/></legend>
 
 <div class="photo-display">
-    <img src="${createLink(url: "/twr/${report.id}/scoot_j1.jpg")}" alt="ScoJ1"/>
-    <button class="btn pull-right"><img src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
-    </button>
+    <img src="${createLink(url: "/twr/${report.id}/scoot_j1.jpg")}" alt="" class="photo-tochange-scoot_j1"/>
+    <a class="btn pull-right change-photo" photoName="scoot_j1"><img
+            src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
+    </a>
 </div>
 
 <legend><g:message code="report.photo.scooting" args="${[report.two.name]}"/></legend>
 
 <div class="photo-display">
-    <img src="${createLink(url: "/twr/${report.id}/scoot_j2.jpg")}" alt="ScoJ2"/>
-    <button class="btn pull-right"><img src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
-    </button>
+    <img src="${createLink(url: "/twr/${report.id}/scoot_j2.jpg")}" alt="" class="photo-tochange-scoot_j2"/>
+    <a class="btn pull-right change-photo" photoName="scoot_j2"><img
+            src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
+    </a>
 </div>
 
 

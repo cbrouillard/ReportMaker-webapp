@@ -109,10 +109,10 @@ class ReportController {
                         meta.owner = person
                         meta.path = "/twr/${report.id}/${photo.name}"
 
-                    } else {
-                        meta.valid = false
                     }
 
+                    meta.valid = false
+                    meta.deleted = false
                     meta.save(flush: true)
 
                     // OK

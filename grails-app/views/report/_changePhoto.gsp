@@ -1,10 +1,11 @@
-<legend>${report.name} - Photo "${name}"</legend>
+<legend>${report.name} - Photo "<g:message code="${name}"/>"</legend>
 <ul class="thumbnails">
-    <li class="span12">
+    <li class="span6">
         <div class="thumbnail">
 
             <a href="javascript:zoomOn();">
-                <img src="${createLink(url: "/twr/${report.id}/${name}.jpg")}" alt="" class="photo-tochange"/>
+                <img src="${createLink(url: "/twr/${report.id}/${name}.jpg") + '?' + new Date().getTime()}" alt=""
+                     class="photo-tochange-${name}"/>
             </a>
 
             <div id="fileupload">
@@ -29,7 +30,7 @@
     </li>
 </ul>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
 <script type="text/javascript">
     $(document).ready(function () {
         $('#fileupload').fileupload({
@@ -42,7 +43,8 @@
                         'width', '100%'
                 );
                 var imgSrc = '${createLink(url: "/twr/${report.id}/${name}.jpg")}?' + (new Date().getTime())
-                $(".photo-tochange").attr('src', imgSrc);
+                $(".photo-tochange-${name}").attr('src', imgSrc);
+                $("#dialog-photo").dialog("close");
             },
             progressall:function (e, data) {
                 var progress = parseInt(data.loaded / data.total * 100, 10);

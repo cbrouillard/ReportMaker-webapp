@@ -15,8 +15,9 @@
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'twr.css')}" type="text/css">
     %{--<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">--}%
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <r:require modules="bootstrap"/>
-    <r:require modules="jquery,jquery-ui, fileupload"/>
+    <r:require modules="jquery-ui, fileupload"/>
     <style>
     body {
         padding-top: 60px;
