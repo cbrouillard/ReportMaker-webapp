@@ -28,4 +28,8 @@ class Turn {
         comments1 type: 'text'
         comments2 type: 'text'
     }
+
+    String getComments(int num) {
+        return num == 1 ? comments1 : comments2;
+    }
 }

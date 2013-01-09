@@ -51,6 +51,14 @@ class Report {
         return null
     }
 
+    Player getFirst() {
+        return one.num == 1 ? one : two;
+    }
+
+    Player getSecond() {
+        return one.num == 1 ? two : one;
+    }
+
     public void buildFromBattle(Battle battle, Person owner) {
         // Informations
         this.name = battle.name
