@@ -107,6 +107,7 @@ class ReportController {
                 if (!type.equalsIgnoreCase("image/jpeg")) {
                     println "Effacement de ${photo.name}"
                     FileTool.delete(photo)
+                    // TODO envoyer un mail avertissement avec IP utilisateur pour futur blocage
                 } else {
 
                     // Copie dans le répertoire de partage
