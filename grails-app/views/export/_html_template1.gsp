@@ -52,10 +52,9 @@
         <ul class="thumbnails">
             <li class="span8">
                 <div class="thumbnail">
-                    <img src="${createLink(url: "/twr/${report.id}/table.jpg")}" alt=""/>
-
                     <span class="label label-info"><i class="icon-camera"></i> <g:message code="report.photo.table"/>
                     </span>
+                    <img src="${createLink(url: "/twr/${report.id}/table.jpg")}" alt=""/>
                 </div>
             </li>
         </ul>
@@ -69,11 +68,11 @@
         <ul class="thumbnails">
             <li class="span6">
                 <div class="thumbnail">
-                    <img src="${createLink(url: "/twr/${report.id}/deployment_j1.jpg")}" alt=""/>
 
                     <span class="label label-info"><i class="icon-camera"></i> <g:message code="report.photo.deployment"
                                                                                           args="${[report.one.name]}"/>
                     </span>
+                    <img src="${createLink(url: "/twr/${report.id}/deployment_j1.jpg")}" alt=""/>
                 </div>
             </li>
         </ul>
@@ -83,11 +82,11 @@
         <ul class="thumbnails">
             <li class="span6">
                 <div class="thumbnail">
-                    <img src="${createLink(url: "/twr/${report.id}/deployment_j2.jpg")}" alt=""/>
 
                     <span class="label label-info"><i class="icon-camera"></i> <g:message code="report.photo.deployment"
                                                                                           args="${[report.two.name]}"/>
                     </span>
+                    <img src="${createLink(url: "/twr/${report.id}/deployment_j2.jpg")}" alt=""/>
                 </div>
             </li>
         </ul>
@@ -101,12 +100,12 @@
         <ul class="thumbnails">
             <li class="span6">
                 <div class="thumbnail">
-                    <img src="${createLink(url: "/twr/${report.id}/infiltration_j1.jpg")}" alt=""/>
 
                     <span class="label label-info"><i class="icon-camera"></i> <g:message
                             code="report.photo.infiltration"
                             args="${[report.one.name]}"/>
                     </span>
+                    <img src="${createLink(url: "/twr/${report.id}/infiltration_j1.jpg")}" alt=""/>
                 </div>
             </li>
         </ul>
@@ -116,12 +115,12 @@
         <ul class="thumbnails">
             <li class="span6">
                 <div class="thumbnail">
-                    <img src="${createLink(url: "/twr/${report.id}/infiltration_j2.jpg")}" alt=""/>
 
                     <span class="label label-info"><i class="icon-camera"></i> <g:message
                             code="report.photo.infiltration"
                             args="${[report.two.name]}"/>
                     </span>
+                    <img src="${createLink(url: "/twr/${report.id}/infiltration_j2.jpg")}" alt=""/>
                 </div>
             </li>
         </ul>
@@ -135,11 +134,11 @@
         <ul class="thumbnails">
             <li class="span6">
                 <div class="thumbnail">
-                    <img src="${createLink(url: "/twr/${report.id}/scoot_j1.jpg")}" alt=""/>
 
                     <span class="label label-info"><i class="icon-camera"></i> <g:message code="report.photo.scooting"
                                                                                           args="${[report.one.name]}"/>
                     </span>
+                    <img src="${createLink(url: "/twr/${report.id}/scoot_j1.jpg")}" alt=""/>
                 </div>
             </li>
         </ul>
@@ -149,11 +148,11 @@
         <ul class="thumbnails">
             <li class="span6">
                 <div class="thumbnail">
-                    <img src="${createLink(url: "/twr/${report.id}/scoot_j2.jpg")}" alt=""/>
 
                     <span class="label label-info"><i class="icon-camera"></i> <g:message code="report.photo.scooting"
                                                                                           args="${[report.two.name]}"/>
                     </span>
+                    <img src="${createLink(url: "/twr/${report.id}/scoot_j2.jpg")}" alt=""/>
                 </div>
             </li>
         </ul>
@@ -173,34 +172,32 @@
         <ul class="thumbnails">
             <li class="span4">
                 <div class="thumbnail">
-                    <img src="${createLink(url: "/twr/${report.id}/player${report.firstPlayer}_turn${turn.num}_move.jpg")}"
-                         alt=""/>
-
                     <span class="label label-info"><i class="icon-camera"></i> <g:message
                             code="report.turn.photo.move"/>
                     </span>
+                    <img src="${createLink(url: "/twr/${report.id}/player${report.firstPlayer}_turn${turn.num}_move.jpg")}"
+                         alt=""/>
                 </div>
             </li>
 
             <li class="span4">
                 <div class="thumbnail">
-                    <img src="${createLink(url: "/twr/${report.id}/player${report.firstPlayer}_turn${turn.num}_shoot.jpg")}"
-                         alt=""/>
-
                     <span class="label label-info"><i class="icon-camera"></i> <g:message
                             code="report.turn.photo.shoot"/>
                     </span>
+                    <img src="${createLink(url: "/twr/${report.id}/player${report.firstPlayer}_turn${turn.num}_shoot.jpg")}"
+                         alt=""/>
                 </div>
             </li>
 
             <li class="span4">
                 <div class="thumbnail">
-                    <img src="${createLink(url: "/twr/${report.id}/player${report.firstPlayer}_turn${turn.num}_assault.jpg")}"
-                         alt=""/>
 
                     <span class="label label-info"><i class="icon-camera"></i> <g:message
                             code="report.turn.photo.assault"/>
                     </span>
+                    <img src="${createLink(url: "/twr/${report.id}/player${report.firstPlayer}_turn${turn.num}_assault.jpg")}"
+                         alt=""/>
                 </div>
             </li>
         </ul>
@@ -220,34 +217,31 @@
         <ul class="thumbnails">
             <li class="span4">
                 <div class="thumbnail">
-                    <img src="${createLink(url: "/twr/${report.id}/player${numSecond}_turn${turn.num}_move.jpg")}"
-                         alt=""/>
-
                     <span class="label label-info"><i class="icon-camera"></i> <g:message
                             code="report.turn.photo.move"/>
                     </span>
+                    <img src="${createLink(url: "/twr/${report.id}/player${numSecond}_turn${turn.num}_move.jpg")}"
+                         alt=""/>
                 </div>
             </li>
 
             <li class="span4">
                 <div class="thumbnail">
-                    <img src="${createLink(url: "/twr/${report.id}/player${numSecond}_turn${turn.num}_shoot.jpg")}"
-                         alt=""/>
-
                     <span class="label label-info"><i class="icon-camera"></i> <g:message
                             code="report.turn.photo.shoot"/>
                     </span>
+                    <img src="${createLink(url: "/twr/${report.id}/player${numSecond}_turn${turn.num}_shoot.jpg")}"
+                         alt=""/>
                 </div>
             </li>
 
             <li class="span4">
                 <div class="thumbnail">
-                    <img src="${createLink(url: "/twr/${report.id}/player${numSecond}_turn${turn.num}_assault.jpg")}"
-                         alt=""/>
-
                     <span class="label label-info"><i class="icon-camera"></i> <g:message
                             code="report.turn.photo.assault"/>
                     </span>
+                    <img src="${createLink(url: "/twr/${report.id}/player${numSecond}_turn${turn.num}_assault.jpg")}"
+                         alt=""/>
                 </div>
             </li>
         </ul>

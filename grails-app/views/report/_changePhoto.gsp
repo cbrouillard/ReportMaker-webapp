@@ -13,9 +13,24 @@
                       method="POST" enctype="multipart/form-data">
                     <div class="fileupload-buttonbar">
                         <input type="hidden" name="protocol" value="http"/>
-                        <label class="fileinput-button">
-                            <input type="file" name="files[]" value="Selectionnez"/>
-                        </label>
+
+                        <input id="lefile" type="file" style="visibility: hidden;" name="files[]">
+
+                        <div class="input-append">
+                            <input id="photoCover" class="input-large" type="text">
+                            <a class="btn" onclick="$('input[id=lefile]').click();">Browse</a>
+                        </div>
+
+                        <script type="text/javascript">
+                            $('input[id=lefile]').change(function () {
+                                $('#photoCover').val($(this).val());
+                            });
+                        </script>
+
+
+                        %{--<label class="fileinput-button">--}%
+                        %{--<input type="file" name="files[]" value="Selectionnez" title="Selectionnez une photo" class="btn"/>--}%
+                        %{--</label>--}%
                     </div>
                 </form>
 
@@ -29,6 +44,9 @@
         </div>
     </li>
 </ul>
+
+
+
 
 
 <script type="text/javascript">
