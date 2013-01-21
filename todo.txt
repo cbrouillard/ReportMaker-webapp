@@ -1,0 +1,9 @@
+- ajouter un bouton pour supprimer une photo
+- finir l'export "OnePage" HTML
+- proposer plusieurs templates pour le mode HTML : OnePage, UnePageParTour, Onglets
+- créer les liens de partage pour le mode HTML
+
+- PRIORITAIRE : programmer l'update
+
+- bug : si clique sur upload d'une photo "vide ou inexistante", alors une mauvaise photo s'affiche dans la boite de dialogue
+
