@@ -32,6 +32,9 @@
     <a class="btn pull-right change-photo" photoName="deployment_j1"><img
             src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
     </a>
+    <a class="btn pull-right delete-photo" photoName="deployment_j1"><img
+            src="${resource(dir: 'images', file: 'trash.png')}"
+            alt="Delete"/></a>
 </div>
 
 <legend><g:message code="report.photo.deployment" args="${[report.two.name]}"/></legend>
@@ -41,6 +44,9 @@
     <a class="btn pull-right change-photo" photoName="deployment_j2"><img
             src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
     </a>
+    <a class="btn pull-right delete-photo" photoName="deployment_j2"><img
+            src="${resource(dir: 'images', file: 'trash.png')}"
+            alt="Delete"/></a>
 </div>
 
 <legend><g:message code="report.photo.infiltration" args="${[report.one.name]}"/></legend>
@@ -51,6 +57,9 @@
     <a class="btn pull-right change-photo" photoName="infiltration_j1"><img
             src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
     </a>
+    <a class="btn pull-right delete-photo" photoName="infiltration_j1"><img
+            src="${resource(dir: 'images', file: 'trash.png')}"
+            alt="Delete"/></a>
 </div>
 
 
@@ -62,6 +71,9 @@
     <a class="btn pull-right change-photo" photoName="infiltration_j2"><img
             src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
     </a>
+    <a class="btn pull-right delete-photo" photoName="infiltration_j2"><img
+            src="${resource(dir: 'images', file: 'trash.png')}"
+            alt="Delete"/></a>
 </div>
 
 
@@ -72,6 +84,9 @@
     <a class="btn pull-right change-photo" photoName="scoot_j1"><img
             src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
     </a>
+    <a class="btn pull-right delete-photo" photoName="scoot_j1"><img
+            src="${resource(dir: 'images', file: 'trash.png')}"
+            alt="Delete"/></a>
 </div>
 
 <legend><g:message code="report.photo.scooting" args="${[report.two.name]}"/></legend>
@@ -81,6 +96,9 @@
     <a class="btn pull-right change-photo" photoName="scoot_j2"><img
             src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
     </a>
+    <a class="btn pull-right delete-photo" photoName="scoot_j2"><img
+            src="${resource(dir: 'images', file: 'trash.png')}"
+            alt="Delete"/></a>
 </div>
 
 

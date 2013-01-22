@@ -91,15 +91,17 @@ class ReportController {
         def report = Report.findByIdAndOwner(params.id, person)
 
         if (report) {
-            MetadataPhoto meta = MetadataPhoto.findByReportAndOwnerAndPath(report, person, "/twr/${report.id}/${params.name}.jpg")
+            MetadataPhoto meta = MetadataPhoto.findByReportAndOwnerAndPath(report, person, "/twr/${report.id}/${params.photo}.jpg")
             if (meta) {
                 String shareDir = grailsApplication.config.twr.photos.dir + File.separator + report.id
-                FileTool.delete(new File(shareDir, "${params.name}.jpg"))
+                FileTool.delete(new File(shareDir, "${params.photo}.jpg"))
 
                 meta.deleted = true
                 meta.save(flush: true)
             }
         }
+
+        return "OK"
     }
 
     def upload() {
