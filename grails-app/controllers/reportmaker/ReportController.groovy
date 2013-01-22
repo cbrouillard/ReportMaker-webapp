@@ -43,7 +43,19 @@ class ReportController {
     }
 
     def update() {
-        println params
+        def person = springSecurityService.currentUser
+        def report = Report.findByIdAndOwner(params.id, person)
+
+        if (report) {
+            report.deploymentType = params.deploymentType.encodeAsHTML()
+
+            report.save(flush: true)
+            flash.message = message(code: 'report.update.success')
+            render(view: 'edit', model: [report: report])
+
+        } else {
+            redirect(action: 'list')
+        }
     }
 
     def pdf() {
@@ -101,7 +113,7 @@ class ReportController {
             }
         }
 
-        return "OK"
+        render "OK"
     }
 
     def upload() {

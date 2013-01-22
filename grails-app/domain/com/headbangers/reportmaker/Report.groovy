@@ -12,6 +12,7 @@ class Report {
     String name
     Date date
     Integer format
+
     String deploymentType
     String scenario
     Integer firstPlayer

@@ -14,6 +14,7 @@
             <p><g:message code="report.list.help"/></p>
 
             <p><g:link class="btn btn-primary" action="create"><g:message code="report.howto.create"/></g:link></p>
+
         </div>
     </div>
 </div>

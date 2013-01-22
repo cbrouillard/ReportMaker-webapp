@@ -6,7 +6,7 @@
 
 <body>
 <g:render template="/common/flashmessage"/>
-<g:form action="update" method="POST">
+<g:form action="update" method="POST"><g:hiddenField name="id" value="${report.id}"/>
 
     <div class="row">
         <table class="table table-striped">
