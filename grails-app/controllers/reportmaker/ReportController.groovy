@@ -8,6 +8,7 @@ import org.codehaus.jackson.map.ObjectMapper
 import javax.activation.FileDataSource
 import com.headbangers.reportmaker.util.FileTool
 import com.headbangers.reportmaker.MetadataPhoto
+import com.headbangers.reportmaker.Player
 
 @Secured(["ROLE_USER", "ROLE_ADMIN"])
 class ReportController {
@@ -48,6 +49,17 @@ class ReportController {
 
         if (report) {
             report.deploymentType = params.deploymentType.encodeAsHTML()
+            report.scenario = params.scenario.encodeAsHTML()
+            report.comments = params.comments.encodeAsHTML()
+            report.firstPlayer = params.firstPlayer
+            report.lordCapacity1 = params.lordCapacity1.encodeAsHTML()
+            report.lordCapacity2 = params.lordCapacity2.encodeAsHTML()
+
+            Player p1 = report.getFirst()
+            Player p2 = report.getSecond()
+
+            report.turns.each {turn ->
+            }
 
             report.save(flush: true)
             flash.message = message(code: 'report.update.success')
