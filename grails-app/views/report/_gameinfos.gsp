@@ -5,6 +5,8 @@
     <a class="btn pull-right change-photo" photoName="table"><img src="${resource(dir: 'images', file: 'camera.png')}"
                                                                   alt="Change"/>
     </a>
+    <a class="btn pull-right delete-photo" photoName="table"><img src="${resource(dir: 'images', file: 'trash.png')}"
+                                                                  alt="Delete"/></a>
 </div>
 
 <legend><g:message code="report.deployment.type"/></legend>

@@ -18,7 +18,7 @@
 
                         <div class="input-append">
                             <input id="photoCover" class="input-large" type="text">
-                            <a class="btn" onclick="$('input[id=lefile]').click();">Browse</a>
+                            <a class="btn" onclick="$('input[id=lefile]').click();"><g:message code="browse"/></a>
                         </div>
 
                         <script type="text/javascript">
@@ -26,11 +26,6 @@
                                 $('#photoCover').val($(this).val());
                             });
                         </script>
-
-
-                        %{--<label class="fileinput-button">--}%
-                        %{--<input type="file" name="files[]" value="Selectionnez" title="Selectionnez une photo" class="btn"/>--}%
-                        %{--</label>--}%
                     </div>
                 </form>
 

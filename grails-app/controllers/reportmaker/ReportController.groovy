@@ -86,6 +86,22 @@ class ReportController {
         }
     }
 
+    def deletePhoto() {
+        def person = springSecurityService.currentUser
+        def report = Report.findByIdAndOwner(params.id, person)
+
+        if (report) {
+            MetadataPhoto meta = MetadataPhoto.findByReportAndOwnerAndPath(report, person, "/twr/${report.id}/${params.name}.jpg")
+            if (meta) {
+                String shareDir = grailsApplication.config.twr.photos.dir + File.separator + report.id
+                FileTool.delete(new File(shareDir, "${params.name}.jpg"))
+
+                meta.deleted = true
+                meta.save(flush: true)
+            }
+        }
+    }
+
     def upload() {
         def person = springSecurityService.currentUser
         def report = Report.findByIdAndOwner(params.id, person)

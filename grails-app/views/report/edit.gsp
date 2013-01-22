@@ -85,6 +85,15 @@
         $(".change-photo").click(function () {
             showDialogChangePhoto($(this).attr("photoName"));
         });
+
+        $(".delete-photo").click(function () {
+            var name = $(this).attr("photoName");
+            // 1x1 pixel
+            $(".photo-tochange-" + name).attr('src', 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==');
+            // post pour suppression
+            $.ajax("${createLink(action:"deletePhoto", id:report.id)}?photo=" + name)
+        });
+
     });
 
     var showDialogChangePhoto = function (photoName) {
