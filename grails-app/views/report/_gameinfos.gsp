@@ -10,20 +10,20 @@
 </div>
 
 <legend><g:message code="report.deployment.type"/></legend>
-<g:textField name="deploymentType" value="${report.deploymentType}" class="input-xxlarge"/>
+<g:textField name="deploymentType" value="${report.deploymentType?.decodeHTML()}" class="input-xxlarge"/>
 
 <legend><g:message code="report.scenario"/></legend>
-<g:textField name="scenario" value="${report.scenario}" class="input-xxlarge"/>
+<g:textField name="scenario" value="${report.scenario?.decodeHTML()}" class="input-xxlarge"/>
 
 <legend><g:message code="report.whostart"/></legend>
 <g:select name="firstPlayer" from="${[report.one, report.two]}" optionValue="name" optionKey="num"
           value="${report.firstPlayer}"/>
 
 <legend><g:message code="report.lordcapacity" args="${[report.one.name]}"/></legend>
-<g:textField name="lordCapacity1" value="${report.lordCapacity1}" class="input-xxlarge"/>
+<g:textField name="lordCapacity1" value="${report.lordCapacity1?.decodeHTML()}" class="input-xxlarge"/>
 
 <legend><g:message code="report.lordcapacity" args="${[report.two.name]}"/></legend>
-<g:textField name="lordCapacity2" value="${report.lordCapacity2}" class="input-xxlarge"/>
+<g:textField name="lordCapacity2" value="${report.lordCapacity2?.decodeHTML()}" class="input-xxlarge"/>
 
 <legend><g:message code="report.photo.deployment" args="${[report.one.name]}"/></legend>
 
@@ -105,4 +105,4 @@
 <legend><g:message code="report.infos.comments"/></legend>
 
 <g:textArea name="comments" rows="5" class="span12" cols=""
-            value="${report.comments}"/>
+            value="${report.comments?.decodeHTML()}"/>

@@ -44,6 +44,7 @@ class ReportController {
     }
 
     def update() {
+        println params
         def person = springSecurityService.currentUser
         def report = Report.findByIdAndOwner(params.id, person)
 
@@ -63,7 +64,8 @@ class ReportController {
 
             report.save(flush: true)
             flash.message = message(code: 'report.update.success')
-            render(view: 'edit', model: [report: report])
+
+            redirect(action: 'edit', id: report.id)
 
         } else {
             redirect(action: 'list')
