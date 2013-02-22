@@ -12,6 +12,5 @@ import org.junit.*
 class MetadataPhotoControllerTests {
 
     void testSomething() {
-        fail "Implement me"
     }
 }

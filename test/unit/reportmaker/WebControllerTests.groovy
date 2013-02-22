@@ -12,6 +12,5 @@ import org.junit.*
 class WebControllerTests {
 
     void testSomething() {
-        fail "Implement me"
     }
 }
