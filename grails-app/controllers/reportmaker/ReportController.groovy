@@ -29,7 +29,7 @@ class ReportController {
         [reports: reports]
     }
 
-//    def create() {}
+    def create() {}
 
     def edit() {
         def person = springSecurityService.currentUser
@@ -185,7 +185,6 @@ class ReportController {
         } else {
             redirect action: 'list'
         }
-
 
     }
 }
