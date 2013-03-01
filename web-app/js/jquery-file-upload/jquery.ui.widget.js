@@ -1,14 +1,3 @@
-/*
- * jQuery UI Widget 1.9.1+amd
- * https://github.com/blueimp/jQuery-File-Upload
- *
- * Copyright 2012 jQuery Foundation and other contributors
- * Released under the MIT license.
- * http://jquery.org/license
- *
- * http://api.jqueryui.com/jQuery.widget/
- */
-
 (function (factory) {
     if (typeof define === "function" && define.amd) {
         // Register as an anonymous AMD module:

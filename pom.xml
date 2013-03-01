@@ -211,6 +211,37 @@
                 </configuration>
                 <extensions>true</extensions>
             </plugin>
+
+	    <plugin>
+		<groupId>com.google.code.maven-license-plugin</groupId>
+		<artifactId>maven-license-plugin</artifactId>
+		<configuration>
+		   <header>${basedir}/LICENSE_HEADER</header>
+		   <excludes>
+		       <exclude>target/**</exclude>
+  		       <exclude>plugins/**</exclude>
+                       <exclude>.git/**</exclude>
+                       <exclude>m2-target/**</exclude>
+		       <exclude>**/*.properties</exclude>
+                       <exclude>**jquery**</exclude>
+		       <exclude>web-app/js/jquery-file-upload/**</exclude>
+                   </excludes>
+		   <properties>
+		       <name>${project.name}</name>
+		       <year>2013</year>
+		       <holder>Cyril Brouillard</holder>
+		       <contact>cyril.brouillard@gmail.com</contact>
+		   </properties>
+		   <encoding>UTF-8</encoding>
+		</configuration>
+		<executions>
+		   <execution>
+		       <goals>
+			   <goal>check</goal>
+		       </goals>
+		   </execution>
+		</executions>
+	    </plugin>
         </plugins>
     </build>
 
@@ -226,6 +257,14 @@
             <url>http://repo.grails.org/grails/plugins</url>
         </repository>
     </repositories>
+
+	<pluginRepositories>
+    <pluginRepository>
+	<id>mc-release</id>
+	<url>http://mc-repo.googlecode.com/svn/maven2/releases</url>
+    </pluginRepository>
+		</pluginRepositories>
+
 
     <profiles>
         <profile>
