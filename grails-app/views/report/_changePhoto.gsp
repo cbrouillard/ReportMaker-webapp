@@ -6,7 +6,7 @@
 
     <a href="javascript:zoomOn();">
         <img src="${createLink(url: "/twr/${report.id}/${name}.jpg") + '?' + new Date().getTime()}" alt=""
-             class="photo-tochange-${name}"/>
+             class="photo-tochange-${name}" def="${resource(file: 'damier.png', dir: 'images')}"/>
     </a>
 
     <div id="fileupload">

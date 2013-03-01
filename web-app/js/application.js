@@ -27,9 +27,16 @@ if (typeof jQuery !== 'undefined') {
 
 jQuery(function () {
     registerClickableTr();
-//    $(".photo-display img").error(function () {
-//        $(this).hide();
-//    });
+    $(".photo-display img, .thumbnail img").error(function () {
+        //$(this).hide();
+        var defaultPhoto = $(this).attr("def");
+        alert(defaultPhoto);
+        if (defaultPhoto != null) {
+            $(this).attr('src', defaultPhoto);
+        } else {
+            $(this).attr('src', 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==');
+        }
+    });
 
 })
 
