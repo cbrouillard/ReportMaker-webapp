@@ -109,6 +109,8 @@ class ReportController {
 
         if (report) {
             render(template: "changePhoto", model: [name: params.name, report: report])
+        } else {
+            render "Erreur."
         }
     }
 

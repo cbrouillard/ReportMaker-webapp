@@ -6,17 +6,12 @@
 
 <body>
 <g:render template="/common/flashmessage"/>
-<div class="row">
-    <div class="span12">
-        <div class="well">
-            <h1><g:message code="report.list"/></h1>
+<div class="well">
+    <h1><g:message code="report.list"/></h1>
 
-            <p><g:message code="report.list.help"/></p>
+    <p><g:message code="report.list.help"/></p>
+    <g:link class="btn btn-primary" action="create"><g:message code="report.howto.create"/></g:link>
 
-            <g:link class="btn btn-primary" action="create"><g:message code="report.howto.create"/></g:link>
-
-        </div>
-    </div>
 </div>
 
 <g:if test="${reports}">

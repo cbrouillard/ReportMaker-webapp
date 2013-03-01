@@ -91,3 +91,8 @@ textarea {
 .report-title {
     border-bottom: 1px solid #ccc;
 }
+
+label input{
+    vertical-align: middle;
+    margin: 0px;
+}

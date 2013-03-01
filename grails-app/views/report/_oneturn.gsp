@@ -2,14 +2,16 @@
 
 <g:if test="${num == 1 || num >= 5}">
     <legend><g:message code="report.turn.night"/></legend>
-    <label for="nightFight_t${num}"><g:message code="report.turn.night.help"/></label>
-    <g:checkBox name="nightFight_t${num}" checked="turn?.nightFight"/>
+    <label for="nightFight_t${num}"><g:message code="report.turn.night.help"/> <g:checkBox name="nightFight_t${num}"
+                                                                                           checked="turn?.nightFight"/></label>
+
 </g:if>
 
 <g:if test="${num >= 5}">
     <legend><g:message code="report.turn.islast"/></legend>
-    <label for="lastOne_t${num}"><g:message code="report.turn.islast.help"/></label>
-    <g:checkBox name="lastOne_t${num}" checked="turn?.lastOne"/>
+    <label for="lastOne_t${num}"><g:message code="report.turn.islast.help"/> <g:checkBox name="lastOne_t${num}"
+                                                                                         checked="turn?.lastOne"/></label>
+
 </g:if>
 
 <legend><g:message code="report.turn.players"/></legend>

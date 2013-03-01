@@ -24,7 +24,7 @@
     </div>
 
     <div class="row">
-        <div class="tabbable"><!-- Only required for left/right tabs -->
+        <div class="tabbable tabs-left"><!-- Only required for left/right tabs -->
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#tabbefore" data-toggle="tab">•</a></li>
                 <li><a href="#t1" data-toggle="tab"><g:message code="t1"/></a></li>
@@ -80,6 +80,22 @@
     </div>
 </g:form>
 
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <h3 id="myModalLabel"><g:message code="dialog.changephoto.title"/></h3>
+    </div>
+
+    <div class="modal-body">
+
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-primary." data-dismiss="modal"
+                aria-hidden="true"><g:message code="dialog.changephoto.terminate"/></button>
+    </div>
+</div>
+
+
 <script type="text/javascript">
     $(document).ready(function () {
         $(".change-photo").click(function () {
@@ -97,25 +113,30 @@
     });
 
     var showDialogChangePhoto = function (photoName) {
-        var dialog = $('<div style="display:none" class="loading dialog-change-photo" id="dialog-photo"></div>').appendTo('body');
-        dialog.dialog({
-            close:function (event, ui) {
-                dialog.remove();
-            },
-            modal:true,
-            autoOpen:false,
-            dialogClass:"smaller",
-            title:"<g:message code="change.photo"/>",
-            width:500
-        });
-        dialog.load(
-                "${createLink(action:'changePhoto')}",
-                {"ajaxSpinner":true, "id":'${report.id}', "name":photoName},
-                function (responseText, textStatus, XMLHttpRequest) {
-                    dialog.removeClass('loading');
-                    dialog.dialog('open');
-                }
-        );
+//        var dialog =
+//                $('<div class="loading dialog-change-photo modal-body" id="dialog-photo"></div>').appendTo('body');
+
+        %{--alert ("${createLink(absolute:true, action:'changePhoto', id:report.id)}?name="+photoName)--}%
+        $("#myModal").modal({remote: "${createLink(absolute:true, action:'changePhoto', id:report.id)}?name=" + photoName});
+
+        %{--dialog.dialog({--}%
+        %{--close:function (event, ui) {--}%
+        %{--dialog.remove();--}%
+        %{--},--}%
+        %{--modal:true,--}%
+        %{--autoOpen:false,--}%
+        %{--dialogClass:"smaller",--}%
+        %{--title:"<g:message code="change.photo"/>",--}%
+        %{--width:500--}%
+        %{--});--}%
+        %{--dialog.load(--}%
+        %{--"${createLink(action:'changePhoto'},--}%
+        %{--{"ajaxSpinner":true, "id":'${report.id}', "name":photoName},--}%
+        %{--function (responseText, textStatus, XMLHttpRequest) {--}%
+        %{--dialog.removeClass('loading');--}%
+        %{--dialog.dialog('open');--}%
+        %{--}--}%
+        %{--);--}%
     }
 </script>
 </body>
