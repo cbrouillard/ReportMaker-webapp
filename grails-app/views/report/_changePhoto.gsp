@@ -41,6 +41,8 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        dealWithWrongPhotos ();
+
         $('#fileupload').fileupload({
             dataType: 'json',
             done: function (e, data) {

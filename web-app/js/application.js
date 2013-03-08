@@ -27,18 +27,21 @@ if (typeof jQuery !== 'undefined') {
 
 jQuery(function () {
     registerClickableTr();
+    dealWithWrongPhotos();
+})
+
+var dealWithWrongPhotos = function () {
     $(".photo-display img, .thumbnail img").error(function () {
         //$(this).hide();
         var defaultPhoto = $(this).attr("def");
-        alert(defaultPhoto);
+//        alert(defaultPhoto);
         if (defaultPhoto != null) {
             $(this).attr('src', defaultPhoto);
         } else {
             $(this).attr('src', 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==');
         }
     });
-
-})
+}
 
 var registerClickableTr = function () {
     $('tr.clickable td:not(.actions)').click(function () {

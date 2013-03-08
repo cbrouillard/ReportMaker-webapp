@@ -113,30 +113,7 @@
     });
 
     var showDialogChangePhoto = function (photoName) {
-//        var dialog =
-//                $('<div class="loading dialog-change-photo modal-body" id="dialog-photo"></div>').appendTo('body');
-
-        %{--alert ("${createLink(absolute:true, action:'changePhoto', id:report.id)}?name="+photoName)--}%
         $("#myModal").modal({remote: "${createLink(absolute:true, action:'changePhoto', id:report.id)}?name=" + photoName});
-
-        %{--dialog.dialog({--}%
-        %{--close:function (event, ui) {--}%
-        %{--dialog.remove();--}%
-        %{--},--}%
-        %{--modal:true,--}%
-        %{--autoOpen:false,--}%
-        %{--dialogClass:"smaller",--}%
-        %{--title:"<g:message code="change.photo"/>",--}%
-        %{--width:500--}%
-        %{--});--}%
-        %{--dialog.load(--}%
-        %{--"${createLink(action:'changePhoto'},--}%
-        %{--{"ajaxSpinner":true, "id":'${report.id}', "name":photoName},--}%
-        %{--function (responseText, textStatus, XMLHttpRequest) {--}%
-        %{--dialog.removeClass('loading');--}%
-        %{--dialog.dialog('open');--}%
-        %{--}--}%
-        %{--);--}%
     }
 </script>
 </body>
