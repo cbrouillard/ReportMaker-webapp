@@ -104,5 +104,5 @@
 
 <legend><g:message code="report.infos.comments"/></legend>
 
-<g:textArea name="comments" rows="5" class="span12" cols=""
+<g:textArea name="comments"
             value="${report.comments?.decodeHTML()}"/>

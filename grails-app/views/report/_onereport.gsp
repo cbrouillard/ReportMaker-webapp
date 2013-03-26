@@ -3,8 +3,8 @@
     <div>
         <h2>${report.name}</h2>
 
-        <span class="label label-info">[ <g:formatDate date="${report.date}"
-                                                       formatName="format.date.toDayAndTime"/> ]</span>
+        <span class="label label-info"><g:message code="report.date"/> : <g:formatDate date="${report.date}"
+                                                       formatName="format.date.toDay"/></span>
         <h4>${report.one.name} VS ${report.two.name}</h4>
     </div>
 </td>

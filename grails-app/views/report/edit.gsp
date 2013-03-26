@@ -5,10 +5,11 @@
 </head>
 
 <body>
-<g:render template="/common/flashmessage"/>
+
 <g:form action="update" method="POST"><g:hiddenField name="id" value="${report.id}"/>
 
     <div class="row">
+
         <table class="table table-striped">
             <tr>
                 <g:render template="onereport" model="[report: report]"/>
@@ -22,6 +23,8 @@
             <div class="clearfix">&nbsp;</div>
         </div>
     </div>
+
+    <g:render template="/common/flashmessage"/>
 
     <div class="row">
         <div class="tabbable tabs-left"><!-- Only required for left/right tabs -->

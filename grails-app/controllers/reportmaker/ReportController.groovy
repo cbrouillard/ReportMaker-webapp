@@ -18,6 +18,7 @@
 package reportmaker
 
 import com.headbangers.reportmaker.Report
+import com.headbangers.reportmaker.Turn
 import grails.plugins.springsecurity.Secured
 import grails.converters.JSON
 import org.springframework.web.multipart.commons.CommonsMultipartFile
@@ -73,14 +74,25 @@ class ReportController {
             report.lordCapacity1 = params.lordCapacity1.encodeAsHTML()
             report.lordCapacity2 = params.lordCapacity2.encodeAsHTML()
 
-            Player p1 = report.getFirst()
-            Player p2 = report.getSecond()
+            (1..7).each {num ->
+                Turn savedTurn = report.getTurn(num)
+                if (!savedTurn) {
+                    savedTurn = new Turn()
+                    savedTurn.owner = person
+                    savedTurn.num = num
+                    report.addToTurns(savedTurn)
+                }
 
-            report.turns.each {turn ->
+                savedTurn.comments1 = params["comments_p0_t$num"].encodeAsHTML()
+                savedTurn.comments2 = params["comments_p1_t$num"].encodeAsHTML()
+                savedTurn.lastOne = params["lastOne_t$num"]
+                savedTurn.nightFight = params["nightFight_t$num"]
+                savedTurn.save()
             }
 
             report.save(flush: true)
             flash.message = message(code: 'report.update.success')
+            flash.level = "success"
 
             redirect(action: 'edit', id: report.id)
 
@@ -146,7 +158,7 @@ class ReportController {
             }
         }
 
-        render "OK"
+        render "<div class='alert alert-info'>OK</div>"
     }
 
     def upload() {
