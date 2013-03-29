@@ -70,7 +70,7 @@ class ReportController {
             report.deploymentType = params.deploymentType.encodeAsHTML()
             report.scenario = params.scenario.encodeAsHTML()
             report.comments = params.comments.encodeAsHTML()
-            report.firstPlayer = params.firstPlayer
+            report.firstPlayer = params.firstPlayer as Integer
             report.lordCapacity1 = params.lordCapacity1.encodeAsHTML()
             report.lordCapacity2 = params.lordCapacity2.encodeAsHTML()
 

@@ -14,24 +14,24 @@
 
 </g:if>
 
-<legend><g:message code="report.turn.players"/></legend>
-
 <div class="tabbable">
     <ul class="nav nav-tabs">
-        <li class="${report.one.num == 1 ? 'active' : ''}"><a href="#player1" data-toggle="tab">${report.one.name} <span
-                class="label label-info">${report.one.num}</span></a></li>
-        <li class="${report.two.num == 1 ? 'active' : ''}"><a href="#player2" data-toggle="tab">${report.two.name} <span
-                class="label label-info">${report.two.num}</span></a></li>
+        <li class="${report.firstPlayer == 1 ? 'active' : ''}"><a href="#player1" data-toggle="tab">${report.one.name}
+            <span
+                class="label label-info">${report.firstPlayer == 1 ? '1' : '2'}</span></a></li>
+        <li class="${report.firstPlayer == 2 ? 'active' : ''}"><a href="#player2" data-toggle="tab">${report.two.name
+        } <span
+                class="label label-info">${report.firstPlayer == 2 ? '1' : '2'}</span></a></li>
     </ul>
 
     <div class="tab-content">
-        <div class="tab-pane ${report.one.num == 1 ? 'active' : ''}" id="player1">
+        <div class="tab-pane ${report.firstPlayer == 1 ? 'active' : ''}" id="player1">
 
             <g:render template="oneplayerturn" model="[report: report, turn: turn, player: report.one, numTurn: num]"/>
 
         </div>
 
-        <div class="tab-pane ${report.two.num == 1 ? 'active' : ''}" id="player2">
+        <div class="tab-pane ${report.firstPlayer == 2 ? 'active' : ''}" id="player2">
             <g:render template="oneplayerturn" model="[report: report, turn: turn, player: report.two, numTurn: num]"/>
         </div>
     </div>

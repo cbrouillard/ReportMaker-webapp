@@ -164,92 +164,98 @@
 <g:set var="secondP" value="${report.second}"/>
 
 <g:each in="${report.turns}" var="turn" status="t">
-    <h4><i class="icon-list"></i> Tour #${turn.num}</h4>
-
-    <h6><i class="icon-user"></i> ${firstP.name}</h6>
-
-    <div class="row photos-turn ${turn.nightFight ? "night" : ""}">
-        <ul class="thumbnails">
-            <li class="span4">
-                <div class="thumbnail">
-                    <span class="label label-info"><i class="icon-camera"></i> <g:message
-                            code="report.turn.photo.move"/>
-                    </span>
-                    <img src="${createLink(url: "/twr/${report.id}/player${report.firstPlayer}_turn${turn.num}_move.jpg")}"
-                         alt=""/>
-                </div>
-            </li>
-
-            <li class="span4">
-                <div class="thumbnail">
-                    <span class="label label-info"><i class="icon-camera"></i> <g:message
-                            code="report.turn.photo.shoot"/>
-                    </span>
-                    <img src="${createLink(url: "/twr/${report.id}/player${report.firstPlayer}_turn${turn.num}_shoot.jpg")}"
-                         alt=""/>
-                </div>
-            </li>
-
-            <li class="span4">
-                <div class="thumbnail">
-
-                    <span class="label label-info"><i class="icon-camera"></i> <g:message
-                            code="report.turn.photo.assault"/>
-                    </span>
-                    <img src="${createLink(url: "/twr/${report.id}/player${report.firstPlayer}_turn${turn.num}_assault.jpg")}"
-                         alt=""/>
-                </div>
-            </li>
-        </ul>
-    </div>
-
-    <div class="row comment-turn ${turn.nightFight ? "night" : ""}">
+    <div class="row">
         <div class="span12">
-            <blockquote>
-                <p>${turn.getComments(report.firstPlayer)}</p>
-            </blockquote>
-        </div>
-    </div>
 
-    <h6><i class="icon-user"></i> ${secondP.name}</h6>
+            <h4><i class="icon-list"></i> Tour #${turn.num}</h4>
 
-    <div class="row photos-turn ${turn.nightFight ? "night" : ""}">
-        <ul class="thumbnails">
-            <li class="span4">
-                <div class="thumbnail">
-                    <span class="label label-info"><i class="icon-camera"></i> <g:message
-                            code="report.turn.photo.move"/>
-                    </span>
-                    <img src="${createLink(url: "/twr/${report.id}/player${numSecond}_turn${turn.num}_move.jpg")}"
-                         alt=""/>
+            <h6><i class="icon-user"></i> ${firstP.name}</h6>
+
+            <div class="photos-turn ${turn.nightFight ? "night" : ""}">
+                <ul class="thumbnails">
+                    <li class="span4">
+                        <div class="thumbnail">
+                            <span class="label label-info"><i class="icon-camera"></i> <g:message
+                                    code="report.turn.photo.move"/>
+                            </span>
+                            <img src="${createLink(url: "/twr/${report.id}/player${report.firstPlayer}_turn${turn.num}_move.jpg")}"
+                                 alt=""/>
+                        </div>
+                    </li>
+
+                    <li class="span4">
+                        <div class="thumbnail">
+                            <span class="label label-info"><i class="icon-camera"></i> <g:message
+                                    code="report.turn.photo.shoot"/>
+                            </span>
+                            <img src="${createLink(url: "/twr/${report.id}/player${report.firstPlayer}_turn${turn.num}_shoot.jpg")}"
+                                 alt=""/>
+                        </div>
+                    </li>
+
+                    <li class="span4">
+                        <div class="thumbnail">
+
+                            <span class="label label-info"><i class="icon-camera"></i> <g:message
+                                    code="report.turn.photo.assault"/>
+                            </span>
+                            <img src="${createLink(url: "/twr/${report.id}/player${report.firstPlayer}_turn${turn.num}_assault.jpg")}"
+                                 alt=""/>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="comment-turn ${turn.nightFight ? "night" : ""}">
+                <div class="span12">
+                    <blockquote>
+                        <p>${turn.getComments(report.firstPlayer)}</p>
+                    </blockquote>
                 </div>
-            </li>
+            </div>
 
-            <li class="span4">
-                <div class="thumbnail">
-                    <span class="label label-info"><i class="icon-camera"></i> <g:message
-                            code="report.turn.photo.shoot"/>
-                    </span>
-                    <img src="${createLink(url: "/twr/${report.id}/player${numSecond}_turn${turn.num}_shoot.jpg")}"
-                         alt=""/>
+            <h6><i class="icon-user"></i> ${secondP.name}</h6>
+
+            <div class="photos-turn ${turn.nightFight ? "night" : ""}">
+                <ul class="thumbnails">
+                    <li class="span4">
+                        <div class="thumbnail">
+                            <span class="label label-info"><i class="icon-camera"></i> <g:message
+                                    code="report.turn.photo.move"/>
+                            </span>
+                            <img src="${createLink(url: "/twr/${report.id}/player${numSecond}_turn${turn.num}_move.jpg")}"
+                                 alt=""/>
+                        </div>
+                    </li>
+
+                    <li class="span4">
+                        <div class="thumbnail">
+                            <span class="label label-info"><i class="icon-camera"></i> <g:message
+                                    code="report.turn.photo.shoot"/>
+                            </span>
+                            <img src="${createLink(url: "/twr/${report.id}/player${numSecond}_turn${turn.num}_shoot.jpg")}"
+                                 alt=""/>
+                        </div>
+                    </li>
+
+                    <li class="span4">
+                        <div class="thumbnail">
+                            <span class="label label-info"><i class="icon-camera"></i> <g:message
+                                    code="report.turn.photo.assault"/>
+                            </span>
+                            <img src="${createLink(url: "/twr/${report.id}/player${numSecond}_turn${turn.num}_assault.jpg")}"
+                                 alt=""/>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="comment-turn ${turn.nightFight ? "night" : ""}">
+                <div class="span12">
+                    ${turn.getComments(numSecond)}
                 </div>
-            </li>
+            </div>
 
-            <li class="span4">
-                <div class="thumbnail">
-                    <span class="label label-info"><i class="icon-camera"></i> <g:message
-                            code="report.turn.photo.assault"/>
-                    </span>
-                    <img src="${createLink(url: "/twr/${report.id}/player${numSecond}_turn${turn.num}_assault.jpg")}"
-                         alt=""/>
-                </div>
-            </li>
-        </ul>
-    </div>
-
-    <div class="row comment-turn ${turn.nightFight ? "night" : ""}">
-        <div class="span12">
-            ${turn.getComments(numSecond)}
         </div>
     </div>
 
