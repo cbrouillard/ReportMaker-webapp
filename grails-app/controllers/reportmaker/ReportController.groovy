@@ -104,7 +104,7 @@ class ReportController {
             report.lordCapacity2 = params.lordCapacity2.encodeAsHTML()
 
             (1..7).each {num ->
-                Turn savedTurn = report.getTurn(num)
+                Turn savedTurn = report.getTurn(num as Integer)
                 if (!savedTurn) {
                     savedTurn = new Turn()
                     savedTurn.owner = person
@@ -112,8 +112,8 @@ class ReportController {
                     report.addToTurns(savedTurn)
                 }
 
-                savedTurn.comments1 = params["comments_p0_t$num"].encodeAsHTML()
-                savedTurn.comments2 = params["comments_p1_t$num"].encodeAsHTML()
+                savedTurn.comments1 = params["comments_p1_t$num"].encodeAsHTML()
+                savedTurn.comments2 = params["comments_p2_t$num"].encodeAsHTML()
                 savedTurn.lastOne = params["lastOne_t$num"]
                 savedTurn.nightFight = params["nightFight_t$num"]
                 savedTurn.save()

@@ -60,10 +60,10 @@ class Report {
         comments type: 'text'
     }
 
-    Turn getTurn(int num) {
-        turns.each {t ->
-            if (t.num.equals(num)) {
-                return t
+    Turn getTurn(Integer numSearched) {
+        for (Turn turn : this.turns) {
+            if (turn.num.equals(numSearched)) {
+                return turn;
             }
         }
         return null

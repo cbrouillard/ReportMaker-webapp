@@ -109,7 +109,11 @@ textarea {
     border-bottom: 1px solid #ccc;
 }
 
-label input{
+label input {
     vertical-align: middle;
     margin: 0px;
+}
+
+.dons form {
+    margin: 0;
 }

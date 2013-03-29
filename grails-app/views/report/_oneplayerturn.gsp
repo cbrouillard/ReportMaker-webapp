@@ -30,5 +30,5 @@
 
 <legend><g:message code="report.turn.comments"/></legend>
 
-<g:textArea name="comments_p${player.id}_t${numTurn}"
+<g:textArea name="comments_p${player.num}_t${numTurn}"
             value="${player.num == 1 ? turn?.comments1 : turn?.comments2}"/>

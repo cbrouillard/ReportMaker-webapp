@@ -252,7 +252,9 @@
 
             <div class="comment-turn ${turn.nightFight ? "night" : ""}">
                 <div class="span12">
-                    ${turn.getComments(numSecond)}
+                    <blockquote>
+                        <p>${turn.getComments(numSecond)}</p>
+                    </blockquote>
                 </div>
             </div>
 
