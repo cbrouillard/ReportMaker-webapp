@@ -4,21 +4,27 @@
         <h1>${report.name}</h1>
     </div>
 
-    <div class="span3">
+    <div class="span3 around-border">
         <div class="pull-right">
             <span class="label label-info btn-block"><i class="icon-calendar icon-white"></i> <g:formatDate
                     date="${report.date}"
                     formatName="format.date.toDay"/>
             </span>
 
-            <span class="label label-success btn-block"><i
-                    class="icon-user icon-white"></i> ${report.one.name} vs ${report.two.name}</span>
+            <g:if test="${report.one.name && report.two.name}">
+                <span class="label label-success btn-block"><i
+                        class="icon-user icon-white"></i> ${report.one.name} vs ${report.two.name}</span>
+            </g:if>
 
-            <span class="label label-success btn-block"><i
-                    class="icon-user icon-white"></i> ${report.one.race} vs ${report.two.race}</span>
+            <g:if test="${report.one.race && report.two.race}">
+                <span class="label label-success btn-block"><i
+                        class="icon-user icon-white"></i> ${report.one.race} vs ${report.two.race}</span>
+            </g:if>
 
-            <span class="label label-warning btn-block"><i
-                    class="icon-hand-right icon-white"></i> ${report.format} points</span>
+            <g:if test="${report.format}">
+                <span class="label label-warning btn-block"><i
+                        class="icon-hand-right icon-white"></i> ${report.format} points</span>
+            </g:if>
         </div>
 
     </div>

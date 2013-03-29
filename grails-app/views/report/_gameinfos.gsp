@@ -1,7 +1,7 @@
 <legend><g:message code="report.photo.table"/></legend>
 
 <div class="photo-display">
-    <img src="${createLink(url: "/twr/${report.id}/table.jpg")}" alt="" class="photo-tochange-table"/>
+    <img src="${createLink(absolute: true, url: "/twr/${report.id}/table.jpg")}" alt="" class="photo-tochange-table"/>
     <a class="btn pull-right change-photo" photoName="table"><img src="${resource(dir: 'images', file: 'camera.png')}"
                                                                   alt="Change"/>
     </a>
@@ -28,7 +28,7 @@
 <legend><g:message code="report.photo.deployment" args="${[report.one.name]}"/></legend>
 
 <div class="photo-display">
-    <img src="${createLink(url: "/twr/${report.id}/deployment_j1.jpg")}" alt="" class="photo-tochange-deployment_j1"/>
+    <img src="${createLink(absolute: true, url: "/twr/${report.id}/deployment_j1.jpg")}" alt="" class="photo-tochange-deployment_j1"/>
     <a class="btn pull-right change-photo" photoName="deployment_j1"><img
             src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
     </a>
@@ -40,7 +40,7 @@
 <legend><g:message code="report.photo.deployment" args="${[report.two.name]}"/></legend>
 
 <div class="photo-display">
-    <img src="${createLink(url: "/twr/${report.id}/deployment_j2.jpg")}" alt="" class="photo-tochange-deployment_j2"/>
+    <img src="${createLink(absolute: true, url: "/twr/${report.id}/deployment_j2.jpg")}" alt="" class="photo-tochange-deployment_j2"/>
     <a class="btn pull-right change-photo" photoName="deployment_j2"><img
             src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
     </a>
@@ -52,7 +52,7 @@
 <legend><g:message code="report.photo.infiltration" args="${[report.one.name]}"/></legend>
 
 <div class="photo-display">
-    <img src="${createLink(url: "/twr/${report.id}/infiltration_j1.jpg")}" alt=""
+    <img src="${createLink(absolute: true, url: "/twr/${report.id}/infiltration_j1.jpg")}" alt=""
          class="photo-tochange-infiltration_j1"/>
     <a class="btn pull-right change-photo" photoName="infiltration_j1"><img
             src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
@@ -66,7 +66,7 @@
 <legend><g:message code="report.photo.infiltration" args="${[report.two.name]}"/></legend>
 
 <div class="photo-display">
-    <img src="${createLink(url: "/twr/${report.id}/infiltration_j2.jpg")}" alt=""
+    <img src="${createLink(absolute: true, url: "/twr/${report.id}/infiltration_j2.jpg")}" alt=""
          class="photo-tochange-infiltration_j2"/>
     <a class="btn pull-right change-photo" photoName="infiltration_j2"><img
             src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
@@ -80,7 +80,7 @@
 <legend><g:message code="report.photo.scooting" args="${[report.one.name]}"/></legend>
 
 <div class="photo-display">
-    <img src="${createLink(url: "/twr/${report.id}/scoot_j1.jpg")}" alt="" class="photo-tochange-scoot_j1"/>
+    <img src="${createLink(absolute: true, url: "/twr/${report.id}/scoot_j1.jpg")}" alt="" class="photo-tochange-scoot_j1"/>
     <a class="btn pull-right change-photo" photoName="scoot_j1"><img
             src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
     </a>
@@ -92,7 +92,7 @@
 <legend><g:message code="report.photo.scooting" args="${[report.two.name]}"/></legend>
 
 <div class="photo-display">
-    <img src="${createLink(url: "/twr/${report.id}/scoot_j2.jpg")}" alt="" class="photo-tochange-scoot_j2"/>
+    <img src="${createLink(absolute: true, url: "/twr/${report.id}/scoot_j2.jpg")}" alt="" class="photo-tochange-scoot_j2"/>
     <a class="btn pull-right change-photo" photoName="scoot_j2"><img
             src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
     </a>

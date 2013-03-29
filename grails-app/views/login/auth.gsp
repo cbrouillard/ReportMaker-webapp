@@ -1,16 +1,10 @@
 <html>
 <head>
-    <meta name='layout' content='main'/>
+    <meta name='layout' content='export'/>
 </head>
 
 <body>
-<div class="row">
-    <div class="span12">
-        <g:if test='${flash.message}'>
-            <div class="alert alert-error">${flash.message}</div>
-        </g:if>
-    </div>
-</div>
+<g:render template="/common/flashmessage"/>
 
 <div class="row">
 

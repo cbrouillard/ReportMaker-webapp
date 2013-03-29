@@ -23,7 +23,7 @@ textarea {
     width: 100%;
 }
 
-.form-signin {
+.form-signin, .around-border {
     /*max-width: 350px;*/
     padding: 19px 29px 29px;
     /*margin: 0 auto 20px;*/

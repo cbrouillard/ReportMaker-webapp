@@ -1,28 +1,16 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <meta name='layout' content='main'/>
+    <meta name='layout' content='export'/>
     <title><g:message code="register.title"/></title>
 </head>
 
 <body>
-<div class="row">
-    <div class="span12">
-        <g:if test='${flash.message}'>
-            <div class="alert alert-error">${flash.message}</div>
-        </g:if>
-    </div>
-</div>
+<g:render template="/common/flashmessage"/>
 
 <div class="row">
 
     <div class="span12">
-        <g:if test="${flash.message}">
-            <div class="alert alert-info">
-                ${flash.message}
-            </div>
-        </g:if>
-
         <g:hasErrors bean="${personInstance}">
             <div class="alert alert-error">
                 <ul class="errors" role="alert">
@@ -53,9 +41,14 @@
                              class="input-block-level ${hasErrors(bean: personInstance, field: 'password', 'error')}"
                              required="true"/>
 
+
+            <div class="alert alert-warning">
+                <g:message code="register.humor"/>
+            </div>
+
             <button class="btn btn-large btn-warning" type="submit"><g:message code="register.submit"/></button>
-            <g:message code="register.humor"/>
         </g:form>
+
     </div>
 
 </div>

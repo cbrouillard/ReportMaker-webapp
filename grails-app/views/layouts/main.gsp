@@ -75,7 +75,7 @@
         <div class="navbar-inner">
             <div class="container-fluid">
 
-                <p class="navbar-text pull-left">© BROUILLARD Cyril - 2012 - <g:message
+                <p class="navbar-text pull-left">© BROUILLARD Cyril - 2013 - <g:message
                         code="app.name"/> - <g:message code="app.disclaimer"/></p>
 
                 <div class="navbar-text pull-right dons">

@@ -95,6 +95,7 @@ class LoginController {
 
         // Retour à la vue de login avec un message
         flash.message = message(code: 'registration.look.at.your.mail')
+        flash.level = "success"
         redirect(action: 'auth')
     }
 
@@ -128,8 +129,10 @@ class LoginController {
 
 
             flash.message = message(code: 'registration.complete')
+            flash.level = "success"
         } else {
             flash.message = message(code: "springSecurity.errors.login.disabled")
+            flash.level = "error"
         }
 
         redirect(action: 'auth')
@@ -213,6 +216,7 @@ class LoginController {
         }
         else {
             flash.message = msg
+            flash.level = "error"
             redirect action: 'auth', params: params
         }
     }

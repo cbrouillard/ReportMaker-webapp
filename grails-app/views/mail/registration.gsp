@@ -17,12 +17,22 @@
     <div class="row-fluid">
 
         <strong>${person.username}</strong>, suivez ce lien afin de valider votre compte.
-    C'est la dernière étape ! Vous pourrez vous connecter immédiatement après.<br/>
+    C'est la dernière étape ! Vous pourrez vous connecter immédiatement après.<br/><br/>
 
-        <a class="btn btn-primary"
-           href="${createLink(controller: 'login', action: 'validate', id: token, absolute: true)}">
-            ${createLink(controller: 'login', action: 'validate', id: token, absolute: true)}
-        </a>
+        <div class="well"
+             style="background-color: #F5F5F5;border: 2px solid #cccccc;min-height: 20px;padding: 10px;margin-bottom: 10px;">
+            <a class="btn btn-primary"
+               href="http://www.tacticalwarreport.com/login/validate/${token}">
+                http://www.tacticalwarreport.com/login/validate/${token}
+            </a><br/><br/><br/>
+        </div>
+
+        En cas de problème, ne pas hésiter à <a href="mailto:cyril@tacticalwarreport.com">contacter le support</a>.
+        <br/><br/>
+
+        ---------------------------------<br/>
+        TWR - Tactical War Report<br/>
+        Logiciel de création de rapport de bataille.
 
     </div>
 </div>
