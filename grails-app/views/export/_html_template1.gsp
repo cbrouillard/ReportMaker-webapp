@@ -4,8 +4,8 @@
         <h1>${report.name}</h1>
     </div>
 
-    <div class="span3 around-border">
-        <div class="pull-right">
+    <div class="span3 ">
+        <div class="pull-right around-border">
             <span class="label label-info btn-block"><i class="icon-calendar icon-white"></i> <g:formatDate
                     date="${report.date}"
                     formatName="format.date.toDay"/>
