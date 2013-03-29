@@ -47,6 +47,35 @@ class ReportController {
         [reports: reports]
     }
 
+    def add() {
+        def person = springSecurityService.currentUser
+        def report = new Report()
+
+        report.name = params.name
+        report.owner = person
+        report.date = new Date()
+        report.firstPlayer = 1
+
+        def playerOne = new Player()
+        playerOne.name="Joueur1"
+        playerOne.num = 1
+        playerOne.owner = person
+
+        def playerTwo = new Player()
+        playerTwo.name="Joueur2"
+        playerTwo.num = 2
+        playerTwo.owner = person
+
+        report.one = playerOne
+        report.two = playerTwo
+
+        if (report.validate() && report.save(flush: true) ){
+            redirect (action: 'edit', id: report.id)
+        }else {
+            render "KO"
+        }
+    }
+
     def create() {}
 
     def edit() {

@@ -39,11 +39,15 @@
             %{--<span class="icon-bar"></span>--}%
             %{--<span class="icon-bar"></span>--}%
             %{--</a>--}%
-            <a class="brand" href="${createLink(uri: '/')}"><g:message code="app.name"/></a>
+            <a class="brand" href="${createLink(uri: '/')}"><strong><g:message code="app.name"/></strong></a>
 
-            %{--<div class="nav-collapse collapse">--}%
-
-            %{--</div><!--/.nav-collapse -->--}%
+            <ul class="nav">
+                <li>
+                    <a href="#createReport" data-toggle="modal">
+                        <i class="icon-comment icon-white"></i> <g:message code="report.new"/>
+                    </a>
+                </li>
+            </ul>
 
             <p class="navbar-text pull-right"><g:message code="hello"/> <sec:username/> ! <sec:ifLoggedIn>
                 <g:link controller="logout" class="logout">
@@ -90,6 +94,34 @@
         </div>
     </div>
 </div>
+
+<g:form controller="report" action="add" method="post">
+    <div id="createReport" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+            <h3 id="myModalLabel"><g:message code="report.new"/></h3>
+        </div>
+
+
+        <div class="modal-body">
+
+            <label><g:message code="report.name"/></label>
+            <g:textField name="name" required="true" placeholder="${message(code: 'report.name.hint')}"
+                         class="input-xlarge"/>
+
+            <div class="alert alert-info">
+                <g:message code="report.create.help"/>
+            </div>
+
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn btn-primary"><g:message code="create"/></button>
+        </div>
+    </div>
+</g:form>
 
 
 %{--<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>--}%
