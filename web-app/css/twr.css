@@ -131,3 +131,7 @@ label input {
 .dons form {
     margin: 0;
 }
+
+.thumbnail span.label+img {
+    margin-top: 5px;
+}

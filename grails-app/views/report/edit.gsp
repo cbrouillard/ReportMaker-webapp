@@ -161,7 +161,7 @@
         $("#form-photo-change").attr("action",
                 "${createLink(action: 'upload', controller: 'report', id: report.id)}?photo=" + photoName);
         $("#photoCover").val("");
-        $("#myModal").modal({remote: "${createLink(absolute:true, action:'changePhoto', id:report.id)}?name=" + photoName});
+        $("#myModal").modal({remote: "${createLink(action:'changePhoto', id:report.id)}?name=" + photoName});
     }
 </script>
 </body>
