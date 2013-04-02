@@ -83,20 +83,59 @@
     </div>
 </g:form>
 
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-header">
-        <h3 id="myModalLabel"><g:message code="dialog.changephoto.title"/></h3>
+
+<form method="POST" enctype="multipart/form-data" id="form-photo-change">
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-header">
+            <h3 id="myModalLabel"><g:message code="dialog.changephoto.title"/></h3>
+        </div>
+
+        <div class="modal-body">
+
+        </div>
+
+        <div class="modal-footer">
+
+            <div id="fileupload">
+
+                <div class="fileupload-buttonbar">
+                    <input type="hidden" name="protocol" value="http"/>
+
+                    <input id="lefile" type="file" style="visibility: hidden; display:none;" name="files[]">
+
+                    <div class="fileupload-content" id="fileupload-content">
+                        <div id="progress" class="progress progress-striped progress-warning">
+                            <div class="bar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+
+                    <div>
+
+                        <div class="input-append pull-left">
+                            <input id="photoCover" class="input-large" type="text">
+                            <a class="btn" onclick="$('input[id=lefile]').click();"><g:message code="browse"/></a>
+                        </div>
+
+                        <div class="pull-right">
+                            <button class="btn btn-primary." data-dismiss="modal"
+                                    aria-hidden="true"><g:message code="dialog.changephoto.terminate"/></button>
+                        </div>
+                    </div>
+
+                    <script type="text/javascript">
+                        $('input[id=lefile]').change(function () {
+                            $('#photoCover').val($(this).val());
+                        });
+                    </script>
+                </div>
+
+            </div>
+
+        </div>
     </div>
 
-    <div class="modal-body">
-
-    </div>
-
-    <div class="modal-footer">
-        <button class="btn btn-primary." data-dismiss="modal"
-                aria-hidden="true"><g:message code="dialog.changephoto.terminate"/></button>
-    </div>
-</div>
+</form>
 
 
 <script type="text/javascript">
@@ -116,6 +155,12 @@
     });
 
     var showDialogChangePhoto = function (photoName) {
+        $('#progress .bar').css(
+                'width', '0%'
+        );
+        $("#form-photo-change").attr("action",
+                "${createLink(action: 'upload', controller: 'report', id: report.id)}?photo=" + photoName);
+        $("#photoCover").val("");
         $("#myModal").modal({remote: "${createLink(absolute:true, action:'changePhoto', id:report.id)}?name=" + photoName});
     }
 </script>

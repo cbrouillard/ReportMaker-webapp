@@ -216,6 +216,8 @@ class ReportController {
 
                     // Copie dans le répertoire de partage
                     String shareDir = grailsApplication.config.twr.photos.dir + File.separator + report.id
+                    File shareDirFile = new File (shareDir)
+                    shareDirFile.mkdirs();
                     FileTool.copyFile(photo, new File(shareDir, photo.name))
                     FileTool.delete(photo)
 

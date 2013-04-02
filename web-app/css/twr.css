@@ -113,7 +113,10 @@ textarea {
 }
 
 .fileupload-buttonbar {
-    margin-top: 10px;
+}
+
+.max-height {
+    max-height: 200px;
 }
 
 .report-title {
