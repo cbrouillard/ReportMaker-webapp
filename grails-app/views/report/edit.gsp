@@ -17,14 +17,30 @@
         </table>
     </div>
 
+%{--<div class="row">--}%
+%{--<div class="around-border">--}%
+%{--<g:submitButton name="submit" class="btn btn-primary pull-right"--}%
+%{--value="${message(code: 'save')}"/>--}%
+%{--<div class="clearfix">&nbsp;</div>--}%
+%{--</div>--}%
+%{--</div>--}%
+
+
     <div class="row">
-        <div class="alert alert-info">
-            <g:submitButton name="submit" class="btn btn-primary pull-right" value="${message(code: 'save')}"/>
-            <div class="clearfix">&nbsp;</div>
-        </div>
+        <g:render template="/common/flashmessage"/>
     </div>
 
-    <g:render template="/common/flashmessage"/>
+    <div class="row">
+        <div class="pull-right">
+            <div class="btn-group">
+                <a href="#bottom" class="btn"><i class="icon-arrow-down"></i> <g:message code="page.down"/></a>
+                <button type="submit" class="btn">
+                    <i class="icon-ok"></i> ${message(code: 'save')}
+                </button>
+
+            </div>
+        </div>
+    </div>
 
     <div class="row">
         <div class="tabbable tabs-left"><!-- Only required for left/right tabs -->
@@ -75,10 +91,19 @@
         </div>
     </div>
 
+%{--<div class="row">--}%
+%{--<div class="around-border">--}%
+%{--<g:submitButton name="submit" class="btn btn-primary pull-right" value="${message(code: 'save')}"/>--}%
+%{--<div class="clearfix">&nbsp;</div>--}%
+%{--</div>--}%
+%{--</div>--}%
+
     <div class="row">
-        <div class="alert alert-info">
-            <g:submitButton name="submit" class="btn btn-primary pull-right" value="${message(code: 'save')}"/>
-            <div class="clearfix">&nbsp;</div>
+        <div class="pull-right">
+            <a href="#top" class="btn"><i class="icon-arrow-up"></i> <g:message code="page.up"/></a>
+            <button type="submit" class="btn">
+                <i class="icon-ok"></i> ${message(code: 'save')}
+            </button>
         </div>
     </div>
 </g:form>
