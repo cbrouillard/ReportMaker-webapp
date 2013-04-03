@@ -27,8 +27,9 @@ if (typeof jQuery !== 'undefined') {
 
 jQuery(function () {
     $("a[data-toggle='tooltip']").tooltip();
-    registerClickableTr();
+    $('textarea.editableArea').autosize();
 
+    registerClickableTr();
     dealWithWrongPhotos();
 
 

@@ -17,15 +17,6 @@
         </table>
     </div>
 
-%{--<div class="row">--}%
-%{--<div class="around-border">--}%
-%{--<g:submitButton name="submit" class="btn btn-primary pull-right"--}%
-%{--value="${message(code: 'save')}"/>--}%
-%{--<div class="clearfix">&nbsp;</div>--}%
-%{--</div>--}%
-%{--</div>--}%
-
-
     <div class="row">
         <g:render template="/common/flashmessage"/>
     </div>
@@ -34,7 +25,7 @@
         <div class="pull-right">
             <div class="btn-group">
                 <a href="#bottom" class="btn"><i class="icon-arrow-down"></i> <g:message code="page.down"/></a>
-                <button type="submit" class="btn">
+                <button type="submit" class="btn btn-primary">
                     <i class="icon-ok"></i> ${message(code: 'save')}
                 </button>
 
@@ -102,7 +93,7 @@
         <div class="pull-right">
             <div class="btn-group">
                 <a href="#top" class="btn"><i class="icon-arrow-up"></i> <g:message code="page.up"/></a>
-                <button type="submit" class="btn">
+                <button type="submit" class="btn btn-primary">
                     <i class="icon-ok"></i> ${message(code: 'save')}
                 </button>
             </div>

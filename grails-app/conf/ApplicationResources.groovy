@@ -26,4 +26,9 @@ modules = {
         resource url: 'js/jquery-file-upload/jquery.iframe-transport.js'
         resource url: 'js/jquery-file-upload/jquery.fileupload.js'
     }
+
+    autosize {
+        dependsOn 'jquery', 'jquery-ui'
+        resource url: 'js/autosize/jquery.autosize-min.js'
+    }
 }
