@@ -6,8 +6,7 @@
 
 <body>
 
-<h1>${report.name}</h1>
-
+<g:render template="/export/bbcode_template1" model="[report: report]"/>
 
 </body>
 </html>

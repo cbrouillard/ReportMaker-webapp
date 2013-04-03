@@ -3,7 +3,7 @@
     <div class="span9 report-title">
         <h1>${report.name}
 
-        <g:render template="/export/share"/></h1>
+            <g:render template="/export/share"/></h1>
 
     </div>
 
@@ -29,6 +29,8 @@
                         class="icon-hand-right icon-white"></i> ${report.format} points</span>
             </g:if>
         </div>
+
+        <div class="clearfix">&nbsp;</div>
 
     </div>
 

@@ -17,7 +17,7 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <r:require modules="bootstrap"/>
-    <r:require modules="jquery-ui, fileupload"/>
+    <r:require modules="jquery-ui, fileupload, autosize"/>
     <style>
     body {
         padding-top: 60px;

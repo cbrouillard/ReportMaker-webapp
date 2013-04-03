@@ -89,4 +89,5 @@
 <legend><g:message code="report.infos.comments"/></legend>
 
 <g:textArea name="comments"
-            value="${report.comments?.decodeHTML()}" class="editableArea"/>
+            value="${report.comments?.decodeHTML()}" class="editableArea"
+            placeholder="${message(code:'report.infos.comments.hint')}"/>
