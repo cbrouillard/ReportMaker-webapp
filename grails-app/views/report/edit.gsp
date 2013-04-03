@@ -100,10 +100,13 @@
 
     <div class="row">
         <div class="pull-right">
-            <a href="#top" class="btn"><i class="icon-arrow-up"></i> <g:message code="page.up"/></a>
-            <button type="submit" class="btn">
-                <i class="icon-ok"></i> ${message(code: 'save')}
-            </button>
+            <div class="btn-group">
+                <a href="#top" class="btn"><i class="icon-arrow-up"></i> <g:message code="page.up"/></a>
+                <button type="submit" class="btn">
+                    <i class="icon-ok"></i> ${message(code: 'save')}
+                </button>
+            </div>
+            <a name="bottom"></a>
         </div>
     </div>
 </g:form>

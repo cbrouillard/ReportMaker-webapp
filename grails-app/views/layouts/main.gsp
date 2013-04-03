@@ -41,19 +41,49 @@
             %{--</a>--}%
             <a class="brand" href="${createLink(uri: '/')}"><strong><g:message code="app.name"/></strong></a>
 
-            <ul class="nav">
-                <li>
-                    <a href="#createReport" data-toggle="modal">
-                        <i class="icon-comment icon-white"></i> <g:message code="report.new"/>
-                    </a>
-                </li>
-            </ul>
+            <sec:ifLoggedIn>
+                <ul class="nav">
+                    <li class="dropdown">
 
-            <p class="navbar-text pull-right"><g:message code="hello"/> <sec:username/> ! <sec:ifLoggedIn>
-                <g:link controller="logout" class="logout">
-                    <i class="icon-off icon-white"></i>
-                </g:link>
-            </sec:ifLoggedIn></p>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <g:message code="reports"/>
+                            <b class="caret"></b>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <g:link controller="report" action="list">
+                                    <i class="icon-picture"></i> <g:message code="report.list"/>
+                                </g:link>
+                            </li>
+
+                            <li>
+                                <a href="#createReport" data-toggle="modal">
+                                    <i class="icon-plus"></i> <g:message code="report.new"/>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </li>
+                </ul>
+            </sec:ifLoggedIn>
+
+            <sec:ifLoggedIn>
+
+                <ul class="nav pull-right">
+                    <li>
+                        <g:link controller="user" action="profile">
+                            <g:message code="hello"/> <sec:username/> !
+                        </g:link>
+                    </li>
+                    <li>
+                        <g:link controller="logout" class="logout">
+                            <i class="icon-off icon-white"></i>  <g:message code="logout"/>
+                        </g:link>
+                    </li>
+                </ul>
+
+            </sec:ifLoggedIn>
         </div>
     </div>
 </div>

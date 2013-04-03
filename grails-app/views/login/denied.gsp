@@ -1,5 +1,5 @@
 <head>
-    <meta name='layout' content='export'/>
+    <meta name='layout' content='main'/>
 </head>
 
 <body>
