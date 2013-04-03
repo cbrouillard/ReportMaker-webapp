@@ -43,23 +43,25 @@
 
 <div class="row">
     <div class="span12">
+        <div class="around-border">
 
-        <g:textArea name="bbcode" class="editableArea">
-            [b]${report.name}[/b]
-
-            Rapport de bataille généré par TWR.
-
+            [b]${report.name}[/b]<br/>
+            <br/>
+            Rapport de bataille généré par TWR.<br/>
+            <br/>
             [quote]<g:message code="report.date"/> : <g:formatDate date="${report.date}"
-                                                       formatName="format.date.toDay"/>
-            ${report.one.name} vs ${report.two.name}
+                                                                   formatName="format.date.toDay"/><br/>
+            ${report.one.name} vs ${report.two.name}<br/>
             <g:if test="${report.one.race && report.two.race}">
-                ${report.one.race} vs ${report.two.race}
+                ${report.one.race} vs ${report.two.race}<br/>
             </g:if>
             <g:if test="${report.format}">
-                Format : ${report.format} points
-            </g:if>[/quote]
-        </g:textArea>
+                Format : ${report.format} points<br/>
+            </g:if>[/quote]<br/>
+            <br/>
+            [img ]
 
+      >/div>
     </div>
 
 </div>
