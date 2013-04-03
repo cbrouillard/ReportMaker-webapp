@@ -1,12 +1,11 @@
 <legend><g:message code="report.photo.table"/></legend>
 
-<div class="photo-display">
-    <img src="${createLink(absolute: true, url: "/twr/${report.id}/table.jpg")}" alt="" class="photo-tochange-table"/>
-    <a class="btn pull-right change-photo" photoName="table"><img src="${resource(dir: 'images', file: 'camera.png')}"
-                                                                  alt="Change"/>
-    </a>
-    <a class="btn pull-right delete-photo" photoName="table"><img src="${resource(dir: 'images', file: 'trash.png')}"
-                                                                  alt="Delete"/></a>
+<div class="around-border">
+    <div class="photo-display">
+        <img src="${createLink(absolute: true, url: "/twr/${report.id}/table.jpg")}" alt=""
+             class="photo-tochange-table"/>
+    </div>
+    <g:render template="actionphotos" model="[photoName: 'table']"/>
 </div>
 
 <legend><g:message code="report.deployment.type"/></legend>
@@ -27,82 +26,67 @@
 
 <legend><g:message code="report.photo.deployment" args="${[report.one.name]}"/></legend>
 
-<div class="photo-display">
-    <img src="${createLink(absolute: true, url: "/twr/${report.id}/deployment_j1.jpg")}" alt="" class="photo-tochange-deployment_j1"/>
-    <a class="btn pull-right change-photo" photoName="deployment_j1"><img
-            src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
-    </a>
-    <a class="btn pull-right delete-photo" photoName="deployment_j1"><img
-            src="${resource(dir: 'images', file: 'trash.png')}"
-            alt="Delete"/></a>
+<div class="around-border">
+    <div class="photo-display">
+        <img src="${createLink(absolute: true, url: "/twr/${report.id}/deployment_j1.jpg")}" alt=""
+             class="photo-tochange-deployment_j1"/>
+    </div>
+    <g:render template="actionphotos" model="[photoName: 'deployment_j1']"/>
 </div>
 
 <legend><g:message code="report.photo.deployment" args="${[report.two.name]}"/></legend>
 
-<div class="photo-display">
-    <img src="${createLink(absolute: true, url: "/twr/${report.id}/deployment_j2.jpg")}" alt="" class="photo-tochange-deployment_j2"/>
-    <a class="btn pull-right change-photo" photoName="deployment_j2"><img
-            src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
-    </a>
-    <a class="btn pull-right delete-photo" photoName="deployment_j2"><img
-            src="${resource(dir: 'images', file: 'trash.png')}"
-            alt="Delete"/></a>
+<div class="around-border">
+    <div class="photo-display">
+        <img src="${createLink(absolute: true, url: "/twr/${report.id}/deployment_j2.jpg")}" alt=""
+             class="photo-tochange-deployment_j2"/>
+    </div>
+    <g:render template="actionphotos" model="[photoName: 'deployment_j2']"/>
 </div>
 
 <legend><g:message code="report.photo.infiltration" args="${[report.one.name]}"/></legend>
 
-<div class="photo-display">
-    <img src="${createLink(absolute: true, url: "/twr/${report.id}/infiltration_j1.jpg")}" alt=""
-         class="photo-tochange-infiltration_j1"/>
-    <a class="btn pull-right change-photo" photoName="infiltration_j1"><img
-            src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
-    </a>
-    <a class="btn pull-right delete-photo" photoName="infiltration_j1"><img
-            src="${resource(dir: 'images', file: 'trash.png')}"
-            alt="Delete"/></a>
+<div class="around-border">
+    <div class="photo-display">
+        <img src="${createLink(absolute: true, url: "/twr/${report.id}/infiltration_j1.jpg")}" alt=""
+             class="photo-tochange-infiltration_j1"/>
+    </div>
+    <g:render template="actionphotos" model="[photoName: 'infiltration_j1']"/>
 </div>
 
 
 <legend><g:message code="report.photo.infiltration" args="${[report.two.name]}"/></legend>
 
-<div class="photo-display">
-    <img src="${createLink(absolute: true, url: "/twr/${report.id}/infiltration_j2.jpg")}" alt=""
-         class="photo-tochange-infiltration_j2"/>
-    <a class="btn pull-right change-photo" photoName="infiltration_j2"><img
-            src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
-    </a>
-    <a class="btn pull-right delete-photo" photoName="infiltration_j2"><img
-            src="${resource(dir: 'images', file: 'trash.png')}"
-            alt="Delete"/></a>
+<div class="around-border">
+    <div class="photo-display">
+        <img src="${createLink(absolute: true, url: "/twr/${report.id}/infiltration_j2.jpg")}" alt=""
+             class="photo-tochange-infiltration_j2"/>
+    </div>
+    <g:render template="actionphotos" model="[photoName: 'infiltration_j2']"/>
 </div>
-
 
 <legend><g:message code="report.photo.scooting" args="${[report.one.name]}"/></legend>
 
-<div class="photo-display">
-    <img src="${createLink(absolute: true, url: "/twr/${report.id}/scoot_j1.jpg")}" alt="" class="photo-tochange-scoot_j1"/>
-    <a class="btn pull-right change-photo" photoName="scoot_j1"><img
-            src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
-    </a>
-    <a class="btn pull-right delete-photo" photoName="scoot_j1"><img
-            src="${resource(dir: 'images', file: 'trash.png')}"
-            alt="Delete"/></a>
+<div class="around-border">
+    <div class="photo-display">
+        <img src="${createLink(absolute: true, url: "/twr/${report.id}/scoot_j1.jpg")}" alt=""
+             class="photo-tochange-scoot_j1"/>
+    </div>
+    <g:render template="actionphotos" model="[photoName: 'scoot_j1']"/>
 </div>
 
 <legend><g:message code="report.photo.scooting" args="${[report.two.name]}"/></legend>
 
-<div class="photo-display">
-    <img src="${createLink(absolute: true, url: "/twr/${report.id}/scoot_j2.jpg")}" alt="" class="photo-tochange-scoot_j2"/>
-    <a class="btn pull-right change-photo" photoName="scoot_j2"><img
-            src="${resource(dir: 'images', file: 'camera.png')}" alt="Change"/>
-    </a>
-    <a class="btn pull-right delete-photo" photoName="scoot_j2"><img
-            src="${resource(dir: 'images', file: 'trash.png')}"
-            alt="Delete"/></a>
+<div class="around-border">
+    <div class="photo-display">
+        <img src="${createLink(absolute: true, url: "/twr/${report.id}/scoot_j2.jpg")}" alt=""
+             class="photo-tochange-scoot_j2"/>
+    </div>
+    <g:render template="actionphotos" model="[photoName: 'scoot_j2']"/>
 </div>
 
 
 <legend><g:message code="report.infos.comments"/></legend>
 
 <g:textArea name="comments"
-            value="${report.comments?.decodeHTML()}"/>
+            value="${report.comments?.decodeHTML()}" class="editableArea"/>

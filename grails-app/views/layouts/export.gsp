@@ -34,22 +34,7 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container-fluid">
-            %{--<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">--}%
-            %{--<span class="icon-bar"></span>--}%
-            %{--<span class="icon-bar"></span>--}%
-            %{--<span class="icon-bar"></span>--}%
-            %{--</a>--}%
             <a class="brand" href="${createLink(uri: '/')}"><g:message code="app.name"/></a>
-
-            %{--<div class="nav-collapse collapse">--}%
-
-            %{--</div><!--/.nav-collapse -->--}%
-
-            <p class="navbar-text pull-right"><g:message code="hello"/> <sec:username/> ! <sec:ifLoggedIn>
-                <g:link controller="logout" class="logout">
-                    <i class="icon-off icon-white"></i>
-                </g:link>
-            </sec:ifLoggedIn></p>
         </div>
     </div>
 </div>

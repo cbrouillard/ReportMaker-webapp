@@ -28,7 +28,10 @@ if (typeof jQuery !== 'undefined') {
 jQuery(function () {
     $("a[data-toggle='tooltip']").tooltip();
     registerClickableTr();
+
     dealWithWrongPhotos();
+
+
 })
 
 var dealWithWrongPhotos = function () {
