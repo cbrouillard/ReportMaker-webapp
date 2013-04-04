@@ -10,75 +10,40 @@
 
     <div class="row">
 
-        <table class="table table-striped">
-            <tr>
-                <g:render template="onereport" model="[report: report]"/>
-            </tr>
-        </table>
-    </div>
+        <div class="span3">
+            <ul class="nav sidenav" data-spy="affix">
 
-    <div class="row">
-        <g:render template="/common/flashmessage"/>
-    </div>
+                <li><a href="#before-game"><i class="icon-chevron-right"></i> <g:message code="before.game"/></a></li>
+                <li><a href="#t1"><i class="icon-chevron-right"></i> <g:message code="t1"/></a></li>
+                <li><a href="#t2"><i class="icon-chevron-right"></i> <g:message code="t2"/></a></li>
+                <li><a href="#t3"><i class="icon-chevron-right"></i> <g:message code="t3"/></a></li>
+                <li><a href="#t4"><i class="icon-chevron-right"></i> <g:message code="t4"/></a></li>
+                <li><a href="#t5"><i class="icon-chevron-right"></i> <g:message code="t5"/></a></li>
+                <li><a href="#t6"><i class="icon-chevron-right"></i> <g:message code="t6"/></a></li>
+                <li><a href="#t7"><i class="icon-chevron-right"></i> <g:message code="t7"/></a></li>
 
-    <div class="row">
-        <div class="pull-right">
-            <div class="btn-group">
-                <a href="#bottom" class="btn"><i class="icon-arrow-down"></i> <g:message code="page.down"/></a>
-                <button type="submit" class="btn btn-primary">
-                    <i class="icon-ok"></i> ${message(code: 'save')}
-                </button>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="tabbable tabs-left"><!-- Only required for left/right tabs -->
-            <ul class="nav nav-tabs">
-                <li class="active"><a href="#tabbefore" data-toggle="tab">•</a></li>
-                <li><a href="#t1" data-toggle="tab"><g:message code="t1"/></a></li>
-                <li><a href="#t2" data-toggle="tab"><g:message code="t2"/></a></li>
-                <li><a href="#t3" data-toggle="tab"><g:message code="t3"/></a></li>
-                <li><a href="#t4" data-toggle="tab"><g:message code="t4"/></a></li>
-                <li><a href="#t5" data-toggle="tab"><g:message code="t5"/></a></li>
-                <li><a href="#t6" data-toggle="tab"><g:message code="t6"/></a></li>
-                <li><a href="#t7" data-toggle="tab"><g:message code="t7"/></a></li>
             </ul>
 
-            <div class="tab-content">
-                <div class="tab-pane active" id="tabbefore">
-                    <g:render template="gameinfos" model="[report: report]"/>
-                </div>
+        </div>
 
-                <div class="tab-pane" id="t1">
-                    <g:render template="oneturn" model="[num: 1, report: report, turn: report.getTurn(1)]"/>
-                </div>
+        <div class="span9">
 
-                <div class="tab-pane" id="t2">
-                    <g:render template="oneturn" model="[num: 2, report: report, turn: report.getTurn(2)]"/>
-                </div>
+            <table class="table table-striped">
+                <tr>
+                    <g:render template="onereport" model="[report: report]"/>
+                </tr>
+            </table>
 
-                <div class="tab-pane" id="t3">
-                    <g:render template="oneturn" model="[num: 3, report: report, turn: report.getTurn(3)]"/>
-                </div>
+            <g:render template="/common/flashmessage"/>
 
-                <div class="tab-pane" id="t4">
-                    <g:render template="oneturn" model="[num: 4, report: report, turn: report.getTurn(4)]"/>
-                </div>
-
-                <div class="tab-pane" id="t5">
-                    <g:render template="oneturn" model="[num: 5, report: report, turn: report.getTurn(5)]"/>
-                </div>
-
-                <div class="tab-pane" id="t6">
-                    <g:render template="oneturn" model="[num: 6, report: report, turn: report.getTurn(6)]"/>
-                </div>
-
-                <div class="tab-pane" id="t7">
-                    <g:render template="oneturn" model="[num: 7, report: report, turn: report.getTurn(7)]"/>
-                </div>
-            </div>
+            <g:render template="gameinfos" model="[report: report]"/>
+            <g:render template="oneturn" model="[num: 1, report: report, turn: report.getTurn(1)]"/>
+            <g:render template="oneturn" model="[num: 2, report: report, turn: report.getTurn(2)]"/>
+            <g:render template="oneturn" model="[num: 3, report: report, turn: report.getTurn(3)]"/>
+            <g:render template="oneturn" model="[num: 4, report: report, turn: report.getTurn(4)]"/>
+            <g:render template="oneturn" model="[num: 5, report: report, turn: report.getTurn(5)]"/>
+            <g:render template="oneturn" model="[num: 6, report: report, turn: report.getTurn(6)]"/>
+            <g:render template="oneturn" model="[num: 7, report: report, turn: report.getTurn(7)]"/>
         </div>
     </div>
 

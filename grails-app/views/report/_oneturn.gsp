@@ -1,3 +1,4 @@
+<a name="t${turn.num}"></a>
 <h2><g:message code="turn" args="${[num]}"/></h2>
 
 <g:if test="${num == 1 || num >= 5}">
