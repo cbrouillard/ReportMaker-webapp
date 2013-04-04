@@ -1,4 +1,4 @@
-<legend><g:message code="report.turn.photo.move"/></legend>
+<h3><g:message code="report.turn.photo.move"/></h3>
 
 <div class="around-border">
     <div class="photo-display">
@@ -9,7 +9,7 @@
 </div>
 
 
-<legend><g:message code="report.turn.photo.shoot"/></legend>
+<h3><g:message code="report.turn.photo.shoot"/></h3>
 
 <div class="around-border">
     <div class="photo-display">
@@ -21,7 +21,7 @@
 </div>
 
 
-<legend><g:message code="report.turn.photo.assault"/></legend>
+<h3><g:message code="report.turn.photo.assault"/></h3>
 
 <div class="around-border">
     <div class="photo-display">
@@ -32,7 +32,7 @@
               model="[photoName: 'player' + player.num + '_turn' + numTurn + '_assault']"/>
 </div>
 
-<legend><g:message code="report.turn.comments"/></legend>
+<h3><g:message code="report.turn.comments"/></h3>
 
 <g:textArea name="comments_p${player.num}_t${numTurn}"
             value="${player.num == 1 ? turn?.comments1 : turn?.comments2}"
