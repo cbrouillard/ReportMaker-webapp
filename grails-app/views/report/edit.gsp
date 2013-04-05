@@ -21,6 +21,8 @@
                 <li><a href="#t5"><i class="icon-chevron-right"></i> <g:message code="t5"/></a></li>
                 <li><a href="#t6"><i class="icon-chevron-right"></i> <g:message code="t6"/></a></li>
                 <li><a href="#t7"><i class="icon-chevron-right"></i> <g:message code="t7"/></a></li>
+                <li><span><g:submitButton name="submit" class="btn btn-primary"
+                                    value="${message(code: 'save')}"/></span></li>
 
             </ul>
 

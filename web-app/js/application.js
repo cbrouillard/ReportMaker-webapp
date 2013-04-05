@@ -29,6 +29,13 @@ jQuery(function () {
     $("a[data-toggle='tooltip']").tooltip();
     $('textarea.editableArea').autosize();
 
+//    $('.sidenav li a').click(function() {
+//        var $this = $(this);
+//        if (!$this.hasClass('active')) {
+//            $this.addClass('active');
+//        }
+//    });
+
     registerClickableTr();
     dealWithWrongPhotos();
 

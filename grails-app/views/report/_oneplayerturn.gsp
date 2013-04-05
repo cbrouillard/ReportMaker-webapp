@@ -1,4 +1,4 @@
-<h3><g:message code="report.turn.photo.move"/></h3>
+<h5><g:message code="report.turn.photo.move"/></h5>
 
 <div class="around-border">
     <div class="photo-display">
@@ -9,7 +9,7 @@
 </div>
 
 
-<h3><g:message code="report.turn.photo.shoot"/></h3>
+<h5><g:message code="report.turn.photo.shoot"/></h5>
 
 <div class="around-border">
     <div class="photo-display">
@@ -21,7 +21,7 @@
 </div>
 
 
-<h3><g:message code="report.turn.photo.assault"/></h3>
+<h5><g:message code="report.turn.photo.assault"/></h5>
 
 <div class="around-border">
     <div class="photo-display">
@@ -32,9 +32,9 @@
               model="[photoName: 'player' + player.num + '_turn' + numTurn + '_assault']"/>
 </div>
 
-<h3><g:message code="report.turn.comments"/></h3>
+<h5><g:message code="report.turn.comments" args="${[numTurn]}"/></h5>
 
 <g:textArea name="comments_p${player.num}_t${numTurn}"
             value="${player.num == 1 ? turn?.comments1 : turn?.comments2}"
-            placeholder="report.turn.comments.hint"
+            placeholder="${message(code: 'report.turn.comments.hint')}"
             class="editableArea"/>

@@ -1,39 +1,46 @@
-<a name="t${turn.num}"></a>
-<h2><g:message code="turn" args="${[num]}"/></h2>
+<section id="t${turn.num}">
 
-<g:if test="${num == 1 || num >= 5}">
-    <legend><g:message code="report.turn.night"/></legend>
-    <label for="nightFight_t${num}"><g:message code="report.turn.night.help"/> <g:checkBox name="nightFight_t${num}"
-                                                                                           checked="turn?.nightFight"/></label>
+    <legend><g:message code="turn" args="${[num]}"/></legend>
 
-</g:if>
+    <g:if test="${num == 1 || num >= 5}">
+        <h5><g:message code="report.turn.night"/></h5>
+        <label for="nightFight_t${num}"><g:message code="report.turn.night.help"/> <g:checkBox name="nightFight_t${num}"
+                                                                                               checked="turn?.nightFight"/></label>
 
-<g:if test="${num >= 5}">
-    <legend><g:message code="report.turn.islast"/></legend>
-    <label for="lastOne_t${num}"><g:message code="report.turn.islast.help"/> <g:checkBox name="lastOne_t${num}"
-                                                                                         checked="turn?.lastOne"/></label>
+    </g:if>
 
-</g:if>
+    <g:if test="${num >= 5}">
+        <h5><g:message code="report.turn.islast"/></h5>
+        <label for="lastOne_t${num}"><g:message code="report.turn.islast.help"/> <g:checkBox name="lastOne_t${num}"
+                                                                                             checked="turn?.lastOne"/></label>
 
-<div class="tabbable">
-    <ul class="nav nav-tabs">
-        <li class="${report.firstPlayer == 1 ? 'active' : ''}"><a href="#player1" data-toggle="tab">${report.one.name}
-            <span
-                class="label label-info">${report.firstPlayer == 1 ? '1' : '2'}</span></a></li>
-        <li class="${report.firstPlayer == 2 ? 'active' : ''}"><a href="#player2" data-toggle="tab">${report.two.name
-        } <span
-                class="label label-info">${report.firstPlayer == 2 ? '1' : '2'}</span></a></li>
-    </ul>
+    </g:if>
 
-    <div class="tab-content">
-        <div class="tab-pane ${report.firstPlayer == 1 ? 'active' : ''}" id="player1">
+    <div class="tabbable">
+        <ul class="nav nav-tabs">
+            <li class="${report.firstPlayer == 1 ? 'active' : ''}"><a href="#player1_turn${turn.num}"
+                                                                      data-toggle="tab">${report.one.name}
+                <span
+                        class="label label-info">${report.firstPlayer == 1 ? '1' : '2'}</span></a></li>
+            <li class="${report.firstPlayer == 2 ? 'active' : ''}"><a href="#player2_turn${turn.num}"
+                                                                      data-toggle="tab">${report.two.name
+                } <span
+                        class="label label-info">${report.firstPlayer == 2 ? '1' : '2'}</span></a></li>
+        </ul>
 
-            <g:render template="oneplayerturn" model="[report: report, turn: turn, player: report.one, numTurn: num]"/>
+        <div class="tab-content">
+            <div class="tab-pane ${report.firstPlayer == 1 ? 'active' : ''}" id="player1_turn${turn.num}">
 
-        </div>
+                <g:render template="oneplayerturn"
+                          model="[report: report, turn: turn, player: report.one, numTurn: num]"/>
 
-        <div class="tab-pane ${report.firstPlayer == 2 ? 'active' : ''}" id="player2">
-            <g:render template="oneplayerturn" model="[report: report, turn: turn, player: report.two, numTurn: num]"/>
+            </div>
+
+            <div class="tab-pane ${report.firstPlayer == 2 ? 'active' : ''}" id="player2_turn${turn.num}">
+                <g:render template="oneplayerturn"
+                          model="[report: report, turn: turn, player: report.two, numTurn: num]"/>
+            </div>
         </div>
     </div>
-</div>
+
+</section>

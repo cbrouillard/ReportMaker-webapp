@@ -59,9 +59,10 @@
                 Format : ${report.format} points<br/>
             </g:if>[/quote]<br/>
             <br/>
-            [img ]
+            [img <a
+                href="${createLink(absolute: true, uri: "/twr/${report.id}/table.jpg")}">${createLink(absolute: true, uri: "/twr/${report.id}/table.jpg")}</a>]
 
-      >/div>
+        </div>
     </div>
 
 </div>

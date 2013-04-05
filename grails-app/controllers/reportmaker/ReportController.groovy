@@ -57,21 +57,32 @@ class ReportController {
         report.firstPlayer = 1
 
         def playerOne = new Player()
-        playerOne.name="Joueur1"
+        playerOne.name = params.player1 ?: "Joueur 1"
         playerOne.num = 1
         playerOne.owner = person
 
         def playerTwo = new Player()
-        playerTwo.name="Joueur2"
+        playerTwo.name = params.player2 ?: "Joueur 2"
         playerTwo.num = 2
         playerTwo.owner = person
 
         report.one = playerOne
         report.two = playerTwo
 
-        if (report.validate() && report.save(flush: true) ){
-            redirect (action: 'edit', id: report.id)
-        }else {
+        (1..7).each {num ->
+            Turn savedTurn = report.getTurn(num as Integer)
+            if (!savedTurn) {
+                savedTurn = new Turn()
+                savedTurn.owner = person
+                savedTurn.num = num
+                report.addToTurns(savedTurn)
+            }
+            savedTurn.save()
+        }
+
+        if (report.validate() && report.save(flush: true)) {
+            redirect(action: 'edit', id: report.id)
+        } else {
             render "KO"
         }
     }
@@ -216,7 +227,7 @@ class ReportController {
 
                     // Copie dans le répertoire de partage
                     String shareDir = grailsApplication.config.twr.photos.dir + File.separator + report.id
-                    File shareDirFile = new File (shareDir)
+                    File shareDirFile = new File(shareDir)
                     shareDirFile.mkdirs();
                     FileTool.copyFile(photo, new File(shareDir, photo.name))
                     FileTool.delete(photo)

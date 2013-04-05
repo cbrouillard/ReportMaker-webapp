@@ -144,6 +144,14 @@
             <g:textField name="name" required="true" placeholder="${message(code: 'report.name.hint')}"
                          class="input-xlarge"/>
 
+            <label><g:message code="report.player1.name"/></label>
+            <g:textField name="player1" placeholder="${message(code: 'report.player1.name.hint')}"
+                         class="input-xlarge"/>
+
+            <label><g:message code="report.player2.name"/></label>
+            <g:textField name="player2" placeholder="${message(code: 'report.player2.name.hint')}"
+                         class="input-xlarge"/>
+
             <div class="alert alert-info">
                 <g:message code="report.create.help"/>
             </div>

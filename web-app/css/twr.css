@@ -161,11 +161,15 @@ label input {
     border-radius: 6px 6px 0 0;
 }
 
-.sidenav > li > a {
+.sidenav > li > a, .sidenav > li > span {
     display: block;
     margin: 0 0 -1px;
     padding: 8px 14px;
     border: 1px solid #e5e5e5;
+}
+
+.sidenav > li > input {
+    margin: 5px;
 }
 
 .sidenav .icon-chevron-right {
@@ -173,4 +177,8 @@ label input {
     margin-top: 2px;
     margin-right: -6px;
     opacity: .25;
+}
+
+section{
+    padding-top: 60px;
 }
