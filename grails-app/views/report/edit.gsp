@@ -10,10 +10,11 @@
 
     <div class="row">
 
-        <div class="span3">
+        <div class="span3" >
             <ul class="nav sidenav" data-spy="affix">
 
-                <li><a href="#before-game"><i class="icon-chevron-right"></i> <g:message code="before.game"/></a></li>
+                <li><a href="#before-game"><i class="icon-chevron-right"></i> <g:message code="before.game"/></a>
+                </li>
                 <li><a href="#t1"><i class="icon-chevron-right"></i> <g:message code="t1"/></a></li>
                 <li><a href="#t2"><i class="icon-chevron-right"></i> <g:message code="t2"/></a></li>
                 <li><a href="#t3"><i class="icon-chevron-right"></i> <g:message code="t3"/></a></li>
@@ -22,14 +23,11 @@
                 <li><a href="#t6"><i class="icon-chevron-right"></i> <g:message code="t6"/></a></li>
                 <li><a href="#t7"><i class="icon-chevron-right"></i> <g:message code="t7"/></a></li>
                 <li><span><g:submitButton name="submit" class="btn btn-primary"
-                                    value="${message(code: 'save')}"/></span></li>
-
+                                          value="${message(code: 'save')}"/></span></li>
             </ul>
-
         </div>
 
-        <div class="span9">
-
+        <div class="span9" data-spy="scroll" data-target=".sidenav">
             <table class="table table-striped">
                 <tr>
                     <g:render template="onereport" model="[report: report]"/>
@@ -37,7 +35,6 @@
             </table>
 
             <g:render template="/common/flashmessage"/>
-
             <g:render template="gameinfos" model="[report: report]"/>
             <g:render template="oneturn" model="[num: 1, report: report, turn: report.getTurn(1)]"/>
             <g:render template="oneturn" model="[num: 2, report: report, turn: report.getTurn(2)]"/>
@@ -46,25 +43,6 @@
             <g:render template="oneturn" model="[num: 5, report: report, turn: report.getTurn(5)]"/>
             <g:render template="oneturn" model="[num: 6, report: report, turn: report.getTurn(6)]"/>
             <g:render template="oneturn" model="[num: 7, report: report, turn: report.getTurn(7)]"/>
-        </div>
-    </div>
-
-%{--<div class="row">--}%
-%{--<div class="around-border">--}%
-%{--<g:submitButton name="submit" class="btn btn-primary pull-right" value="${message(code: 'save')}"/>--}%
-%{--<div class="clearfix">&nbsp;</div>--}%
-%{--</div>--}%
-%{--</div>--}%
-
-    <div class="row">
-        <div class="pull-right">
-            <div class="btn-group">
-                <a href="#top" class="btn"><i class="icon-arrow-up"></i> <g:message code="page.up"/></a>
-                <button type="submit" class="btn btn-primary">
-                    <i class="icon-ok"></i> ${message(code: 'save')}
-                </button>
-            </div>
-            <a name="bottom"></a>
         </div>
     </div>
 </g:form>

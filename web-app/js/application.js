@@ -29,10 +29,14 @@ jQuery(function () {
     $("a[data-toggle='tooltip']").tooltip();
     $('textarea.editableArea').autosize();
 
-//    $('.sidenav li a').click(function() {
-//        var $this = $(this);
-//        if (!$this.hasClass('active')) {
-//            $this.addClass('active');
+//    $('.sidenav li a').click(function () {
+//        $('.sidenav li').each(function () {
+//            $(this).removeClass('active');
+//        });
+//
+//        var li = $(this).parent('li');
+//        if (!li.hasClass('active')) {
+//            li.addClass('active');
 //        }
 //    });
 
