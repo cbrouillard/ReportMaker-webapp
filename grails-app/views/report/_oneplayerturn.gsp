@@ -1,3 +1,5 @@
+<legend>${player.name}</legend>
+
 <h5><g:message code="report.turn.photo.move"/></h5>
 
 <div class="around-border">
