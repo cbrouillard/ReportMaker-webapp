@@ -17,7 +17,7 @@
     </g:if>
 
     <div class="tabbable">
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-pills">
             <li class="${report.firstPlayer == 1 ? 'active' : ''}"><a href="#player1_turn${turn.num}"
                                                                       data-toggle="tab">${report.one.name}
                 <span

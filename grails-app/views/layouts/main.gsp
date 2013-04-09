@@ -29,7 +29,7 @@
     <r:layoutResources/>
 </head>
 
-<body >
+<body data-spy="scroll" data-target="#navbarSpy">
 
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
