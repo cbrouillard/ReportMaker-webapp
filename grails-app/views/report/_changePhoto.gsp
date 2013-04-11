@@ -2,7 +2,7 @@
 
 <div class="alert alert-info"><g:message code="dialog.changephoto.help"/></div>
 
-<div class="thumbnail">
+<div class="thumbnail center">
 
     <a href="javascript:zoomOn();">
         <img src="${createLink(url: "/twr/${report.id}/${name}.jpg") + '?' + new Date().getTime()}" alt=""

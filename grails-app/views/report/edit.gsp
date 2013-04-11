@@ -40,31 +40,18 @@
 
             <g:render template="/common/flashmessage"/>
 
-            <table class="table table-striped">
+            <table class="table table-striped table-spy-nav">
                 <tr><td>
-                    <g:render template="gameinfos" model="[report: report]"/>
+                    <section id="before-game">
+                        <g:render template="gameinfos" model="[report: report]"/>
+                    </section>
                 </td></tr>
-                <tr><td>
-                    <g:render template="oneturn" model="[num: 1, report: report, turn: report.getTurn(1)]"/>
-                </td></tr>
-                <tr><td>
-                    <g:render template="oneturn" model="[num: 2, report: report, turn: report.getTurn(2)]"/>
-                </td></tr>
-                <tr><td>
-                    <g:render template="oneturn" model="[num: 3, report: report, turn: report.getTurn(3)]"/>
-                </td></tr>
-                <tr><td>
-                    <g:render template="oneturn" model="[num: 4, report: report, turn: report.getTurn(4)]"/>
-                </td></tr>
-                <tr><td>
-                    <g:render template="oneturn" model="[num: 5, report: report, turn: report.getTurn(5)]"/>
-                </td></tr>
-                <tr><td>
-                    <g:render template="oneturn" model="[num: 6, report: report, turn: report.getTurn(6)]"/>
-                </td></tr>
-                <tr><td>
-                    <g:render template="oneturn" model="[num: 7, report: report, turn: report.getTurn(7)]"/>
-                </td></tr>
+                <g:each in="${(1..7)}" var="turnNum">
+                    <tr><td>
+                        <section id="t${turnNum}">
+                        <g:render template="oneturn" model="[num: turnNum, report: report, turn: report.getTurn(turnNum)]"/>
+                    </td></tr>
+                </g:each>
             </table>
             %{--</div>--}%
         </div>
@@ -100,20 +87,19 @@
 
                     <div>
 
-                        <div class="input-append pull-left">
-                            <input id="photoCover" class="input-large" type="text">
-                            <a class="btn" onclick="$('input[id=lefile]').click();"><g:message code="browse"/></a>
+                        <div class="pull-left">
+                            <a class="btn btn-warning"
+                               onclick="$('input[id=lefile]').click();"><g:message code="browse"/></a>
                         </div>
 
                         <div class="pull-right">
-                            <button class="btn btn-primary." data-dismiss="modal"
+                            <button class="btn btn-primary" data-dismiss="modal"
                                     aria-hidden="true"><g:message code="dialog.changephoto.terminate"/></button>
                         </div>
                     </div>
 
                     <script type="text/javascript">
                         $('input[id=lefile]').change(function () {
-                            $('#photoCover').val($(this).val());
                         });
                     </script>
                 </div>
@@ -148,7 +134,6 @@
         );
         $("#form-photo-change").attr("action",
                 "${createLink(action: 'upload', controller: 'report', id: report.id)}?photo=" + photoName);
-        $("#photoCover").val("");
         $("#myModal").modal({remote: "${createLink(action:'changePhoto', id:report.id)}?name=" + photoName});
     }
 </script>
