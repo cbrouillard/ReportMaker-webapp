@@ -35,14 +35,11 @@ class ReportController {
 
     def index() {redirect(action: 'list') }
 
+
     def list() {
 
         def person = springSecurityService.currentUser
-
-        def report = new Report()
-        report.owner = person
-
-        def reports = Report.findAll(report, [sort: 'date', order: 'desc'])
+        def reports = Report.findAllByOwner(person, [sort: 'date', order: 'desc'])
 
         [reports: reports]
     }
@@ -101,8 +98,12 @@ class ReportController {
         redirect(action: 'list')
     }
 
+    def admin() {
+
+    }
+
     def update() {
-        println params
+        //println params
         def person = springSecurityService.currentUser
         def report = Report.findByIdAndOwner(params.id, person)
 
@@ -125,8 +126,8 @@ class ReportController {
 
                 savedTurn.comments1 = params["comments_p1_t$num"].encodeAsHTML()
                 savedTurn.comments2 = params["comments_p2_t$num"].encodeAsHTML()
-                savedTurn.lastOne = params["lastOne_t$num"]
-                savedTurn.nightFight = params["nightFight_t$num"]
+                savedTurn.lastOne = params["lastOne_t$num"] as Boolean
+                savedTurn.nightFight = params["nightFight_t$num"] as Boolean
                 savedTurn.save()
             }
 
@@ -219,10 +220,11 @@ class ReportController {
                 FileDataSource ds = new FileDataSource(photo)
                 String type = ds.contentType
 
+                log.info("Image type = " + type)
                 if (!type.equalsIgnoreCase("image/jpeg")) {
                     println "Effacement de ${photo.name}"
                     FileTool.delete(photo)
-                    // TODO envoyer un mail avertissement avec IP utilisateur pour futur blocage
+                    // TODO envoyer un mail avertissement avec IP utilisateur et username pour futur blocage
                 } else {
 
                     // Copie dans le répertoire de partage

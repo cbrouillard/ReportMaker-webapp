@@ -7,7 +7,7 @@
         <img src="${createLink(absolute: true, url: "/twr/${report.id}/player${player.num}_turn${numTurn}_move.jpg")}"
              alt="" title="Move" class="photo-tochange-player${player.num}_turn${numTurn}_move"/>
     </div>
-    <g:render template="actionphotos" model="[photoName: 'player' + player.num + '_turn' + numTurn + '_move']"/>
+    <g:render template="/common/actionphotos" model="[photoName: 'player' + player.num + '_turn' + numTurn + '_move']"/>
 </div>
 
 
@@ -18,7 +18,7 @@
         <img src="${createLink(absolute: true, url: "/twr/${report.id}/player${player.num}_turn${numTurn}_shoot.jpg")}"
              alt="" title="Shoot" class="photo-tochange-player${player.num}_turn${numTurn}_shoot"/>
     </div>
-    <g:render template="actionphotos"
+    <g:render template="/common/actionphotos"
               model="[photoName: 'player' + player.num + '_turn' + numTurn + '_shoot']"/>
 </div>
 
@@ -30,7 +30,7 @@
         <img src="${createLink(absolute: true, url: "/twr/${report.id}/player${player.num}_turn${numTurn}_assault.jpg")}"
              alt="" title="Assault" class="photo-tochange-player${player.num}_turn${numTurn}_assault"/>
     </div>
-    <g:render template="actionphotos"
+    <g:render template="/common/actionphotos"
               model="[photoName: 'player' + player.num + '_turn' + numTurn + '_assault']"/>
 </div>
 

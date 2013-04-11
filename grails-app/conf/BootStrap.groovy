@@ -1,3 +1,7 @@
+import com.headbangers.reportmaker.Person
+import com.headbangers.reportmaker.PersonRole
+import com.headbangers.reportmaker.Role
+
 /**
  * Copyright (C) 2013 Cyril Brouillard <cyril.brouillard@gmail.com>
  *
@@ -17,7 +21,31 @@
  */
 class BootStrap {
 
-    def init = { servletContext ->
+    def init = {servletContext ->
+
+        def admin = Person.findByUsername("admin")
+        if (!admin) {
+
+            // Création de l'user admin
+            admin = new Person()
+            admin.accountExpired = false
+            admin.accountLocked = false
+            admin.email = "cyril.brouillard@gmail.com"
+            admin.enabled = true
+            admin.passwordExpired = false
+            admin.username = "admin"
+            admin.token = "VALIDATED_NOT_USED"
+
+            admin.password = "admin"
+            admin.save(flush: true)
+
+            def roleAdmin = Role.findByAuthority("ROLE_ADMIN")
+            if (!roleAdmin) {
+                // Should not happen
+                roleAdmin = new Role(authority: "ROLE_ADMIN").save(flush: true)
+            }
+            PersonRole.create(admin, roleAdmin, true)
+        }
     }
     def destroy = {
     }

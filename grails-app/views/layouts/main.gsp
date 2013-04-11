@@ -66,10 +66,17 @@
             <sec:ifLoggedIn>
                 <ul class="nav pull-right">
                     <li>
-                        <g:link controller="user" action="profile">
+                        <g:link controller="person" action="profile">
                             <g:message code="hello"/> <sec:username/> !
                         </g:link>
                     </li>
+                    <sec:ifAllGranted roles="ROLE_ADMIN">
+                        <li>
+                            <g:link controller="metadataPhoto">
+                                <g:message code="admin"/>
+                            </g:link>
+                        </li>
+                    </sec:ifAllGranted>
                     <li>
                         <g:link controller="logout" class="logout">
                             <i class="icon-off icon-white"></i>  <g:message code="logout"/>

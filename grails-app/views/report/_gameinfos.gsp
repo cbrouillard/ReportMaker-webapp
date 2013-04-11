@@ -8,7 +8,7 @@
             <img src="${createLink(absolute: true, url: "/twr/${report.id}/table.jpg")}" alt=""
                  class="photo-tochange-table"/>
         </div>
-        <g:render template="actionphotos" model="[photoName: 'table']"/>
+        <g:render template="/common/actionphotos" model="[photoName: 'table']"/>
     </div>
 
 
@@ -41,7 +41,7 @@
             <img src="${createLink(absolute: true, url: "/twr/${report.id}/deployment_j1.jpg")}" alt=""
                  class="photo-tochange-deployment_j1"/>
         </div>
-        <g:render template="actionphotos" model="[photoName: 'deployment_j1']"/>
+        <g:render template="/common/actionphotos" model="[photoName: 'deployment_j1']"/>
     </div>
 
     <h5><g:message code="report.photo.deployment" args="${[report.two.name]}"/></h5>
@@ -51,7 +51,7 @@
             <img src="${createLink(absolute: true, url: "/twr/${report.id}/deployment_j2.jpg")}" alt=""
                  class="photo-tochange-deployment_j2"/>
         </div>
-        <g:render template="actionphotos" model="[photoName: 'deployment_j2']"/>
+        <g:render template="/common/actionphotos" model="[photoName: 'deployment_j2']"/>
     </div>
 
 
@@ -62,7 +62,7 @@
             <img src="${createLink(absolute: true, url: "/twr/${report.id}/infiltration_j1.jpg")}" alt=""
                  class="photo-tochange-infiltration_j1"/>
         </div>
-        <g:render template="actionphotos" model="[photoName: 'infiltration_j1']"/>
+        <g:render template="/common/actionphotos" model="[photoName: 'infiltration_j1']"/>
     </div>
 
     <h5><g:message code="report.photo.infiltration" args="${[report.two.name]}"/></h5>
@@ -72,7 +72,7 @@
             <img src="${createLink(absolute: true, url: "/twr/${report.id}/infiltration_j2.jpg")}" alt=""
                  class="photo-tochange-infiltration_j2"/>
         </div>
-        <g:render template="actionphotos" model="[photoName: 'infiltration_j2']"/>
+        <g:render template="/common/actionphotos" model="[photoName: 'infiltration_j2']"/>
     </div>
 
 
@@ -83,7 +83,7 @@
             <img src="${createLink(absolute: true, url: "/twr/${report.id}/scoot_j1.jpg")}" alt=""
                  class="photo-tochange-scoot_j1"/>
         </div>
-        <g:render template="actionphotos" model="[photoName: 'scoot_j1']"/>
+        <g:render template="/common/actionphotos" model="[photoName: 'scoot_j1']"/>
     </div>
 
 
@@ -94,7 +94,7 @@
             <img src="${createLink(absolute: true, url: "/twr/${report.id}/scoot_j2.jpg")}" alt=""
                  class="photo-tochange-scoot_j2"/>
         </div>
-        <g:render template="actionphotos" model="[photoName: 'scoot_j2']"/>
+        <g:render template="/common/actionphotos" model="[photoName: 'scoot_j2']"/>
     </div>
 
 

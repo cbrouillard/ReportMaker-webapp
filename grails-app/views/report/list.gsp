@@ -5,14 +5,14 @@
 </head>
 
 <body>
-<g:render template="/common/flashmessage"/>
 <div class="well">
     <h1><g:message code="report.list"/></h1>
 
     <p><g:message code="report.list.help"/></p>
-    <g:link class="btn btn-primary" action="create"><g:message code="report.howto.create"/></g:link>
 
 </div>
+
+<g:render template="/common/flashmessage"/>
 
 <g:if test="${reports}">
     <table class="table table-striped table-hover">
@@ -26,6 +26,7 @@
 <g:else>
     <div class="alert alert-info">
         <g:message code="report.list.noreports"/>
+        <g:link class="btn btn-primary" action="create"><g:message code="report.howto.create"/></g:link>
     </div>
 </g:else>
 

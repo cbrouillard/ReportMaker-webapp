@@ -21,7 +21,7 @@ import grails.plugins.springsecurity.Secured
 import com.headbangers.reportmaker.MetadataPhoto
 import com.headbangers.reportmaker.util.FileTool
 
-//@Secured(["ROLE_ADMIN"])
+@Secured(["ROLE_ADMIN"])
 class MetadataPhotoController {
 
     def index() {

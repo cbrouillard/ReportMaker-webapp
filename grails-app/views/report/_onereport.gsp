@@ -12,7 +12,7 @@
 
     <g:if test="${editAction}">
         <span>
-            <g:link action="edit" id="${report.id}" data-toggle="tooltip"
+            <g:link controller="report" action="edit" id="${report.id}" data-toggle="tooltip"
                     title="${message(code: 'report.edit.tooltip')}"><img src="${resource(dir:
                     'images', file: 'edit.png')}"
                                                          alt="Edit"/></g:link><br/>Editer
@@ -20,20 +20,20 @@
     </g:if>
 
     <span>
-        <g:link action="pdf" id="${report.id}" data-toggle="tooltip"
+        <g:link controller="report" action="pdf" id="${report.id}" data-toggle="tooltip"
                 title="${message(code: 'report.export.pdf.tooltip')}"><img src="${resource(dir: 'images',
                 file: 'pdf.png')}"
                                                     alt="PDF"/></g:link><br/>PDF
     </span>
 
     <span>
-        <g:link action="code" params="[type: 'bbcode']" id="${report.id}" data-toggle="tooltip"
+        <g:link controller="report"  action="code" params="[type: 'bbcode']" id="${report.id}" data-toggle="tooltip"
                 title="${message(code: 'report.export.bbcode.tooltip')}"><img
                 src="${resource(dir: 'images', file: 'bb-code.png')}" alt="BB-Code"/></g:link><br/>BB-Code
     </span>
 
     <span>
-        <g:link action="code" params="[type: 'html']" id="${report.id}" data-toggle="tooltip"
+        <g:link controller="report" action="code" params="[type: 'html']" id="${report.id}" data-toggle="tooltip"
                 title="${message(code: 'report.export.html.tooltip')}"><img
                 src="${resource(dir: 'images', file: 'html.png')}" alt="HTML"/></g:link><br/>HTML
     </span>
