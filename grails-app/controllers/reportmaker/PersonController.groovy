@@ -28,4 +28,29 @@ class PersonController {
 
         [person: person, reports:fiveLastReports]
     }
+
+    @Secured(["ROLE_ADMIN", "ROLE_USER"])
+    def changePassForm (){
+        if (!params['pass'] || !params["passCheck"] || !params.pass.equals(params.passCheck)){
+            // error
+            flash.message = message(code:"person.changepass.invalid.pass")
+            flash.level = 'error'
+            render template: '/common/flashmessage'
+            return
+        }
+
+        def person = springSecurityService.currentUser
+        person.password = params.pass
+        person.save(flush:true)
+
+        flash.message = message(code:"person.changepass.valid")
+        flash.level = 'success'
+
+        render template:  '/common/closemodal'
+    }
+
+    @Secured(["ROLE_ADMIN", "ROLE_USER"])
+    def updateInfos (){
+
+    }
 }

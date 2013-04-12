@@ -8,7 +8,24 @@
 
 <div class="row">
 
-    <div class="span6 justify">
+    <div class="span4">
+
+        <form class="form-signin" action='${postUrl}' method='POST' id='loginForm' autocomplete='off'>
+            <h2 class="form-signin-heading alert alert-info"><g:message code="login.please.signin"/></h2>
+            <input type="text" class="input-block-level" placeholder="${message(code: 'login.username')}"
+                   name='j_username' required="true">
+            <input type="password" class="input-block-level" placeholder="${message(code: 'login.password')}"
+                   name='j_password' required="true">
+            <label class="checkbox">
+                <input type="checkbox" name='${rememberMeParameter}'
+                       <g:if test='${hasCookie}'>checked='checked'</g:if>><g:message code="login.rememberme"/>
+            </label>
+            <button class="btn btn-large btn-primary" type="submit"><g:message code="login.submit"/></button>
+        </form>
+
+    </div>
+
+    <div class="span8 justify">
         <div class="well">
 
             <p>Tactical War Report (TWR) est une application facilitant la rédaction de rapports de bataille pour vos parties de wargame.</p>
@@ -32,22 +49,7 @@
 
     </div>
 
-    <div class="span6">
 
-        <form class="form-signin" action='${postUrl}' method='POST' id='loginForm' autocomplete='off'>
-            <h2 class="form-signin-heading alert alert-info"><g:message code="login.please.signin"/></h2>
-            <input type="text" class="input-block-level" placeholder="${message(code: 'login.username')}"
-                   name='j_username' required="true">
-            <input type="password" class="input-block-level" placeholder="${message(code: 'login.password')}"
-                   name='j_password' required="true">
-            <label class="checkbox">
-                <input type="checkbox" name='${rememberMeParameter}'
-                       <g:if test='${hasCookie}'>checked='checked'</g:if>><g:message code="login.rememberme"/>
-            </label>
-            <button class="btn btn-large btn-primary" type="submit"><g:message code="login.submit"/></button>
-        </form>
-
-    </div>
 
 </div>
 

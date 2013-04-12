@@ -29,7 +29,20 @@
     <r:layoutResources/>
 </head>
 
-<body data-spy="scroll" data-target="#navbarSpy" >
+<body data-spy="scroll" data-target="#navbarSpy">
+
+<sec:ifNotLoggedIn>
+    <header class="epic">
+        <div class="pull-left" >
+            <img width="100px" src="${resource(dir: 'images', file: 'icone.png')}" alt="[TWR]" />
+        </div>
+
+        <h1 style="margin-top:20px;margin-left:120px;">${message(code: 'app.name')}</h1>
+
+        <div class="clearfix">&nbsp;</div>
+
+    </header>
+</sec:ifNotLoggedIn>
 
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
@@ -96,6 +109,8 @@
 %{--<p class="lead">Bring Bootstrap's components to life&mdash;now with 13 custom jQuery plugins.--}%
 %{--</div>--}%
 %{--</header>--}%
+
+
 
 <div class="container">
     <g:layoutBody/>

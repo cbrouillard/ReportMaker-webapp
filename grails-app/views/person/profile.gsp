@@ -71,7 +71,8 @@
             <g:else>
                 <div class="alert alert-info">
                     <g:message code="report.list.noreports"/>
-                    <g:link class="btn btn-primary" action="create"><g:message code="report.howto.create"/></g:link>
+                    <g:link class="btn btn-primary" action="create"
+                            controller="report"><g:message code="report.howto.create"/></g:link>
                 </div>
             </g:else>
         </div>
