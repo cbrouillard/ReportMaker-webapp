@@ -131,12 +131,12 @@ log4j = {
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.headbangers.reportmaker.Person'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.headbangers.reportmaker.PersonRole'
 grails.plugins.springsecurity.authority.className = 'com.headbangers.reportmaker.Role'
-grails.plugins.springsecurity.portMapper.httpPort = 8080
-grails.plugins.springsecurity.portMapper.httpsPort = 8443
-grails.plugins.springsecurity.secureChannel.definition = [
-        '/web/**': 'REQUIRES_SECURE_CHANNEL',
-        '/**': 'REQUIRES_INSECURE_CHANNEL'
-]
+//grails.plugins.springsecurity.portMapper.httpPort = 80
+//grails.plugins.springsecurity.portMapper.httpsPort = 443
+//grails.plugins.springsecurity.secureChannel.definition = [
+//        '/web/**': 'REQUIRES_SECURE_CHANNEL',
+//        '/**': 'REQUIRES_INSECURE_CHANNEL'
+//]
 
 grails.plugins.twitterbootstrap.fixtaglib = true
 

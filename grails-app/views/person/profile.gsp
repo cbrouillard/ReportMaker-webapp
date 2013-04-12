@@ -81,7 +81,7 @@
 
 </div>
 
-<g:formRemote method="post" name="changePassForm" url="[controller: 'person', action: 'changePass']">
+<g:formRemote method="post" name="changePassForm" url="[controller: 'person', action: 'changePass']" update="message">
     <div id="changepass" class="modal hide fade">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -91,6 +91,8 @@
         </div>
 
         <div class="modal-body">
+            <div id="message"></div>
+
             <label><g:message code="person.change.pass"/></label>
             <g:passwordField name="pass"/>
             <label><g:message code="person.change.pass.check"/></label>

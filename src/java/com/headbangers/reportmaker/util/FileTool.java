@@ -17,6 +17,9 @@
  */
 package com.headbangers.reportmaker.util;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.*;
 
 public class FileTool {
@@ -74,5 +77,21 @@ public class FileTool {
         }
         return resource.delete();
 
+    }
+
+    public static boolean isFileAnImage(File resource) {
+        try {
+            BufferedImage image = ImageIO.read(resource);
+            if (image == null){
+                return false;
+            }
+
+            if (image.getWidth() > 0) {
+                return true;
+            }
+
+        } catch (IOException e) {
+        }
+        return false;
     }
 }

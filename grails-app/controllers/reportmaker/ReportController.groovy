@@ -213,16 +213,17 @@ class ReportController {
                 result << [name: file.originalFilename, size: file.size]
 
                 // Copie du fichier dans /tmp
-                File photo = new File("/tmp/" + params.photo + ".jpg")
+                File dir =  new File("/tmp/${person.id}/")
+                dir.mkdirs()
+                File photo = new File(dir, params.photo + ".jpg")
                 file.transferTo(photo)
 
                 // Si ce n'est pas image, c'est supprimé
                 FileDataSource ds = new FileDataSource(photo)
-                String type = ds.contentType
 
-                log.info("Image type = " + type)
-                if (!type.equalsIgnoreCase("image/jpeg")) {
-                    println "Effacement de ${photo.name}"
+                if (!FileTool.isFileAnImage(photo)) {
+                    log.info "[WARNING BAD PHOTO] Effacement de ${photo.absolutePath} user is ${person.username} " +
+                            "(id='${person.id}')"
                     FileTool.delete(photo)
                     // TODO envoyer un mail avertissement avec IP utilisateur et username pour futur blocage
                 } else {

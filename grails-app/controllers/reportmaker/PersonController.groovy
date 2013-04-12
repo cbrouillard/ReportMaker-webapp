@@ -30,7 +30,7 @@ class PersonController {
     }
 
     @Secured(["ROLE_ADMIN", "ROLE_USER"])
-    def changePassForm (){
+    def changePass(){
         if (!params['pass'] || !params["passCheck"] || !params.pass.equals(params.passCheck)){
             // error
             flash.message = message(code:"person.changepass.invalid.pass")
@@ -45,8 +45,7 @@ class PersonController {
 
         flash.message = message(code:"person.changepass.valid")
         flash.level = 'success'
-
-        render template:  '/common/closemodal'
+        render template: '/common/flashmessage'
     }
 
     @Secured(["ROLE_ADMIN", "ROLE_USER"])
