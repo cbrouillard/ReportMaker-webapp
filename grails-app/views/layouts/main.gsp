@@ -33,12 +33,14 @@
 
 <sec:ifNotLoggedIn>
     <header class="epic">
-        <div class="pull-left" >
-            <img width="100px" src="${resource(dir: 'images', file: 'icone.png')}" alt="[TWR]" />
+        <div class="span1">
+            <img width="100px" src="${resource(dir: 'images', file: 'icone.png')}" alt="[TWR]"/>
         </div>
 
-        <h1 style="margin-top:20px;margin-left:120px;">${message(code: 'app.name')}</h1>
+        <div class="span11">
+            <h1 >${message(code: 'app.name')}</h1>
 
+        </div>
         <div class="clearfix">&nbsp;</div>
 
     </header>

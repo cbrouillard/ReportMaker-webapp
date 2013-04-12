@@ -1,3 +1,6 @@
-2013-04-12 10:38:11,757 [main] INFO  http11.Http11Protocol  - Starting ProtocolHandler ["http-bio-9999"]
-2013-04-12 10:39:24,145 [http-bio-9999-exec-1] INFO  [localhost].[/reportmaker]  - Initializing Spring FrameworkServlet 'gsp'
-2013-04-12 10:39:24,146 [http-bio-9999-exec-1] INFO  [localhost].[/reportmaker]  - GSP servlet initialized
+2013-04-12 10:44:51,494 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ApplicationHolder.getApplication() is deprecated and will be removed in a future version of Grails.
+2013-04-12 10:44:51,587 [localhost-startStop-1] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+2013-04-12 10:44:51,870 [localhost-startStop-1] INFO  [localhost].[/reportmaker]  - Initializing Spring FrameworkServlet 'grails'
+2013-04-12 10:44:51,918 [main] INFO  http11.Http11Protocol  - Starting ProtocolHandler ["http-bio-9999"]
+2013-04-12 10:45:05,723 [http-bio-9999-exec-1] INFO  [localhost].[/reportmaker]  - Initializing Spring FrameworkServlet 'gsp'
+2013-04-12 10:45:05,724 [http-bio-9999-exec-1] INFO  [localhost].[/reportmaker]  - GSP servlet initialized
