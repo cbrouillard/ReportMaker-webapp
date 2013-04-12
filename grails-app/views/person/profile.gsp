@@ -94,9 +94,9 @@
             <div id="message"></div>
 
             <label><g:message code="person.change.pass"/></label>
-            <g:passwordField name="pass"/>
+            <g:passwordField name="pass" required="true"/>
             <label><g:message code="person.change.pass.check"/></label>
-            <g:passwordField name="passCheck"/>
+            <g:passwordField name="passCheck" required="true"/>
         </div>
 
         <div class="modal-footer">
