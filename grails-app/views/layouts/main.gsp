@@ -38,9 +38,10 @@
         </div>
 
         <div class="span11">
-            <h1 >${message(code: 'app.name')}</h1>
+            <h1>${message(code: 'app.name')}</h1>
 
         </div>
+
         <div class="clearfix">&nbsp;</div>
 
     </header>
@@ -80,10 +81,26 @@
 
             <sec:ifLoggedIn>
                 <ul class="nav pull-right">
-                    <li>
-                        <g:link controller="person" action="profile">
-                            <g:message code="hello"/> <sec:username/> !
-                        </g:link>
+                    <li class="dropdown">
+
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <g:message code="configuration"/> [<sec:username/>] <b class="caret"></b>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <g:link controller="person" action="profile">
+                                    <i class="icon-user"></i> <g:message code="person.profile"/>
+                                </g:link>
+                            </li>
+
+                            <li>
+                                <a data-toggle="modal" href="#changepass"><i class="icon-lock"></i> <g:message
+                                        code="person.infos.changepass"/></a>
+                            </li>
+
+                        </ul>
+
                     </li>
                     <sec:ifAllGranted roles="ROLE_ADMIN">
                         <li>
@@ -94,7 +111,7 @@
                     </sec:ifAllGranted>
                     <li>
                         <g:link controller="logout" class="logout">
-                            <i class="icon-off icon-white"></i>  <g:message code="logout"/>
+                             <g:message code="logout"/> <i class="icon-off icon-white"></i>
                         </g:link>
                     </li>
                 </ul>
@@ -182,6 +199,29 @@
     </div>
 </g:form>
 
+<g:formRemote method="post" name="changePassForm" url="[controller: 'person', action: 'changePass']" update="message">
+    <div id="changepass" class="modal hide fade">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+            <h3><g:message
+                    code="person.infos.changepass"/></h3>
+        </div>
+
+        <div class="modal-body">
+            <div id="message"></div>
+
+            <label><g:message code="person.change.pass"/></label>
+            <g:passwordField name="pass" required="true"/>
+            <label><g:message code="person.change.pass.check"/></label>
+            <g:passwordField name="passCheck" required="true"/>
+        </div>
+
+        <div class="modal-footer">
+            <g:actionSubmit value="${message(code:'change')}" class="btn btn-primary"/>
+        </div>
+    </div>
+</g:formRemote>
 
 %{--<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>--}%
 <g:javascript library="application"/>
