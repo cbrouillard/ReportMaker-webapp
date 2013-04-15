@@ -47,7 +47,8 @@
     </header>
 </sec:ifNotLoggedIn>
 
-<div class="navbar navbar-inverse navbar-fixed-top">
+%{--<div class="navbar navbar-inverse navbar-fixed-top">--}%
+    <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container-fluid">
             <a class="brand" href="${createLink(uri: '/')}"><strong><g:message code="app.name"/></strong></a>
@@ -111,7 +112,7 @@
                     </sec:ifAllGranted>
                     <li>
                         <g:link controller="logout" class="logout">
-                             <g:message code="logout"/> <i class="icon-off icon-white"></i>
+                             <g:message code="logout"/> <i class="icon-off"></i>
                         </g:link>
                     </li>
                 </ul>
