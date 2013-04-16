@@ -26,14 +26,14 @@ class PersonController {
         def person = springSecurityService.currentUser
         def fiveLastReports = Report.findAllByOwner(person, [sort: 'date', order: 'desc', max: 5])
 
-        [person: person, reports:fiveLastReports]
+        [person: person, reports: fiveLastReports]
     }
 
     @Secured(["ROLE_ADMIN", "ROLE_USER"])
-    def changePass(){
-        if (!params['pass'] || !params["passCheck"] || !params.pass.equals(params.passCheck)){
+    def changePass() {
+        if (!params['pass'] || !params["passCheck"] || !params.pass.equals(params.passCheck)) {
             // error
-            flash.message = message(code:"person.changepass.invalid.pass")
+            flash.message = message(code: "person.changepass.invalid.pass")
             flash.level = 'error'
             render template: '/common/flashmessage'
             return
@@ -41,15 +41,31 @@ class PersonController {
 
         def person = springSecurityService.currentUser
         person.password = params.pass
-        person.save(flush:true)
+        person.save(flush: true)
 
-        flash.message = message(code:"person.changepass.valid")
+        flash.message = message(code: "person.changepass.valid")
         flash.level = 'success'
         render template: '/common/flashmessage'
     }
 
     @Secured(["ROLE_ADMIN", "ROLE_USER"])
-    def updateInfos (){
+    def updateInfos() {
+        def person = springSecurityService.currentUser
+        bindData(person, params)
+
+        if (person.validate() && person.save(flush: true)) {
+            flash.message = message(code: "person.update.valid")
+            flash.level = 'success'
+
+            chain action: 'profile'
+            return
+        } else {
+            flash.message = message(code: "person.update.invalid")
+            flash.level = 'error'
+
+            chain action: 'profile'
+            return
+        }
 
     }
 }

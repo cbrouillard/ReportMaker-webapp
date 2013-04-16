@@ -38,7 +38,8 @@
             <g:form controller="person" action="updateInfos">
 
                 <label><g:message code="person.email"/></label>
-                <g:textField name="email" value="${person.email}"/>
+                <g:textField name="email" value="${person.email}"
+                             class="${hasErrors(bean: person, field: 'email', 'error')}"/>
 
                 <hr/>
                 <button type="submit" class="btn btn-primary"><g:message code="person.infos.submit"/></button>

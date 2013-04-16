@@ -31,10 +31,10 @@
 
 <body>
 
-<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container-fluid">
-            <a class="brand" href="${createLink(uri: '/')}"><g:message code="app.name"/></a>
+            <a class="brand" href="${createLink(uri: '/')}"><strong><g:message code="app.name"/></strong></a>
         </div>
     </div>
 </div>
@@ -44,7 +44,7 @@
 </div>
 
 <div id="footer">
-    <div class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="navbar navbar-fixed-bottom">
         <div class="navbar-inner">
             <div class="container-fluid">
 
