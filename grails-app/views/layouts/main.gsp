@@ -32,7 +32,7 @@
 <body data-spy="scroll" data-target="#navbarSpy">
 
 <sec:ifNotLoggedIn>
-    <header class="epic">
+    <header class="epic degrade-to-grey">
         <div class="span1">
             <img width="100px" src="${resource(dir: 'images', file: 'icone.png')}" alt="[TWR]"/>
         </div>
