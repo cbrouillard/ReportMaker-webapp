@@ -37,20 +37,20 @@
 
 <div class="around-border">
     <div class="photo-display">
-        <img src="${createLink(absolute: true, url: "/twr/${report.id}/deployment_j1.jpg")}" alt=""
-             class="photo-tochange-deployment_j1"/>
+        <img src="${createLink(absolute: true, url: "/twr/${report.id}/deploiement_j1.jpg")}" alt=""
+             class="photo-tochange-deploiement_j1"/>
     </div>
-    <g:render template="/common/actionphotos" model="[photoName: 'deployment_j1']"/>
+    <g:render template="/common/actionphotos" model="[photoName: 'deploiement_j1']"/>
 </div>
 
 <h5><g:message code="report.photo.deployment" args="${[report.two.name]}"/></h5>
 
 <div class="around-border">
     <div class="photo-display">
-        <img src="${createLink(absolute: true, url: "/twr/${report.id}/deployment_j2.jpg")}" alt=""
-             class="photo-tochange-deployment_j2"/>
+        <img src="${createLink(absolute: true, url: "/twr/${report.id}/deploiement_j2.jpg")}" alt=""
+             class="photo-tochange-deploiement_j2"/>
     </div>
-    <g:render template="/common/actionphotos" model="[photoName: 'deployment_j2']"/>
+    <g:render template="/common/actionphotos" model="[photoName: 'deploiement_j2']"/>
 </div>
 
 
