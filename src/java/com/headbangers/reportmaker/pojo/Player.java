@@ -17,11 +17,11 @@
  */
 package com.headbangers.reportmaker.pojo;
 
-
 public class Player {
 
     private String name;
     private String race;
+    private String armyComments;
 
     public String getName() {
         return name;
@@ -39,4 +39,11 @@ public class Player {
         this.race = race;
     }
 
+    public String getArmyComments() {
+        return armyComments;
+    }
+
+    public void setArmyComments(String armyComments) {
+        this.armyComments = armyComments;
+    }
 }

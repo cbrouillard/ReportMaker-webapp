@@ -39,7 +39,7 @@
 
         <div class="span11">
             <h1>${message(code: 'app.name')}</h1>
-
+            <small>Créez, éditez, partagez vos rapports de bataille</small>
         </div>
 
         <div class="clearfix">&nbsp;</div>

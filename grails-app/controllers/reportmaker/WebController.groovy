@@ -46,49 +46,54 @@ class WebController {
         Person owner = checkUser(params.user, params.pass)
 
         if (owner) {
+
             // Récupération de la bataille
+            if (!params.reportData) {
+                render status: 500, message: "Error"
+                return
+            }
             ObjectMapper mapper = new ObjectMapper()
             Battle battle = mapper.readValue(params.reportData, Battle.class)
-
-            // Récupération du fichier zip
-            CommonsMultipartFile photos = request.getFile('photos')
-            println photos.contentType
 
             // Vérification des données de bataille
             Report report = new Report()
             report.buildFromBattle(battle, owner)
             if (report.validate() && report.save(flush: true)) {
+
                 // Rapport enregistré. On peut traiter les photos
-                // Décompression du fichier zip
-                File zipFile = new File("/tmp", report.id + ".zip")
-                photos.transferTo(zipFile)
-                unZipIt(zipFile, "/tmp/${report.id}")
+                // Récupération du fichier zip
+                CommonsMultipartFile photos = request.getFile('photos')
+                if (photos) {
+                    println photos.contentType
 
-                // Vérification du contenu. Tout ce qui n'est pas image saute.
-                File rootZip = new File("/tmp/${report.id}")
-                for (File fileToCheck : rootZip.listFiles()) {
-                    FileDataSource ds = new FileDataSource(fileToCheck)
-                    String type = ds.contentType
+                    // Décompression du fichier zip
+                    File zipFile = new File("/tmp", report.id + ".zip")
+                    photos.transferTo(zipFile)
+                    unZipIt(zipFile, "/tmp/${report.id}")
 
-                    if (!type.equalsIgnoreCase("image/jpeg")) {
-                        println "Effacement de ${fileToCheck.name}"
-                        fileToCheck.delete();
+                    // Vérification du contenu. Tout ce qui n'est pas image saute.
+                    File rootZip = new File("/tmp/${report.id}")
+                    for (File fileToCheck : rootZip.listFiles()) {
+                        if (!FileTool.isFileAnImage(fileToCheck)) {
+                            println "Effacement de ${fileToCheck.name}"
+                            fileToCheck.delete();
+                        }
                     }
-                }
 
-                // Déplacement du dossier dans l'emplacement géré par Apache.
-                String finalDirName = grailsApplication.config.twr.photos.dir + File.separator + report.id
-                File finalDir = new File(finalDirName)
-                FileTool.copyDirectory(rootZip, finalDir)
-                FileTool.delete(rootZip)
+                    // Déplacement du dossier dans l'emplacement géré par Apache.
+                    String finalDirName = grailsApplication.config.twr.photos.dir + File.separator + report.id
+                    File finalDir = new File(finalDirName)
+                    FileTool.copyDirectory(rootZip, finalDir)
+                    FileTool.delete(rootZip)
 
-                // Ajout des paths des photos dans la table de gestion
-                for (File file : finalDir.listFiles()) {
-                    MetadataPhoto metaPhoto = new MetadataPhoto()
-                    metaPhoto.path = "/twr/${report.id}/${file.name}"
-                    metaPhoto.owner = owner
-                    metaPhoto.report = report
-                    metaPhoto.save(flush: true)
+                    // Ajout des paths des photos dans la table de gestion
+                    for (File file : finalDir.listFiles()) {
+                        MetadataPhoto metaPhoto = new MetadataPhoto()
+                        metaPhoto.path = "/twr/${report.id}/${file.name}"
+                        metaPhoto.owner = owner
+                        metaPhoto.report = report
+                        metaPhoto.save(flush: true)
+                    }
                 }
 
                 render status: 200, message: "Ok"
