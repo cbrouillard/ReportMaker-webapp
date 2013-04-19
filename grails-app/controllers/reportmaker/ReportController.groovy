@@ -270,7 +270,18 @@ class ReportController {
 
         if (report) {
 
+            def photos = MetadataPhoto.findAllByReport(report)
+            photos.each {photo ->
+                photo.delete()
+            }
+
+            report.turns.each {turn ->
+                turn.delete()
+            }
             report.delete(flush: true)
+            flash.message = message(code: 'report.deletion.success')
+            flash.level = "success"
+            render template: "/common/flashmessage"
 
         } else {
             render status: 403, message: "Error"

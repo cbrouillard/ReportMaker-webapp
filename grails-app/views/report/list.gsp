@@ -11,13 +11,13 @@
     <p><g:message code="report.list.help"/></p>
 
 </div>
-
 <g:render template="/common/flashmessage"/>
+<div id="deleteMessage"></div>
 
 <g:if test="${reports}">
     <table class="table table-striped table-hover">
         <g:each in="${reports}" var="report" status="i">
-            <tr class="clickable" link="${createLink(action: 'edit', id: report.id)}">
+            <tr id="report-${report.id}" class="clickable" link="${createLink(action: 'edit', id: report.id)}">
                 <g:render template="onereport" model="[report: report, editAction: true]"/>
             </tr>
         </g:each>
@@ -35,7 +35,9 @@
         if (confirm("${message (code:'report.deletion.confirm')}")) {
             $.ajax('${createLink(controller: 'report', action:"delete")}' + "/" + reportId, {type: 'POST',
                 success: function (data, textStatus, ajax) {
-                    alert(data);
+                    $("#deleteMessage").html(data);
+                    $("#report-"+reportId).fadeTo(500, 0.3);
+                    $("#actionreport-"+reportId).fadeOut();
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     alert("${message(code:'report.deletion.error')} ("+errorThrown+")")

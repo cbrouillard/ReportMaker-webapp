@@ -9,40 +9,42 @@
     </div>
 </td>
 <td class="middle actions">
+    <div id="actionreport-${report.id}">
 
-    <g:if test="${editAction}">
+        <g:if test="${editAction}">
+            <span>
+                <a href="javascript:deleteReport('${report.id}');" data-toggle="tooltip"
+                   title="${message(code: 'report.delete.tooltip')}">
+                    <img src="${resource(dir: 'images', file: 'trash2.png')}" alt="Edit"/></a><br/>Supprimer
+
+            </span>
+
+            <span>
+                <g:link controller="report" action="edit" id="${report.id}" data-toggle="tooltip"
+                        title="${message(code: 'report.edit.tooltip')}"><img src="${resource(dir:
+                        'images', file: 'edit.png')}"
+                                                                             alt="Edit"/></g:link><br/>Editer
+            </span>
+        </g:if>
+
         <span>
-            <a href="javascript:deleteReport('${report.id}');" data-toggle="tooltip"
-               title="${message(code: 'report.delete.tooltip')}">
-                <img src="${resource(dir: 'images', file: 'trash2.png')}" alt="Edit"/></a><br/>Supprimer
-
+            <g:link controller="report" action="pdf" id="${report.id}" data-toggle="tooltip"
+                    title="${message(code: 'report.export.pdf.tooltip')}"><img src="${resource(dir: 'images',
+                    file: 'pdf.png')}"
+                                                                               alt="PDF"/></g:link><br/>PDF
         </span>
 
         <span>
-            <g:link controller="report" action="edit" id="${report.id}" data-toggle="tooltip"
-                    title="${message(code: 'report.edit.tooltip')}"><img src="${resource(dir:
-                    'images', file: 'edit.png')}"
-                                                                         alt="Edit"/></g:link><br/>Editer
+            <g:link controller="report" action="code" params="[type: 'bbcode']" id="${report.id}" data-toggle="tooltip"
+                    title="${message(code: 'report.export.bbcode.tooltip')}"><img
+                    src="${resource(dir: 'images', file: 'bb-code.png')}" alt="BB-Code"/></g:link><br/>BB-Code
         </span>
-    </g:if>
 
-    <span>
-        <g:link controller="report" action="pdf" id="${report.id}" data-toggle="tooltip"
-                title="${message(code: 'report.export.pdf.tooltip')}"><img src="${resource(dir: 'images',
-                file: 'pdf.png')}"
-                                                                           alt="PDF"/></g:link><br/>PDF
-    </span>
-
-    <span>
-        <g:link controller="report" action="code" params="[type: 'bbcode']" id="${report.id}" data-toggle="tooltip"
-                title="${message(code: 'report.export.bbcode.tooltip')}"><img
-                src="${resource(dir: 'images', file: 'bb-code.png')}" alt="BB-Code"/></g:link><br/>BB-Code
-    </span>
-
-    <span>
-        <g:link controller="report" action="code" params="[type: 'html']" id="${report.id}" data-toggle="tooltip"
-                title="${message(code: 'report.export.html.tooltip')}"><img
-                src="${resource(dir: 'images', file: 'html.png')}" alt="HTML"/></g:link><br/>HTML
-    </span>
+        <span>
+            <g:link controller="report" action="code" params="[type: 'html']" id="${report.id}" data-toggle="tooltip"
+                    title="${message(code: 'report.export.html.tooltip')}"><img
+                    src="${resource(dir: 'images', file: 'html.png')}" alt="HTML"/></g:link><br/>HTML
+        </span>
+    </div>
 
 </td>
