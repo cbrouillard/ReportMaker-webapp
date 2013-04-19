@@ -10,10 +10,7 @@
     <title><g:message code="app.name"/></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
-    <link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
-    <link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'twr.css')}" type="text/css">
-    %{--<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">--}%
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <r:require modules="bootstrap"/>
@@ -48,7 +45,7 @@
 </sec:ifNotLoggedIn>
 
 %{--<div class="navbar navbar-inverse navbar-fixed-top">--}%
-    <div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container-fluid">
             <a class="brand" href="${createLink(uri: '/')}"><strong><g:message code="app.name"/></strong></a>
@@ -112,7 +109,7 @@
                     </sec:ifAllGranted>
                     <li>
                         <g:link controller="logout" class="logout">
-                             <g:message code="logout"/> <i class="icon-off"></i>
+                            <g:message code="logout"/> <i class="icon-off"></i>
                         </g:link>
                     </li>
                 </ul>
@@ -121,16 +118,6 @@
         </div>
     </div>
 </div>
-
-
-%{--<header class="jumbotron subhead">--}%
-%{--<div class="container">--}%
-%{--<h1>JavaScript</h1>--}%
-%{--<p class="lead">Bring Bootstrap's components to life&mdash;now with 13 custom jQuery plugins.--}%
-%{--</div>--}%
-%{--</header>--}%
-
-
 
 <div class="container">
     <g:layoutBody/>
@@ -219,7 +206,7 @@
         </div>
 
         <div class="modal-footer">
-            <g:actionSubmit value="${message(code:'change')}" class="btn btn-primary"/>
+            <g:actionSubmit value="${message(code: 'change')}" class="btn btn-primary"/>
         </div>
     </div>
 </g:formRemote>

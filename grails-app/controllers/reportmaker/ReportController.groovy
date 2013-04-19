@@ -74,7 +74,7 @@ class ReportController {
                 savedTurn.num = num
                 report.addToTurns(savedTurn)
             }
-            savedTurn.save()
+            //savedTurn.save()
         }
 
         if (report.validate() && report.save(flush: true)) {
@@ -128,7 +128,7 @@ class ReportController {
                 savedTurn.comments2 = params["comments_p2_t$num"].encodeAsHTML()
                 savedTurn.lastOne = params["lastOne_t$num"] as Boolean
                 savedTurn.nightFight = params["nightFight_t$num"] as Boolean
-                savedTurn.save()
+                //                savedTurn.save()
             }
 
             report.save(flush: true)
@@ -213,7 +213,7 @@ class ReportController {
                 result << [name: file.originalFilename, size: file.size]
 
                 // Copie du fichier dans /tmp
-                File dir =  new File("/tmp/${person.id}/")
+                File dir = new File("/tmp/${person.id}/")
                 dir.mkdirs()
                 File photo = new File(dir, params.photo + ".jpg")
                 file.transferTo(photo)
@@ -262,5 +262,18 @@ class ReportController {
             redirect action: 'list'
         }
 
+    }
+
+    def delete() {
+        def person = springSecurityService.currentUser
+        def report = Report.findByIdAndOwner(params.id, person)
+
+        if (report) {
+
+            report.delete(flush: true)
+
+        } else {
+            render status: 403, message: "Error"
+        }
     }
 }

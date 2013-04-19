@@ -30,5 +30,21 @@
     </div>
 </g:else>
 
+<script type="text/javascript">
+    var deleteReport = function (reportId) {
+        if (confirm("${message (code:'report.deletion.confirm')}")) {
+            $.ajax('${createLink(controller: 'report', action:"delete")}' + "/" + reportId, {type: 'POST',
+                success: function (data, textStatus, ajax) {
+                    alert(data);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert("${message(code:'report.deletion.error')} ("+errorThrown+")")
+                }
+
+            })
+        }
+    }
+</script>
+
 </body>
 </html>
