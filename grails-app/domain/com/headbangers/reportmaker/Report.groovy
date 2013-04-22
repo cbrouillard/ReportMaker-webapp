@@ -70,11 +70,11 @@ class Report {
     }
 
     Player getFirst() {
-        return one.num == 1 ? one : two;
+        return firstPlayer <= 1 ? one : two;
     }
 
     Player getSecond() {
-        return one.num == 1 ? two : one;
+        return firstPlayer >= 1 ? two : one;
     }
 
     public void buildFromBattle(Battle battle, Person owner) {

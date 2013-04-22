@@ -84,7 +84,7 @@
                     <span class="label label-info"><i class="icon-camera"></i> <g:message code="report.photo.deployment"
                                                                                           args="${[report.one.name]}"/>
                     </span>
-                    <img src="${createLink(url: "/twr/${report.id}/deployment_j1.jpg")}" alt=""/>
+                    <img src="${createLink(url: "/twr/${report.id}/deploiement_j1.jpg")}" alt=""/>
                 </div>
             </li>
         </ul>
@@ -98,7 +98,7 @@
                     <span class="label label-info"><i class="icon-camera"></i> <g:message code="report.photo.deployment"
                                                                                           args="${[report.two.name]}"/>
                     </span>
-                    <img src="${createLink(url: "/twr/${report.id}/deployment_j2.jpg")}" alt=""/>
+                    <img src="${createLink(url: "/twr/${report.id}/deploiement_j2.jpg")}" alt=""/>
                 </div>
             </li>
         </ul>
