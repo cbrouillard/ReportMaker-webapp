@@ -5,8 +5,8 @@
 </head>
 
 <body>
-%{--<div data-spy="scroll" data-target="#navbarSpy" style="">--}%
-<g:form action="update" method="POST"><g:hiddenField name="id" value="${report.id}"/>
+<g:formRemote name="updateReport${report.id}" url="[controller: 'report', action: 'aj_update']"
+              method="POST" update="updateResult"><g:hiddenField name="id" value="${report.id}"/>
 
     <div class="row">
 
@@ -24,8 +24,9 @@
                     <li><a href="#t5"><i class="icon-chevron-right"></i> <g:message code="t5"/></a></li>
                     <li><a href="#t6"><i class="icon-chevron-right"></i> <g:message code="t6"/></a></li>
                     <li><a href="#t7"><i class="icon-chevron-right"></i> <g:message code="t7"/></a></li>
-                    <li><span><g:submitButton name="submit" class="btn btn-primary"
-                                              value="${message(code: 'save')}"/></span></li>
+                    <li><span><g:submitButton name="submit" class="btn btn-primary" value="${message(code: 'save')}"/>
+                        <span id="updateResult"></span>
+                    </span></li>
                 </ul>
             </div>
         </div>
@@ -49,14 +50,15 @@
                 <g:each in="${(1..7)}" var="turnNum">
                     <tr><td>
                         <section id="t${turnNum}">
-                        <g:render template="oneturn" model="[num: turnNum, report: report, turn: report.getTurn(turnNum)]"/>
+                            <g:render template="oneturn"
+                                      model="[num: turnNum, report: report, turn: report.getTurn(turnNum)]"/>
                     </td></tr>
                 </g:each>
             </table>
             %{--</div>--}%
         </div>
     </div>
-</g:form>
+</g:formRemote>
 
 
 <form method="POST" enctype="multipart/form-data" id="form-photo-change">

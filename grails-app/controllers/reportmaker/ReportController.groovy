@@ -101,7 +101,30 @@ class ReportController {
 
     }
 
+    // action ajax pour la maj
+    def aj_update() {
+        boolean update = updateReport()
+
+        if (update) {
+            render template: "/common/autodisappear_icon", model: [code: "ok"]
+        } else {
+            render template: "/common/autodisappear_icon", model: [code: "error"]
+        }
+    }
+
     def update() {
+        boolean update = updateReport()
+
+        if (update) {
+            flash.message = message(code: 'report.update.success')
+            flash.level = "success"
+            redirect(action: 'edit', id: params.id)
+        } else {
+            redirect(action: 'list')
+        }
+    }
+
+    private boolean updateReport() {
         //println params
         def person = springSecurityService.currentUser
         def report = Report.findByIdAndOwner(params.id, person)
@@ -131,13 +154,10 @@ class ReportController {
             }
 
             report.save(flush: true)
-            flash.message = message(code: 'report.update.success')
-            flash.level = "success"
-
-            redirect(action: 'edit', id: report.id)
+            return true
 
         } else {
-            redirect(action: 'list')
+            return false
         }
     }
 
