@@ -74,7 +74,7 @@ class Report {
     }
 
     Player getSecond() {
-        return firstPlayer >= 1 ? two : one;
+        return firstPlayer <= 1 ? two : one;
     }
 
     public void buildFromBattle(Battle battle, Person owner) {

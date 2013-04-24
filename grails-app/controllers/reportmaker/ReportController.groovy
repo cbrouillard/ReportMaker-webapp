@@ -20,7 +20,6 @@ package reportmaker
 import com.headbangers.reportmaker.Report
 import com.headbangers.reportmaker.Turn
 import grails.plugins.springsecurity.Secured
-import grails.converters.JSON
 import org.springframework.web.multipart.commons.CommonsMultipartFile
 import org.codehaus.jackson.map.ObjectMapper
 import javax.activation.FileDataSource
@@ -140,37 +139,6 @@ class ReportController {
         } else {
             redirect(action: 'list')
         }
-    }
-
-    def pdf() {
-        def person = springSecurityService.currentUser
-        def report = Report.findByIdAndOwner(params.id, person)
-
-        if (report) {
-
-        }
-    }
-
-    def code() {
-        def person = springSecurityService.currentUser
-        def report = Report.findByIdAndOwner(params.id, person)
-
-        def type = params.type ?: "html"
-
-        if (report) {
-
-            if (type.equals("html")) {
-                render view: 'html', model: [report: report]
-                return
-            }
-
-            if (type.equals("bbcode")) {
-                render view: 'bbcode', model: [report: report]
-                return
-            }
-        }
-
-        redirect(action: 'list')
     }
 
     def changePhoto() {

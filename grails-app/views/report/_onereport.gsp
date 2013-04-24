@@ -28,20 +28,20 @@
         </g:if>
 
         <span>
-            <g:link controller="report" action="pdf" id="${report.id}" data-toggle="tooltip"
+            <g:link controller="export" action="pdf" id="${report.id}" data-toggle="tooltip"
                     title="${message(code: 'report.export.pdf.tooltip')}"><img src="${resource(dir: 'images',
                     file: 'pdf.png')}"
                                                                                alt="PDF"/></g:link><br/>PDF
         </span>
 
         <span>
-            <g:link controller="report" action="code" params="[type: 'bbcode']" id="${report.id}" data-toggle="tooltip"
+            <g:link controller="export" action="bbcode" id="${report.id}" data-toggle="tooltip"
                     title="${message(code: 'report.export.bbcode.tooltip')}"><img
                     src="${resource(dir: 'images', file: 'bb-code.png')}" alt="BB-Code"/></g:link><br/>BB-Code
         </span>
 
         <span>
-            <g:link controller="report" action="code" params="[type: 'html']" id="${report.id}" data-toggle="tooltip"
+            <g:link controller="export" action="html" id="${report.id}" data-toggle="tooltip"
                     title="${message(code: 'report.export.html.tooltip')}"><img
                     src="${resource(dir: 'images', file: 'html.png')}" alt="HTML"/></g:link><br/>HTML
         </span>
