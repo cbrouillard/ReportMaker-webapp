@@ -31,4 +31,11 @@ modules = {
         dependsOn 'jquery', 'jquery-ui'
         resource url: 'js/autosize/jquery.autosize-min.js'
     }
+
+    nivozoom {
+        dependsOn 'jquery', 'jquery-ui'
+        resource url: 'js/nivozoom/jquery.nivo.zoom.pack.js'
+        resource url: 'js/nivozoom/nivo-zoom.css'
+        resource url: 'js/nivozoom/custom-nivo-zoom.css'
+    }
 }

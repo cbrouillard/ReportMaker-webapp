@@ -66,7 +66,10 @@
                 <div class="thumbnail">
                     <span class="label label-info"><i class="icon-camera"></i> <g:message code="report.photo.table"/>
                     </span>
-                    <img src="${createLink(url: "/twr/${report.id}/table.jpg")}" alt=""/>
+                    <a href="${createLink(url: "/twr/${report.id}/table.jpg")}" class="nivoZoom">
+                        <img src="${createLink(url: "/twr/${report.id}/table.jpg")}" alt=""/>
+                        <div class="nivoCaption">This is an example of a caption.</div>
+                    </a>
                 </div>
             </li>
         </ul>
@@ -180,15 +183,16 @@
     <g:set var="reportDone" value="${false}"/>
     <g:each in="${report.turns}" var="turn" status="t">
         <g:if test="${!reportDone}">
-            <tr><td>
+            <tr><td class="${turn.nightFight ? "night" : ""}">
                 <div class="row">
                     <div class="span12">
 
-                        <h4><i class="icon-list"></i> Tour #${turn.num}</h4>
+                        <h4><i class="icon-list"></i> Tour #${turn.num} ${turn.nightFight ? " - " + message(code: "turn.night.played") : ""}
+                        </h4>
 
                         <h6><i class="icon-user"></i> ${firstP.name}</h6>
 
-                        <div class="photos-turn ${turn.nightFight ? "night" : ""}">
+                        <div class="photos-turn">
                             <ul class="thumbnails">
                                 <li class="span4">
                                     <div class="thumbnail">
@@ -223,17 +227,15 @@
                             </ul>
                         </div>
 
-                        <div class="comment-turn ${turn.nightFight ? "night" : ""}">
-                            <div class="span12">
-                                <blockquote>
-                                    <p>${turn.getComments(report.firstPlayer)}</p>
-                                </blockquote>
+                        <div class="comment-turn">
+                            <div class="blockquote">
+                                ${turn.getComments(numSecond)}
                             </div>
                         </div>
 
                         <h6><i class="icon-user"></i> ${secondP.name}</h6>
 
-                        <div class="photos-turn ${turn.nightFight ? "night" : ""}">
+                        <div class="photos-turn">
                             <ul class="thumbnails">
                                 <li class="span4">
                                     <div class="thumbnail">
@@ -267,11 +269,9 @@
                             </ul>
                         </div>
 
-                        <div class="comment-turn ${turn.nightFight ? "night" : ""}">
-                            <div class="span12 justify">
-                                <blockquote>
-                                    <p>${turn.getComments(numSecond)}</p>
-                                </blockquote>
+                        <div class="comment-turn ">
+                            <div class="blockquote">
+                                ${turn.getComments(numSecond)}
                             </div>
                         </div>
 

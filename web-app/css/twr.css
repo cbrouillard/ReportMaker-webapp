@@ -234,3 +234,17 @@ header.epic {
     text-align: center;
     /*margin-bottom: -20em;*/
 }
+
+div.blockquote{
+
+    border-left: 5px solid #888;
+    font-size: 16px;
+    text-align: justify;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+td.night{
+    background: #0a2e58 url("../images/night.png") no-repeat top right !important;
+    color: #fefefe;
+}

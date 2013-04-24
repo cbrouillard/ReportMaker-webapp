@@ -28,6 +28,14 @@ if (typeof jQuery !== 'undefined') {
 jQuery(function () {
     $("a[data-toggle='tooltip']").tooltip();
     $('textarea.editableArea').autosize();
+    $('body').nivoZoom({
+        speed: 500,
+        zoomHoverOpacity: 0.8,
+        overlay: false,
+        overlayColor: '#333',
+        overlayOpacity: 0.5,
+        captionOpacity: 0.8
+    });
 
 //    $('.sidenav li a').click(function () {
 //        $('.sidenav li').each(function () {
