@@ -43,6 +43,8 @@ class Report {
     Person owner
     List<Turn> turns;
 
+    Date dateCreated
+
     static constraints = {
         name blank: false, nullable: false
         date nullable: false
@@ -53,6 +55,8 @@ class Report {
         lordCapacity1 blank: true, nullable: true
         lordCapacity2 blank: true, nullable: true
         comments blank: true, nullable: true
+
+        dateCreated nullable: true
     }
 
     static mapping = {

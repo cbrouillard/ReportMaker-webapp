@@ -101,10 +101,22 @@
 
                     </li>
                     <sec:ifAllGranted roles="ROLE_ADMIN">
-                        <li>
-                            <g:link controller="metadataPhoto">
+                        <li class="dropdown">
+                            <g:link controller="administration" class="dropdown-toggle" data-toggle="dropdown">
                                 <g:message code="admin"/>
                             </g:link>
+
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <g:link controller="account"><i class="icon-user"></i> Utilisateurs</g:link>
+                                </li>
+
+                                <li>
+                                    <g:link controller="metadataPhoto"><i class="icon-picture"></i> Photos</g:link>
+                                </li>
+
+                            </ul>
+
                         </li>
                     </sec:ifAllGranted>
                     <li>

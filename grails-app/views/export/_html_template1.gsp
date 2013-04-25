@@ -68,7 +68,7 @@
                     </span>
                     <a href="${createLink(url: "/twr/${report.id}/table.jpg")}" class="nivoZoom">
                         <img src="${createLink(url: "/twr/${report.id}/table.jpg")}" alt=""/>
-                        <div class="nivoCaption">This is an example of a caption.</div>
+                        <div class="nivoCaption"><g:message code="report.photo.table"/></div>
                     </a>
                 </div>
             </li>
@@ -77,6 +77,10 @@
 </div>
 
 <h4>Déploiement :</h4>
+
+<g:set var="numSecond" value="${report.firstPlayer == 1 ? 2 : 1}"/>
+<g:set var="firstP" value="${report.first}"/>
+<g:set var="secondP" value="${report.second}"/>
 
 <div class="row deployment">
     <div class="span6">
@@ -173,10 +177,6 @@
         </ul>
     </div>
 </div>
-
-<g:set var="numSecond" value="${report.firstPlayer == 1 ? 2 : 1}"/>
-<g:set var="firstP" value="${report.first}"/>
-<g:set var="secondP" value="${report.second}"/>
 
 <table class="table table-striped">
 
