@@ -59,6 +59,7 @@
                 Format : ${report.format} points<br/>
             </g:if>[/quote]<br/>
             <br/>
+            Table de jeu<br/>
             [img <a
                 href="${createLink(absolute: true, uri: "/twr/${report.id}/table.jpg")}">${createLink(absolute: true, uri: "/twr/${report.id}/table.jpg")}</a>]
 

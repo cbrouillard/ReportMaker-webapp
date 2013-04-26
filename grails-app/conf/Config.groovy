@@ -113,6 +113,7 @@ log4j = {
     }
 
     debug myAppender: 'com.headbangers'
+    debug myAppender: 'nl.jworks.akismet'
 
     error 'org.codehaus.groovy.grails.web.servlet', // controllers
             'org.codehaus.groovy.grails.web.pages', // GSP
@@ -153,3 +154,9 @@ grails.mail.props = ["mail.smtp.auth": "true",
         "mail.smtp.socketFactory.port": "465",
         "mail.smtp.socketFactory.class": "javax.net.ssl.SSLSocketFactory",
         "mail.smtp.socketFactory.fallback": "false"]
+
+akismet {
+    key = props.get("akismet.key")
+    site = props.get("server.url")
+    provider = "rest.akismet.com" // or api.antispam.typepad.com
+}

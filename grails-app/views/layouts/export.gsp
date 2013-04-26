@@ -32,6 +32,23 @@
     <div class="navbar-inner">
         <div class="container-fluid">
             <a class="brand" href="${createLink(uri: '/')}"><strong><g:message code="app.name"/></strong></a>
+
+            <sec:ifNotLoggedIn>
+                <ul class="nav pull-right">
+                    <li>
+                        <g:link controller="login" action="register">
+                            <g:message code="login.noaccount"/>
+                        </g:link>
+                    </li>
+
+                    <li>
+                        <g:link controller="login">
+                            <g:message code="login.submit"/>
+                        </g:link>
+                    </li>
+                </ul>
+            </sec:ifNotLoggedIn>
+
         </div>
     </div>
 </div>
