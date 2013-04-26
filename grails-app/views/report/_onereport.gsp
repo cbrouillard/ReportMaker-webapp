@@ -23,13 +23,14 @@
                 <div class="controls">
                     <div class="input-prepend">
                         <span class="add-on"><i class="icon-pencil"></i></span>
-                        <g:textField name="date" value="${formatDate(date: report.date, formatName: "format.date.toDay")}"/>
+                        <g:textField name="date" class="datepicker" readonly="true"
+                                     value="${formatDate(date: report.date, formatName: "format.date.toDay")}"/>
                     </div>
                 </div>
             </div>
 
             <div class="control-group">
-                <label class="control-label" >Joueurs</label>
+                <label class="control-label">Joueurs</label>
 
                 <div class="controls">
                     <div class="input-prepend">
