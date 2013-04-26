@@ -10,24 +10,13 @@
     <div class="span12">
         <div class="well">
             <h1><g:message code="report.create.howto"/></h1>
+
+            <p><g:message code="report.create.howto.help"/></p>
         </div>
     </div>
 </div>
 
-<div id="navbarSpy" class="navbar navbar-static">
-    <div class="navbar-inner">
-        <div class="container" style="width: auto;">
-            %{--<a class="brand" href="#">Project Name</a>--}%
-            <ul class="nav">
-                <li><a href="#step1"><g:message code="report.create.howto.step1"/></a></li>
-                <li><a href="#step2"><g:message code="report.create.howto.step2"/></a></li>
-                <li><a href="#step3"><g:message code="report.create.howto.step3"/></a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<div data-spy="scroll" data-target="#navbarSpy" style="height:350px;overflow: auto;position: relative;">
+<div>
     <h4 id="step1"><g:message code="report.create.howto.step1"/></h4>
 
     <p><g:message code="report.create.howto.step1.details"/></p>
@@ -38,6 +27,20 @@
     <h4 id="step2"><g:message code="report.create.howto.step2"/></h4>
 
     <p><g:message code="report.create.howto.step2.details"/></p>
+
+    <div class="center around-border">
+        <img src="${resource(dir: 'images/mobapp', file: 'creer.png')}"
+             alt="[TWR - Mobile - Créer]" width="300px"/>
+
+        <img
+                src="${resource(dir: 'images/mobapp', file: 'edition.png')}"
+                alt="[TWR - Mobile - Edition]" width="300px"/>
+
+        <img
+                src="${resource(dir: 'images/mobapp', file: 'zoom.png')}"
+                alt="[TWR - Mobile - Zoom]" width="300px"/>
+
+    </div>
     <hr/>
 
     <h4 id="step3"><g:message code="report.create.howto.step3"/></h4>

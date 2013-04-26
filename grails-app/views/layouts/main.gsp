@@ -103,7 +103,7 @@
                     <sec:ifAllGranted roles="ROLE_ADMIN">
                         <li class="dropdown">
                             <g:link controller="administration" class="dropdown-toggle" data-toggle="dropdown">
-                                <g:message code="admin"/>
+                                <g:message code="admin"/>  <b class="caret"></b>
                             </g:link>
 
                             <ul class="dropdown-menu">
