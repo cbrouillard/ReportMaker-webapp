@@ -32,10 +32,11 @@
         </div>
 
         <div class="span9">
+            <legend>Mode édition</legend>
             %{--<div data-spy="scroll" data-target="#navbarSpy" style="position: relative;height: 1000px; overflow: auto;">--}%
             <table class="table table-striped">
                 <tr>
-                    <g:render template="onereport" model="[report: report]"/>
+                    <g:render template="onereport" model="[report: report, editInfosAvailable:true]"/>
                 </tr>
             </table>
 
@@ -112,7 +113,6 @@
     </div>
 
 </form>
-
 
 <script type="text/javascript">
     $(document).ready(function () {

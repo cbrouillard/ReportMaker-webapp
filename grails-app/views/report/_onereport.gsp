@@ -1,12 +1,58 @@
-<td class="sized48 center middle"><img src="${resource(dir: 'images', file: 'mars.png')}" alt="[.]"/></td>
+<td class="sized48 center middle" xmlns="http://www.w3.org/1999/html"><img
+        src="${resource(dir: 'images', file: 'mars.png')}" alt="[.]"/></td>
 <td>
-    <div>
-        <h2>${report.name}</h2>
 
-        <span class="label label-info"><g:message code="report.date"/> : <g:formatDate date="${report.date}"
-                                                                                       formatName="format.date.toDay"/></span>
-        <h4>${report.one.name} VS ${report.two.name}</h4>
-    </div>
+    <g:if test="${editInfosAvailable}">
+        <div class="input-invisible">
+
+            <div class="control-group">
+                <label class="control-label" for="name">Nom</label>
+
+                <div class="controls">
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="icon-pencil"></i></span>
+                        <g:textField name="name" value="${report.name}" class="h2 input-xlarge"/>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="control-group">
+                <label class="control-label" for="name"><g:message code="report.date"/></label>
+
+                <div class="controls">
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="icon-pencil"></i></span>
+                        <g:textField name="date" value="${formatDate(date: report.date, formatName: "format.date.toDay")}"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" >Joueurs</label>
+
+                <div class="controls">
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="icon-pencil"></i></span>
+                        <g:textField name="one.name" value="${report.one.name}" class="h4"/>
+                    </div> VS
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="icon-pencil"></i></span>
+                        <g:textField name="two.name" value="${report.two.name}" class="h4"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </g:if>
+    <g:else>
+        <div>
+            <h2>${report.name}</h2>
+
+            <span class="label label-info"><g:message code="report.date"/> : <g:formatDate date="${report.date}"
+                                                                                           formatName="format.date.toDay"/></span>
+            <h4>${report.one.name} VS ${report.two.name}</h4>
+        </div>
+    </g:else>
 </td>
 <td class="middle actions">
     <div id="actionreport-${report.id}">

@@ -137,6 +137,10 @@ class ReportController {
             report.lordCapacity1 = params.lordCapacity1.encodeAsHTML()
             report.lordCapacity2 = params.lordCapacity2.encodeAsHTML()
 
+            report.name = params.name.encodeAsHTML()
+            report.one.name = params["one.name"].encodeAsHTML()
+            report.two.name = params["two.name"].encodeAsHTML()
+
             (1..7).each {num ->
                 Turn savedTurn = report.getTurn(num as Integer)
                 if (!savedTurn) {

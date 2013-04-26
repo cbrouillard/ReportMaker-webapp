@@ -220,7 +220,7 @@ header.epic {
     margin-top: -20px; /**dummy**/
 }
 
-.degrade-to-grey{
+.degrade-to-grey {
     background: #FFF;
     background: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0) 0%, #e5e5e5 100%);
     background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #ffffff), color-stop(100%, #e5e5e5));
@@ -235,7 +235,7 @@ header.epic {
     /*margin-bottom: -20em;*/
 }
 
-div.blockquote{
+div.blockquote {
 
     border-left: 5px solid #888;
     font-size: 16px;
@@ -244,7 +244,30 @@ div.blockquote{
     padding-left: 20px;
 }
 
-td.night{
+td.night {
     background: #0a2e58 url("../images/night.png") no-repeat top right !important;
     color: #fefefe;
+}
+
+div.input-invisible input {
+    /*background: inherit;*/
+    /*border: none;*/
+}
+
+input.h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+div.input-invisible input.into-label {
+    color: white;
+    vertical-align: middle;
+    height: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+input.h4 {
+    font-size: 14px;
+    font-weight: bold;
 }
