@@ -37,7 +37,8 @@ jQuery(function () {
         captionOpacity: 0.8
     });
 
-    $(".datepicker").datepicker( $.datepicker.regional[ "fr" ] );
+//    $(".datepicker").datepicker({'dateFormat': 'dd/mm/yy', showOn: 'both', buttonText: '<i class="icon-calendar"></i>'});
+    $(".datepicker").datepicker({'dateFormat': 'dd/mm/yy'});
 //    $(".datepicker").datepicker( "option", "dateFormat", "dd/mm/y");
 
 //    $('.sidenav li a').click(function () {
