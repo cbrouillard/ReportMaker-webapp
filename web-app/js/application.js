@@ -58,7 +58,7 @@ var dealWithWrongPhotos = function () {
     $(".photo-display img, .thumbnail img").error(function () {
         //$(this).hide();
         var defaultPhoto = $(this).attr("def");
-//        alert(defaultPhoto);
+        //alert(defaultPhoto);
         if (defaultPhoto != null) {
             $(this).attr('src', defaultPhoto);
         } else {
