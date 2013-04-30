@@ -60,19 +60,19 @@
     </div>
 
     <div class="span8">
-
         <ul class="thumbnails">
             <li class="span8">
-                <div class="thumbnail">
-                    <span class="label label-info"><i class="icon-camera"></i> <g:message code="report.photo.table"/>
-                    </span>
-                    <a href="${createLink(url: "/twr/${report.id}/table.jpg")}" class="nivoZoom">
-                        <img src="${createLink(url: "/twr/${report.id}/table.jpg")}" alt=""
-                             def="${resource(dir: 'images', file: 'default-no-image.png')}"/>
 
-                        <div class="nivoCaption"><g:message code="report.photo.table"/></div>
-                    </a>
+                <div class="thumbnail">
+                    <span class="label label-info"><i class="icon-camera"></i> <g:message
+                            code="report.photo.table"/>
+                    </span>
+
+                    <img src="${createLink(url: "/twr/${report.id}/table_t.jpg")}" alt=""
+                         def="${resource(dir: 'images', file: 'default-no-image.png')}"/>
+
                 </div>
+
             </li>
         </ul>
     </div>
@@ -95,8 +95,9 @@
                     <span class="label label-info"><i class="icon-camera"></i> <g:message code="report.photo.deployment"
                                                                                           args="${[firstP.name]}"/>
                     </span>
-                    <img src="${createLink(url: "/twr/${report.id}/deploiement_j${firstP.num}.jpg")}" alt=""
+                    <img src="${createLink(url: "/twr/${report.id}/deploiement_j${firstP.num}_t.jpg")}" alt=""
                          def="${resource(dir: 'images', file: 'default-no-image.png')}"/>
+
                 </div>
             </li>
         </ul>
@@ -110,8 +111,9 @@
                     <span class="label label-info"><i class="icon-camera"></i> <g:message code="report.photo.deployment"
                                                                                           args="${[secondP.name]}"/>
                     </span>
-                    <img src="${createLink(url: "/twr/${report.id}/deploiement_j${numSecond}.jpg")}" alt=""
+                    <img src="${createLink(url: "/twr/${report.id}/deploiement_j${numSecond}_t.jpg")}" alt=""
                          def="${resource(dir: 'images', file: 'default-no-image.png')}"/>
+
                 </div>
             </li>
         </ul>
@@ -130,8 +132,9 @@
                             code="report.photo.infiltration"
                             args="${[firstP.name]}"/>
                     </span>
-                    <img src="${createLink(url: "/twr/${report.id}/infiltration_j${firstP.num}.jpg")}" alt=""
+                    <img src="${createLink(url: "/twr/${report.id}/infiltration_j${firstP.num}_t.jpg")}" alt=""
                          def="${resource(dir: 'images', file: 'default-no-image.png')}"/>
+
                 </div>
             </li>
         </ul>
@@ -146,7 +149,7 @@
                             code="report.photo.infiltration"
                             args="${[secondP.name]}"/>
                     </span>
-                    <img src="${createLink(url: "/twr/${report.id}/infiltration_j${numSecond}.jpg")}" alt=""
+                    <img src="${createLink(url: "/twr/${report.id}/infiltration_j${numSecond}_t.jpg")}" alt=""
                          def="${resource(dir: 'images', file: 'default-no-image.png')}"/>
                 </div>
             </li>
@@ -165,7 +168,7 @@
                     <span class="label label-info"><i class="icon-camera"></i> <g:message code="report.photo.scooting"
                                                                                           args="${[firstP.name]}"/>
                     </span>
-                    <img src="${createLink(url: "/twr/${report.id}/scoot_j${firstP.num}.jpg")}" alt=""
+                    <img src="${createLink(url: "/twr/${report.id}/scoot_j${firstP.num}_t.jpg")}" alt=""
                          def="${resource(dir: 'images', file: 'default-no-image.png')}"/>
                 </div>
             </li>
@@ -180,7 +183,7 @@
                     <span class="label label-info"><i class="icon-camera"></i> <g:message code="report.photo.scooting"
                                                                                           args="${[secondP.name]}"/>
                     </span>
-                    <img src="${createLink(url: "/twr/${report.id}/scoot_j${numSecond}.jpg")}" alt=""
+                    <img src="${createLink(url: "/twr/${report.id}/scoot_j${numSecond}_t.jpg")}" alt=""
                          def="${resource(dir: 'images', file: 'default-no-image.png')}"/>
                 </div>
             </li>
@@ -209,8 +212,9 @@
                                         <span class="label label-info"><i class="icon-camera"></i> <g:message
                                                 code="report.turn.photo.move"/>
                                         </span>
-                                        <img src="${createLink(url: "/twr/${report.id}/player${report.firstPlayer}_turn${turn.num}_move.jpg")}"
+                                        <img src="${createLink(url: "/twr/${report.id}/player${report.firstPlayer}_turn${turn.num}_move_t.jpg")}"
                                              alt="" def="${resource(dir: 'images', file: 'default-no-image.png')}"/>
+
                                     </div>
                                 </li>
 
@@ -219,8 +223,9 @@
                                         <span class="label label-info"><i class="icon-camera"></i> <g:message
                                                 code="report.turn.photo.shoot"/>
                                         </span>
-                                        <img src="${createLink(url: "/twr/${report.id}/player${report.firstPlayer}_turn${turn.num}_shoot.jpg")}"
+                                        <img src="${createLink(url: "/twr/${report.id}/player${report.firstPlayer}_turn${turn.num}_shoot_t.jpg")}"
                                              alt="" def="${resource(dir: 'images', file: 'default-no-image.png')}"/>
+
                                     </div>
                                 </li>
 
@@ -230,7 +235,7 @@
                                         <span class="label label-info"><i class="icon-camera"></i> <g:message
                                                 code="report.turn.photo.assault"/>
                                         </span>
-                                        <img src="${createLink(url: "/twr/${report.id}/player${report.firstPlayer}_turn${turn.num}_assault.jpg")}"
+                                        <img src="${createLink(url: "/twr/${report.id}/player${report.firstPlayer}_turn${turn.num}_assault_t.jpg")}"
                                              alt="" def="${resource(dir: 'images', file: 'default-no-image.png')}"/>
                                     </div>
                                 </li>
@@ -252,7 +257,7 @@
                                         <span class="label label-info"><i class="icon-camera"></i> <g:message
                                                 code="report.turn.photo.move"/>
                                         </span>
-                                        <img src="${createLink(url: "/twr/${report.id}/player${numSecond}_turn${turn.num}_move.jpg")}"
+                                        <img src="${createLink(url: "/twr/${report.id}/player${numSecond}_turn${turn.num}_move_t.jpg")}"
                                              alt="" def="${resource(dir: 'images', file: 'default-no-image.png')}"/>
                                     </div>
                                 </li>
@@ -262,7 +267,7 @@
                                         <span class="label label-info"><i class="icon-camera"></i> <g:message
                                                 code="report.turn.photo.shoot"/>
                                         </span>
-                                        <img src="${createLink(url: "/twr/${report.id}/player${numSecond}_turn${turn.num}_shoot.jpg")}"
+                                        <img src="${createLink(url: "/twr/${report.id}/player${numSecond}_turn${turn.num}_shoot_t.jpg")}"
                                              alt="" def="${resource(dir: 'images', file: 'default-no-image.png')}"/>
                                     </div>
                                 </li>
