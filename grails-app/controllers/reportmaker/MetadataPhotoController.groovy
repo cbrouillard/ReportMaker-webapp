@@ -34,9 +34,9 @@ class MetadataPhotoController {
         def offset = params.offset ?: 0
 
         def photos = MetadataPhoto.createCriteria().list() {
+            eq("valid", false)
             maxResults max
             firstResult offset
-
             order("valid", "asc")
             order("dateCreated", "desc")
         }

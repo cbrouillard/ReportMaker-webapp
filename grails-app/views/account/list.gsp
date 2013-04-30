@@ -19,6 +19,17 @@
 <div>
     <legend>Utilisateurs enregistrés</legend>
     <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Mail</th>
+            <th>Date création</th>
+            <th>Rôle</th>
+            <th>Actif ?</th>
+            <th>Bloqué ?</th>
+            <th>Expiré ?</th>
+        </tr>
+        </thead>
         <g:each in="${persons}" var="person">
 
             <tr>
@@ -26,9 +37,21 @@
                 <td>${person.email}</td>
                 <td><g:formatDate date="${person.dateCreated}" formatName="format.date.toDay"/></td>
                 <td>${person.authorities*.authority}</td>
-                <td>Actif: ${person.enabled}</td>
-                <td>Bloqué: ${person.accountLocked}</td>
-                <td>Expiré: ${person.accountExpired}</td>
+                <td>
+                    <div id="active-${person.id}">
+                        <g:render template="active" model="[enabled: person.enabled, id: person.id]"/>
+                    </div>
+                </td>
+                <td>
+                    <div id="lock-${person.id}">
+                        <g:render template="lock" model="[accountLocked: person.accountLocked, id: person.id]"/>
+                    </div>
+                </td>
+                <td>
+                    <div id="expired-${person.id}">
+                        <g:render template="expired" model="[accountExpired: person.accountExpired, id: person.id]"/>
+                    </div>
+                </td>
             </tr>
 
         </g:each>

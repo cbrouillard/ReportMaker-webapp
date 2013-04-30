@@ -37,20 +37,8 @@ jQuery(function () {
         captionOpacity: 0.8
     });
 
-//    $(".datepicker").datepicker({'dateFormat': 'dd/mm/yy', showOn: 'both', buttonText: '<i class="icon-calendar"></i>'});
+    //$(".datepicker").datepicker({'dateFormat': 'dd/mm/yy', showOn: 'both', buttonText: '<i class="icon-calendar"></i>'});
     $(".datepicker").datepicker({'dateFormat': 'dd/mm/yy'});
-//    $(".datepicker").datepicker( "option", "dateFormat", "dd/mm/y");
-
-//    $('.sidenav li a').click(function () {
-//        $('.sidenav li').each(function () {
-//            $(this).removeClass('active');
-//        });
-//
-//        var li = $(this).parent('li');
-//        if (!li.hasClass('active')) {
-//            li.addClass('active');
-//        }
-//    });
 
     registerClickableTr();
     dealWithWrongPhotos();

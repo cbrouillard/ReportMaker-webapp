@@ -17,6 +17,7 @@
  */
 package reportmaker
 
+import com.headbangers.reportmaker.util.ResizeTool
 import org.codehaus.jackson.map.ObjectMapper
 import com.headbangers.reportmaker.pojo.Battle
 import org.springframework.web.multipart.commons.CommonsMultipartFile
@@ -24,9 +25,7 @@ import com.headbangers.reportmaker.Report
 import com.headbangers.reportmaker.Person
 import java.util.zip.ZipInputStream
 import java.util.zip.ZipEntry
-import javax.activation.FileDataSource
-import org.springframework.beans.factory.annotation.Value
-import org.codehaus.groovy.grails.commons.ConfigurationHolder
+
 import com.headbangers.reportmaker.util.FileTool
 import com.headbangers.reportmaker.MetadataPhoto
 
@@ -85,6 +84,9 @@ class WebController {
                     File finalDir = new File(finalDirName)
                     FileTool.copyDirectory(rootZip, finalDir)
                     FileTool.delete(rootZip)
+
+                    // Redimmensionnement
+                    ResizeTool.resizeAllReportImages(report.id)
 
                     // Ajout des paths des photos dans la table de gestion
                     for (File file : finalDir.listFiles()) {

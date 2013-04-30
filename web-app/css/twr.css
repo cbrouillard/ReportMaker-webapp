@@ -88,7 +88,7 @@ textarea.editableArea {
     text-align: center;
 }
 
-.table td.actions {
+.table td.actions, .table th.actions {
     text-align: right;
 }
 

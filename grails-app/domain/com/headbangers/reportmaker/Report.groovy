@@ -28,7 +28,7 @@ class Report {
 
     String name
     Date date
-    Integer format
+    String format
 
     String deploymentType
     String scenario

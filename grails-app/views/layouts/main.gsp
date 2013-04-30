@@ -118,6 +118,10 @@
                                     <g:link controller="metadataPhoto"><i class="icon-picture"></i> Photos</g:link>
                                 </li>
 
+                                <li>
+                                    <g:link controller="administration" action="reports"><i class="icon-picture"></i> Rapports</g:link>
+                                </li>
+
                             </ul>
 
                         </li>
