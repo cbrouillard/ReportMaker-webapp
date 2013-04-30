@@ -80,7 +80,9 @@
 
 <h4>Déploiement :</h4>
 
+
 <g:set var="numSecond" value="${report.firstPlayer == 1 ? 2 : 1}"/>
+<g:set var="numFirst" value="${numSecond == 1 ? 2 : 1}"/>
 <g:set var="firstP" value="${report.first}"/>
 <g:set var="secondP" value="${report.second}"/>
 
@@ -237,7 +239,7 @@
 
                         <div class="comment-turn">
                             <div class="blockquote">
-                                ${turn.getComments(numSecond)}
+                                ${turn.getComments(firstP.num)}
                             </div>
                         </div>
 
@@ -279,7 +281,7 @@
 
                         <div class="comment-turn ">
                             <div class="blockquote">
-                                ${turn.getComments(numSecond)}
+                                ${turn.getComments(secondP.num)}
                             </div>
                         </div>
 
