@@ -28,16 +28,9 @@ if (typeof jQuery !== 'undefined') {
 jQuery(function () {
     $("a[data-toggle='tooltip']").tooltip();
     $('textarea.editableArea').autosize();
-    $('body').nivoZoom({
-        speed: 500,
-        zoomHoverOpacity: 0.8,
-        overlay: false,
-        overlayColor: '#333',
-        overlayOpacity: 0.5,
-        captionOpacity: 0.8
-    });
+//    $('.fancybox').fancybox();
 
-    //$(".datepicker").datepicker({'dateFormat': 'dd/mm/yy', showOn: 'both', buttonText: '<i class="icon-calendar"></i>'});
+    $(".datepicker").datepicker({'dateFormat': 'dd/mm/yy', showOn: 'both', buttonText: '<i class="icon-calendar"></i>'});
     $(".datepicker").datepicker({'dateFormat': 'dd/mm/yy'});
 
     registerClickableTr();

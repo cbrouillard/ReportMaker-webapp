@@ -21,21 +21,35 @@ modules = {
     }
 
     fileupload {
-        dependsOn 'jquery', 'jquery-ui'
         resource url: 'js/jquery-file-upload/jquery.ui.widget.js'
         resource url: 'js/jquery-file-upload/jquery.iframe-transport.js'
         resource url: 'js/jquery-file-upload/jquery.fileupload.js'
     }
 
     autosize {
-        dependsOn 'jquery', 'jquery-ui'
         resource url: 'js/autosize/jquery.autosize-min.js'
     }
 
-    nivozoom {
-        dependsOn 'jquery', 'jquery-ui'
-        resource url: 'js/nivozoom/jquery.nivo.zoom.pack.js'
-        resource url: 'js/nivozoom/nivo-zoom.css'
-        resource url: 'js/nivozoom/custom-nivo-zoom.css'
+    fancybox {
+        resource url: 'js/fancybox/source/jquery.fancybox.pack.js?v=2.1.4'
+        resource url: 'js/fancybox/source/jquery.fancybox.css?v=2.1.4'
+    }
+
+    'my-bootstrap-js' {
+        defaultBundle configDefaultBundle
+        dependsOn 'bootstrap-transition,bootstrap-alert,bootstrap-dropdown,bootstrap-modal,bootstrap-scrollspy,bootstrap-tab,bootstrap-tooltip,' +
+                  'bootstrap-popover,bootstrap-button,bootstrap-carousel,bootstrap-typeahead,bootstrap-collapse,bootstrap-affix'
+    }
+
+    mybootstrap {
+        defaultBundle 'bundle_bootstrap'
+        dependsOn 'bootstrap-css'
+        dependsOn 'my-bootstrap-js'
+    }
+
+    reveal{
+        resource url: 'js/reveal/lib/js/head.min.js'
+        resource url: 'js/reveal/lib/js/classList.js'
+        resource url: 'js/reveal/js/reveal.min.js'
     }
 }

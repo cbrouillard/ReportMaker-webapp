@@ -17,7 +17,7 @@
     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 
     <r:require modules="bootstrap"/>
-    <r:require modules="jquery-ui, fileupload, autosize, nivozoom"/>
+    <r:require modules="jquery-ui, fileupload, autosize, fancybox"/>
     <style>
     body {
         padding-top: 60px;

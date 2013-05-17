@@ -68,8 +68,10 @@
                             code="report.photo.table"/>
                     </span>
 
-                    <img src="${createLink(url: "/twr/${report.id}/table_t.jpg")}" alt=""
-                         def="${resource(dir: 'images', file: 'default-no-image.png')}"/>
+                    <a href="${createLink(url: "/twr/${report.id}/table.jpg")}" rel="group" class="fancybox" data-fancybox-group="gallery">
+                        <img src="${createLink(url: "/twr/${report.id}/table.jpg")}" alt=""
+                             def="${resource(dir: 'images', file: 'default-no-image.png')}"/>
+                    </a>
 
                 </div>
 

@@ -81,8 +81,9 @@ body {
 	height: 100%;
 }
 
-a:link, a:visited, a:hover {
+a:link, a:visited, a:hover, a:focus {
 	color: #48802c;
+    text-decoration: none !important;
 }
 
 a:hover, a:active {

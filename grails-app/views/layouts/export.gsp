@@ -12,9 +12,8 @@
     <link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'twr.css')}" type="text/css">
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <r:require modules="bootstrap"/>
-    <r:require modules="jquery-ui, fileupload, autosize, nivozoom"/>
+    <r:require modules="mybootstrap"/>
+    <r:require modules=" fileupload, autosize"/>
     <style>
     body {
         padding-top: 60px;
@@ -24,6 +23,11 @@
 
     <g:layoutHead/>
     <r:layoutResources/>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" src="${resource(dir: "js/fancybox/source/", file: 'jquery.fancybox.js?v=2.1.4')}"></script>
+    <link rel="stylesheet" type="text/css"
+          href="${resource(dir: "js/fancybox/source/", file: 'jquery.fancybox.css?v=2.1.4')}" media="screen"/>
 </head>
 
 <body>
